@@ -64,6 +64,74 @@
 - `x\{m,\}` Repetition of character x at least m times
 - `x\{m,n\}` Repetition of character x between m and n times
 
+#### 4.1.3.1 New with egrep
+
+- `+` Matches one or more of the characters preceding the + sign.
+- `?` Matches zero or one of the preceding characters.
+- `a|b` Matches either a or b.
+- `()` Groups characters.
+
+#### 4.1.3.2 New with GNU grep
+
+In addition, GNU grep recognizes \b, \w, and \W, as well as a new class of POSIX metacharacters.
+
+- `\w` Alphanumeric word character; `[a-zA-Z0-9_]`.
+- `\W` Nonalphanumeric word character; `[^a-zA-Z0-9_]`.
+- `\b` Word boundary.
+
+#### 4.1.3.3 POSIX metacharacters
+
+- `[:alnum:]` Alphanumeric characters
+- `[:alpha:]` Alphabetic characters
+- `[:cntrl:]` Control characters
+- `[:digit:]` Numeric characters
+- `[:graph:]` Nonblank characters (not spaces, control characters, etc.)
+- `[:lower:]` Lowercase letters
+- `[:print:]` Like [:graph:], but includes the space character
+- `[:punct:]` Punctuation characters
+- `[:space:]` All whitespace characters (newlines, spaces, tabs)
+- `[:upper:]` Uppercase letters
+- `[:xdigit:]` Allows digits in a hexadecimal number (0-9a-fA-F)
+
+#### 4.1.4 grep's Options
+
+- `-c` Displays a count of matching lines rather than displaying the lines that match.
+- `-h` Does not display filenames.
+- `-i` Ignores the case of letters in comparisons.
+- `-l` Lists only the names of files with matching lines (once), separated by newline characters.
+- `-n` Precedes each line by its relative line number in the file.
+- `-v` Inverts the search to display only lines that do not match.
+- `-w` Searches for the expression as a word, as if surrounded by `\<` and `\>`. This applies to grep only.
+
+#### 4.12 GNU grep with Options
+
+- `-A NUM, --after-context=NUM` Print NUM lines of trailing context after matching lines.
+- `-B NUM, --before-context=NUM` Print # lines of leading context before matching lines.
+- `-C NUM, -NUM, --context=NUM` Matches will be printed with NUM lines of leading and trailing context.
+- `-a, --text, --binary-files=text` Processes binary files as text files.
+- `-e PATTERN, --regexp=PATTERN` Use PATTERN literally as the pattern; useful to protect patterns beginning with -.
+- `-n, --line-number` Prefix each line of output with the line number where the match occurred.
+- `-v, --revert-match` Invert the sense of matching, to select nonmatch in lines.
+- `-r` Read all files under each directory, recursively.
+
+#### 4.1.5 grep and Exit Status
+
+- grep returns an exit status to indicate whether it was able to locate the pattern or the file you were looking for.
+  - If the pattern is found, grep returns an exit status of 0, indicating success;
+  - If grep cannot find the pattern, it returns 1 as its exit status;
+  - If the file cannot be found, grep returns an exit status of 2.
+
+#### 4.7.1 Linux and GNU grep
+
+- There are two versions of regular expression metacharacters: basic and extended.
+  - The regular version of GNU grep (also `grep -G`) uses the basic set,
+  - and egrep (or `grep -E`) uses the extended set.
+
+- When regular grep use the extended set of metacharacters
+  - Even without the -E option, regular grep, the default, can use the extended set of metacharacters,
+    provided that the metacharacters are preceded with a backslash.
+  - The extended set of metacharacters have no special meaning to regular grep, unless they are backslashed.
+
 ### Q6：作者是怎么论述的？
 
 ### Q7：作者解决了什么问题？
