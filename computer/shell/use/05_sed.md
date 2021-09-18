@@ -48,6 +48,10 @@
 
 #### 5.4 Regular Expressions
 
+- Regular expressions are patterns of characters **enclosed in forward slashes** for searches and substitutions.
+
+> 伍注：正则表达式是用斜杠包围起来的字符串。
+
 - To change the regular expression delimeter,
   some character, say x, is preceded by a backslash, followed by the regular expression, and that character.
 
@@ -71,6 +75,28 @@
   - A dollar sign can be used to represent the last line of the input file.
   - If a comma separates two line numbers, the addresses that will be processed are within that range of lines, including the first and last line in the range.
   - The range may be numbers, regular expressions, or a combination of numbers and regular expressions.
+
+#### 5.6 Commands and Options
+
+- The exclamation point (!) can be used to negate a command.
+  - `sed '/Tom/!d' file` tells sed to delete lines not containing Tom.
+
+#### 5.8 Metacharacters
+
+- `^` Beginning-of-line anchor
+- `$` End-of-line anchor
+- `.` Matches one character, **but not the newline character**
+- `*` Matches zero or more characters
+- `[]` Matches one character in the set
+- `[^]` Matches one character not in the set
+- `\<` Beginning-of-word anchor
+- `\>` End-of-word anchor
+- `\(..\)` Saves matched characters.
+  - Tags marked portion in a register to be remembered later as number 1. To reference later, use `\1` to repeat the pattern.
+- `&` Saves search string so it can be remembered in the replacement string. eg: `s/love/**&**/`
+- `x\{m\}` Repetition of character x m times
+- `x\{m,\}` Repetition of character x at least m times
+- `x\{m,n\}` Repetition of character x between m and n times
 
 ### Q6：作者是怎么论述的？
 
