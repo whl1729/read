@@ -78,8 +78,38 @@
 
 #### 5.6 Commands and Options
 
-- The exclamation point (!) can be used to negate a command.
-  - `sed '/Tom/!d' file` tells sed to delete lines not containing Tom.
+##### 5.6.1 sed Commands
+
+- `a\` Appends one or more lines of text to the current line. (伍注：在下一行输入追加内容时才需要使用反斜杠)
+- `c\` Changes (replaces) text in the current line with new text
+- `d`  Deletes lines
+- `i\` Inserts text above the current line
+- `h` Copies the contents of the pattern space to a holding buffer
+- `H` Appends the contents of the pattern space to a holding buffer
+- `g` Gets what is in the holding buffer and copies it into the pattern buffer, overwriting what was there
+- `G` Gets what is in the holding buffer and copies it into the pattern buffer, appending to what was there
+- `l` Lists nonprinting characters
+- `p` Prints lines
+- `n` Reads the next input line and starts processing the newline with the next command rather than the first command
+- `q` Quits or exits sed
+- `r` Reads lines from a file
+- `!` Applies the command to all lines except the selected ones
+- `s` Substitutes one string for another
+
+##### 5.6.2 sed Substitution Flags
+
+- `g` Globally substitutes on a line
+- `p` Prints lines
+- `r` Append text read from file
+- `w` Writes lines out to a file
+- `x` Exchanges contents of the holding buffer with the pattern space
+- `y` Translates one character to another (cannot use regular expression metacharacters with y)
+
+##### 5.6.2 sed Options
+
+- `-e` Allows multiple edits
+- `-f` Precedes a sed script filename
+- `-n` Suppresses default output
 
 #### 5.8 Metacharacters
 
@@ -97,6 +127,12 @@
 - `x\{m\}` Repetition of character x m times
 - `x\{m,\}` Repetition of character x at least m times
 - `x\{m,n\}` Repetition of character x between m and n times
+
+#### 5.10 sed Scripting
+
+- Sed is very particular about the way you type lines into the script.
+  - There cannot be any **trailing whitespace or text** at the end of the command.
+  - If commands are not placed on a line by themselves, they must be terminated with a **semicolon**.
 
 ### Q6：作者是怎么论述的？
 
