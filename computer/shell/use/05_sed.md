@@ -91,6 +91,7 @@
 - `l` Lists nonprinting characters
 - `p` Prints lines
 - `n` Reads the next input line and starts processing the newline with the next command rather than the first command
+- `N` Appends the next input line and starts processing the newline with the next command rather than the first command
 - `q` Quits or exits sed
 - `r` Reads lines from a file
 - `!` Applies the command to all lines except the selected ones
@@ -147,6 +148,26 @@
 #### Q10.1：为什么是这样的？为什么发展成这样？为什么需要它？
 
 #### Q10.2：有哪些相似的知识点？它们之间的联系是什么？
+
+##### [SED 简明教程][sed_tutorial]
+
+- sed 可以指定替换第几个匹配项
+
+  ```shell
+  sed 's/s/S/1' my.txt   # 只替换每一行的第1个s
+  sed 's/s/S/3g' my.txt  # 只替换每一行的第3个以后的s
+  ```
+
+- 一次替换多个模式的两种方法
+  - 使用分号来隔开
+  - 使用多个`-e`
+
+  ```shell
+  sed '1,3s/my/your/g; 3,$s/This/That/g' my.txt   # 使用分号来隔开
+  sed -e '1,3s/my/your/g' -e '3,$s/This/That/g' my.txt  # 使用多个`-e`
+  ```
+
+  [sed_tutorial]: https://coolshell.cn/articles/9104.html
 
 #### Q10.3：其他领域/学科有没有相关的知识点？日常生活中有没有类似的现象？
 
