@@ -4,7 +4,7 @@
 
 ### 计算机
 
-- [ ] [JavaScript 高级程序设计](computer/js/professional)
+- [ ] [Professional JavaScript for Web Developers](computer/js/professional)
 - [ ] [Unix Shells by Example](computer/shell/use)
 - [ ] [Advanced Programming in the UNIX Environment](computer/os/apue)
 - [ ] Refactoring
