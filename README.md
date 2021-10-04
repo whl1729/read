@@ -4,6 +4,7 @@
 
 ### 计算机
 
+- [ ] [淘宝技术这十年](computer/it/taobao)
 - [ ] [Professional JavaScript for Web Developers](computer/js/professional)
 - [ ] [Unix Shells by Example](computer/shell/use)
 - [ ] [Advanced Programming in the UNIX Environment](computer/os/apue)
