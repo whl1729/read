@@ -10,6 +10,8 @@
 - [ ] Refactoring
 - [ ] The Pragmatic Programmer
 - [ ] 代码整洁之道
+- [ ] vim 实用技巧
+- [ ] 鸟哥的Linux私房菜
 
 ### 历史
 

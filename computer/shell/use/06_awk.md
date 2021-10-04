@@ -143,8 +143,10 @@
 
 - Patterns
   - When reading a pattern expression, there is an implied if statement.
+  - The default action is to print each line where the expression results in a true condition.
   - When an if is implied, there can be no curly braces surrounding it.
   - When the if is explicit, it becomes an action statement and the syntax is different. (Question: Not understand?)
+  - e.g. `awk '$3 < 4000' /tmp/employees`
 
 - Actions
   - Actions are statements enclosed within curly braces and separated by semicolons.
@@ -244,6 +246,14 @@
 - END Patterns
   - END patterns do not match any input lines, but execute any actions that are associated with the END pattern.
   - END patterns are handled after all lines of input have been processed.
+
+- How to reference a variable in awk
+  - Neither double quotes or dollar sign are needed, just the variable name.
+
+  ```shell
+  awk -v name="$some_name" '$1 ~ name {print $2}' file
+  awk -F: -v value="$some_value" '$3 == value {print NR}' file
+  ```
 
 #### 6.14 Redirection and Pipes
 

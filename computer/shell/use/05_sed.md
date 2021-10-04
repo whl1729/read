@@ -169,6 +169,13 @@
 
   [sed_tutorial]: https://coolshell.cn/articles/9104.html
 
+##### [How do I use variables in a sed command?][sed_variable]
+
+- Use **double quotes** to make the shell expand variables while preserving whitespace.
+  - e.g. `sed -i "s/$var1/ZZ/g" "$file"`
+
+  [sed_variable]: https://askubuntu.com/questions/76808/how-do-i-use-variables-in-a-sed-command
+
 #### Q10.3：其他领域/学科有没有相关的知识点？日常生活中有没有类似的现象？
 
 ### Q11：这一章和我有什么关系？
