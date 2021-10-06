@@ -471,7 +471,7 @@ esac
   - Usually you should use [[:upper:]] instead. (This works in Bash even without extglob.)
 
   ```shell
-  ls [[:upper]][[:upper]][[:upper]]
+  ls [[:upper:]][[:upper:]][[:upper:]]
   ```
 
 - Remove two-character files starting with a or A.
