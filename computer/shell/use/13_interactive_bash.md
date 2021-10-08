@@ -734,7 +734,6 @@
   - You can set certain options only by letter. Others are available only under the shopt command.
     This makes finding and setting a particular option a confusing task.
 
-
 ### Q6：作者是怎么论述的？
 
 ### Q7：作者解决了什么问题？

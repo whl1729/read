@@ -87,6 +87,31 @@
 
 ### Q11.2：有哪些相似的知识点？它们之间的联系是什么？
 
+#### Bash Manual
+
+- [Bash Reference Manual][man]
+
+  [man]: https://www.gnu.org/software/bash/manual/bash.html
+
+- Bash man pages
+  - 研究一下bash man pages的组织结构，分析如何快速找到自己想要的东西。
+
+#### zsh vs bash
+
+- 对比zsh与bash的异同点，特别是zsh比bash更优秀的地方？
+
+#### 其他书籍
+
+- 鸟哥的Linux私房菜
+- Linux Command Line and Shell Scripting Bible
+- Linux Shell Scripting Cookbook
+- Linux 101 Hacks
+- Bash 101 Hacks
+- Sed and Awk 101 Hacks
+- The Awk Programming Language
+- Vim 实用技巧
+- Vim 101 Hacks
+
 ### Q11.3：其他领域/学科有没有相关的知识点？日常生活中有没有类似的现象？
 
 ## Q12：这本书和我有什么关系？

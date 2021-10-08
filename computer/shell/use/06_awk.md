@@ -226,7 +226,7 @@
   - `FNR` Record number in current file
   - `FS` The input field separator, by default a space
   - `IGNORECASE` Turns off case sensitivity in regular expressions and string operations (gawk only)
-  - `NF` Number of fields in current record
+  - `NF` Number of fields in current record. (Wu: `$NF` represents the last field)
   - `NR` Number of records so far
   - `OFMT` Output format for numbers
   - `OFS` Output field separator
