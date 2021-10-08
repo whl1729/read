@@ -9,7 +9,7 @@
 - [ ] [Professional JavaScript for Web Developers](computer/js/professional)
 - [ ] [Unix Shells by Example](computer/shell/use)
 - [ ] [Advanced Programming in the UNIX Environment](computer/os/apue)
-- [ ] Refactoring
+- [ ] [Refactoring](computer/se/refactoring)
 - [ ] The Pragmatic Programmer
 - [ ] 代码整洁之道
 - [ ] vim 实用技巧
