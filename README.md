@@ -4,6 +4,7 @@
 
 ### 计算机
 
+- [ ] [Code Complete](computer/se/code_complete/index.md)
 - [ ] [淘宝技术这十年](computer/it/taobao)
 - [ ] [Professional JavaScript for Web Developers](computer/js/professional)
 - [ ] [Unix Shells by Example](computer/shell/use)
