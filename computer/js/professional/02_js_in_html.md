@@ -92,6 +92,36 @@
   - They should not modify the DOM as they are loading.
   - They are guaranteed to execute before the page’s load event and may execute before or after DOMContentLoaded.
 
+- Dynamic Script Loading
+  - You can create script elements and attaching them to the DOM.
+  - By default, scripts that are created in this fashion are async.
+  - To unify the dynamic script loading behavior, you can explicitly mark the tag as synchronous.
+
+- Deprecated Syntax
+  -  Unless you are using XHTML or the `<script>` tag requests or wraps non-JavaScript,
+     the best practice is to not specify a type attribute at all.
+
+#### 2.2 Inline Code vs External Files
+
+- It's a best practice to include as much JavaScript as possible using external files.
+  - Maintainability
+  - Caching
+  - Future-proof
+
+#### 2.3 Document Modes
+
+- There are now three modes used by the layout engines in web browsers:
+  - Quirks mode. Layout emulates nonstandard behavior in Navigator 4 and Internet Explorer 5.
+  - Almost standards mode. There are only a very small number of quirks implemented.
+  - Full standards mode. The behavior is (hopefully) the behavior described by the HTML and CSS specifications.
+
+- To ensure that your page uses full standards mode, make sure that your page has a DOCTYPE like this: `<!DOCTYPE html>`
+
+#### 2.4 The <noscript> Element
+
+- The `<noscript>` HTML element defines a section of HTML to be inserted
+  if a script type on the page is unsupported or if scripting is currently turned off in the browser.
+
 ### Q6：作者是怎么论述的？
 
 ### Q7：作者解决了什么问题？
