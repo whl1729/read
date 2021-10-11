@@ -18,8 +18,12 @@
 
 - Heuristics 启发式方法
 - Popular Methodologies
-- Rule of thumb 
+- Rule of thumb
   - An approximate method for doing something, based on practical experience rather than theory.
+- Cohesion
+  - How closely all the routines in a class or all the code in a routine support a central purpose—how focused the class is.
+- Experimental Prototyping
+  - Writing the absolute minimum amount of throwaway code that’s needed to answer a specific design question.
 
 ### Q5：这一章的关键句是什么？
 
@@ -34,7 +38,7 @@
 
 - Design Is a Wicked Problem
   - Horst Rittel and Melvin Webber defined a "wicked" problem as one that could be clearly defined only by solving it, or by solving part of it.
-  - This paradox implies, essentially, that you have to "solve" the problem once in order to clearly define it and then solve it again to create a solution that works. 
+  - This paradox implies, essentially, that you have to "solve" the problem once in order to clearly define it and then solve it again to create a solution that works.
 
 - Design Is a Sloppy Process (Even If it Produces a Tidy Result)
   - You take many false steps and go down many blind alleys— you make a lot of mistakes.
@@ -57,7 +61,7 @@
 - Design Is Emergent
   - Designs evolve and improve through design reviews, informal discussions, experience writing the code itself, and experience revising the code.
   - Virtually all systems undergo some degree of design changes during their initial development,
-    and then they typically change to a greater extent as they're extended into later versions. 
+    and then they typically change to a greater extent as they're extended into later versions.
 
 #### 5.2 Key Design Concepts
 
@@ -84,7 +88,7 @@
 - The Essential Difficulties
   - Progress on software’s remaining essential difficulties is bound to be slower.
   - The reason is that, at its essence, software development consists of working out all the details of a highly intricate, interlocking set of concepts.
-  - The essential difficulties arise from the necessity of 
+  - The essential difficulties arise from the necessity of
     - interfacing with the complex, disorderly real world;
     - accurately and completely identifying the dependencies and exception cases;
     - designing solutions that can’t be just approximately correct but that must be exactly correct;
@@ -101,10 +105,10 @@
 
 - How to Reduce Complexity
   - Divide and Conquer
-    - At the software-architecture level, the complexity of a problem is reduced by dividing the system into subsystems. 
+    - At the software-architecture level, the complexity of a problem is reduced by dividing the system into subsystems.
     - The goal of all software-design techniques is to **break a complicated problem into simple pieces.**
   - Reduce you mental workload
-    - Keeping routines short 
+    - Keeping routines short
     - Writing programs in terms of the problem domain, rather than in terms of low-level implementation details
     - working at the highest level of abstraction
   - Readability
@@ -131,7 +135,7 @@
   - High fan-in
     - High fan-in implies that a system has been designed to make good use of utility classes at the lower levels in the system.
   - Low-to-medium fan-out
-    - High fan-out (more than about seven) indicates that a class uses a large number of other classes and may therefore be overly complex. 
+    - High fan-out (more than about seven) indicates that a class uses a large number of other classes and may therefore be overly complex.
   - Portability
   - Leanness (精简)
     - Designing the system so that it has no extra parts.
@@ -162,6 +166,29 @@
 
 #### 5.3 Design Building Blocks: Heuristics
 
+- Major design heuristics
+  - Find Real-World Objects
+  - Form Consistent Abstractions
+  - Encapsulate Implementation Details
+  - Inherit When Possible
+  - Hide Secrets (Information Hiding)
+  - Identify Areas Likely to Change
+  - Keep Coupling Loose
+  - Look for Common Design Patterns
+
+- Other Heuristics
+  - Aim for Strong Cohesion
+  - Build Hierarchies
+  - Formalize Class Contracts
+  - Assign Responsibilities
+  - Design for Test
+  - Avoid Failure
+  - Choose Binding Time Consciously
+  - Make Central Points of Control
+  - Consider Using Brute Force
+  - Draw a Diagram
+  - Keep Your Design Modular
+
 ##### 5.3.1 Find Real-World Objects
 
 - The steps in designing with objects are
@@ -175,9 +202,9 @@
 ##### 5.3.2 Form Consistent Abstractions
 
 - Abstraction is the ability to engage with a concept while safely ignoring some of its details—
-  handling different details at different levels. 
+  handling different details at different levels.
 
-- A good class interface is an abstraction that allows you to focus on the interface 
+- A good class interface is an abstraction that allows you to focus on the interface
   without needing to worry about the internal workings of the class.
 
 - From a complexity point of view, the principal benefit of abstraction is that it allows you to ignore irrelevant details.
@@ -196,7 +223,7 @@
 
 - Information hiding is part of the foundation of both structured design and object-oriented design.
   - In structured design, the notion of “black boxes” comes from information hiding.
-  - In object-oriented design, it gives rise to the concepts of encapsulation and modularity and it is associated with the concept of abstraction. 
+  - In object-oriented design, it gives rise to the concepts of encapsulation and modularity and it is associated with the concept of abstraction.
 
 - Value of Information Hiding
   - Thinking about information hiding inspires and promotes design decisions that thinking about objects does not.
@@ -222,7 +249,7 @@
   - Accommodating changes is one of the most challenging aspects of good program design.
   - The goal is to isolate unstable areas so that the effect of a change will be limited to one routine, class, or package.
 
-- Steps for Accommodating changes 
+- Steps for Accommodating changes
   - Identify items that seem likely to change.
   - Separate items that are likely to change.
   - Isolate items that seem likely to change.
@@ -259,14 +286,96 @@
 - A good technique for identifying areas likely to change is
   - First to identify the minimal subset of the program that might be of use to the user.
     The subset makes up the core of the system and is unlikely to change.
-  - Next, define minimal increments to the system. They can be so small that they seem trivial. 
+  - Next, define minimal increments to the system. They can be so small that they seem trivial.
 
 ##### 5.3.8 Keep Coupling Loose
 
 - Loose Coupling
   - The goal is to create classes and routines with small, direct, visible, and flexible relations to other classes and routines.
   - In software, make the connections among modules as simple as possible.
-  - Try to create modules that depend little on other modules. 
+  - Try to create modules that depend little on other modules.
+
+- Coupling Criteria
+  - Size: The number of connections between modules.
+  - Visibility: The prominence of the connection between two modules.
+  - Flexibility: how easily you can change the connections between modules.
+
+- Kinds of Coupling
+  - Simple-data-parameter coupling
+    - Two modules are simple-data-parameter coupled if all the data passed between them are of primitive data types and all the data is passed through parameter lists.
+  - Simple-object coupling
+    - A module is simple-object coupled to an object if it instantiates that object.
+  - Object-parameter coupling
+    - Two modules are object-parameter coupled to each other if Object1 requires Object2 to pass it an Object3.
+  - Semantic coupling
+    - The most insidious kind of coupling occurs when one module makes use not of some syntactic element of another module but of some semantic knowledge of another module’s inner workings.
+
+##### 5.3.9 Look for Common Design Patterns
+
+- Common patterns include Adapter, Bridge, Decorator, Facade, Factory Method, Observor, Singleton, Strategy, and Template Method.
+
+##### 5.3.10 Guidelines for Using Heuristics
+
+- One of the most effective guidelines is not to get stuck on a single approach.
+
+- You don't have to solve the whole design problem at once.
+  - Leave issues unresolved until you have more information.
+
+#### 5.4 Design Practices
+
+- Iterate
+  - Design is an iterative process.
+  - Ranging between highlevel and low-level considerations.
+- Divide and Conquer
+- Top-Down and Bottom-Up Design Approaches
+- Experimental Prototyping
+- Collaborative Design
+
+- How Much Design Is Enough?
+  - The biggest design problems tend to arise not from areas I knew were difficult and created bad designs for,
+    but from areas I thought were easy and didn’t create any designs for at all.
+
+#### 5.5 Comments on Popular Methodologies
+
+- You’ll be happy with your designs if you:
+  - Treat design as a wicked, sloppy, heuristic process.
+  - Don’t settle for the first design that occurs to you.
+  - Collaborate.
+  - Strive for simplicity.
+  - Prototype when you need to.
+  - Iterate, iterate, and iterate again.
+
+#### Additional Resources
+
+- Software Design, General
+  - The Object-Oriented Thought Process
+  - Object-Oriented Design Heuristics
+  - Programming on Purpose: Essays on Software Design (Recommendation)
+  - Object-Oriented Software Construction
+  - The Art of UNIX Programming
+  - Applying UML and Patterns: An Introduction to Object-Oriented Analysis and Design and the Unified Process
+
+- Software Design Theory
+  - A Rational Design Process: How and Why to Fake It
+  - On the Criteria to Be Used in Decomposing Systems into Modules
+  - Designing Software for Ease of Extension and Contraction
+  - The Modular Structure of Complex Systems
+
+- Design Patterns
+  - Design Patterns
+  - Design Patterns Explained
+
+- Design in General
+  - Conceptual Blockbusting: A Guide to Better Ideas
+  - How to Solve It: A New Aspect of Mathematical Method
+  - How to Solve It: Modern Heuristics
+  - The Sciences of the Artificial
+  - Software Creativity
+  - Design Paradigms: Case Histories of Error and Judgment in Engineering
+
+- Standards
+  - IEEE Std 1016-1998, Recommended Practice for Software Design Descriptions
+  - IEEE Std 1471-2000. Recommended Practice for Architectural Description of Software Intensive Systems
 
 ### Q6：作者是怎么论述的？
 
@@ -307,6 +416,7 @@
 
 - 常见设计原则
   - 「左耳听风」提到的设计原则
+
 - 相关书籍
   - 设计模式
   - 敏捷软件开发
