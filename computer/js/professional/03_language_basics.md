@@ -77,6 +77,8 @@
 - Exponentiation Operators
 - for-in
 - for-of
+- temporal dead zone"
+- The window object
 
 ### Q5：这一章的关键句是什么？
 
@@ -114,16 +116,59 @@
 - Statements
   - Even though a semicolon is not required at the end of statements, you should always include one.
     - Including semicolons helps prevent errors of omission.
-    - Including semicolons also improves performance in certain situations 
+    - Including semicolons also improves performance in certain situations
       because parsers try to correct syntax errors by inserting semicolons where they appear to belong.
   -  it is a best practice to always use code blocks with control statements, even if there’s only one statement.
 
 #### 5.2 Keywords and Reserved Words
 
-- It’s best to avoid using both keywords and reserved words as both identifiers and property names 
+- It’s best to avoid using both keywords and reserved words as both identifiers and property names
   to ensure compatibility with past and future ECMAScript editions.
 
 #### 5.3 Variables
+
+- The `var` Keyword
+  - It is still possible to not only change the value stored in the variable but also change the type of value.
+  - Using the var operator to define a variable makes it **local** to the function scope in which it was defined.
+  - You would define a global variable if you omit the var/let/const operator.
+  - var Declaration Hoisting: The interpreter pulls all variable declarations to the top of its scope.
+    - You can use a variable before var declaration.
+    - You can use redundant var declarations without penalty.
+
+  ```javascript
+  function test() {
+    var message = "hi";  // local variable
+  }
+
+  function test2() {
+    message = "hi";  // global variable
+  }
+  ```
+
+- `let` vs `var`
+  - let is block scoped, but var is function scoped.
+  - let declarations does not allow for any redundant declarations within a block scope, while var does.
+  - let declarations cannot be used in a way that assumes hoisting, while var does.
+    - The segment of execution that occurs before the declaration is referred to as the "temporal dead zone".
+  - when declaring variables using let in the global context, variables will not attach to the window object as they do with var.
+
+- `const` Declarations
+  - const behaves identically to that of let but with one important difference—
+    it must be initialized with a value, and that value cannot be redefined after declaration.
+  - The const declaration is only enforced with respect to the reference to the variable that it points to.
+    If a const variable references an object, it does not violate the const constraints to modify properties inside that object.
+  - if you were to declare a for loop variable that is not modified, const is allowed—
+    precisely because a new variable is declared for each iteration.
+
+  ```javascript
+  for (const value of [1,2,3,4,5]) {
+    console.log(value)
+  }
+  ```
+
+- Declaration Styles and Best Practices
+  - Don't Use var
+  - Prefer const Over let
 
 #### 5.4 Data Types
 
