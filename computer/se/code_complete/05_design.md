@@ -11,6 +11,7 @@
 - Design Building Blocks: Heuristics
 - Design Practices
 - Comments on Popular Methodologies
+- Checklist: Design in Construction
 
 ### Q3：作者想要解决什么问题？
 
@@ -344,6 +345,23 @@
   - Strive for simplicity.
   - Prototype when you need to.
   - Iterate, iterate, and iterate again.
+
+#### 5.6 Checklist: Design in Construction
+
+- Design Practices
+  - [ ] Have you iterated, selecting the best of several attempts rather than the first attempt?
+  - [ ] Have you tried decomposing the system in several different ways to see which way will work best?
+  - [ ] Have you approached the design problem both from the top down and from the bottom up?
+  - [ ] Have you prototyped risky or unfamiliar parts of the system, creating the absolute minimum amount of throwaway code needed to answer specific questions?
+  - [ ] Has your design been reviewed, formally or informally, by others?
+  - [ ] Have you driven the design to the point that its implementation seems obvious?
+  - [ ] Have you captured your design work using an appropriate technique such as a Wiki, e-mail, flip charts, digital photography, UML, CRC cards, or comments in the code itself?
+- Design Goals
+  - [ ] Does the design adequately address issues that were identified and deferred at the architectural level?
+  - [ ] Is the design stratified into layers?
+  - [ ] Are you satisfied with the way the program has been decomposed into subsystems, packages, and classes?
+  - [ ] Are you satisfied with the way the classes have been decomposed into routines?
+  - [ ] Are classes designed for minimal interaction with each other?
 
 #### Additional Resources
 
