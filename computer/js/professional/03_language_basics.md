@@ -172,6 +172,60 @@
 
 #### 5.4 Data Types
 
+- There are six simple data types (also called primitive types) in ECMAScript:
+  - Undefined
+  - Null
+  - Boolean
+  - Number
+  - String
+  - Symbol
+
+- There is also one complex data type called **Object**, which is an unordered list of name–value pairs.
+
+- Using the typeof operator on a value returns one of the following strings:
+  - "undefined" if the value is undefined
+  - "boolean" if the value is a Boolean
+  - "string" if the value is a string
+  - "number" if the value is a number
+  - "object" if the value is an object (other than a function) or null
+  - "function" if the value is a function
+  - "symbol" if the value is a Symbol
+
+- The Undefined type
+  - The typeof operator returns "undefined" when called on an uninitialized variable or undeclared variable.
+  - You should never explicitly set a variable to be undefined.
+    The literal undefined value is provided mainly for comparison and
+    formalizing the difference between an empty object pointer (null) and an uninitialized variable.
+  - You should always initialize variables. That way, when typeof returns "undefined",
+    you’ll know that it’s because a given variable hasn’t been declared rather than was simply not initialized.
+  - The value undefined is falsy.
+
+- The Null type
+  - Logically, a null value is an empty object pointer.
+  - When defining a variable that is meant to later hold an object, initialize the variable to null as opposed to anything else.
+    That way, you can explicitly check for the value null to determine if the variable has been filled with an object reference at a later time.
+  - Using the equality operator (==) between null and undefined always returns true.
+  - Any time an object is expected but is not available, null should be used in its place.
+    This helps to keep the paradigm of null as an empty object pointer and further differentiates it from undefined.
+  - The null type is falsy.
+
+  ```javascript
+  console.log(null == undefined);  // true
+  ```
+
+- The Boolean Type
+  - The Boolean literals true and false are case–sensitive,
+    so True and False (and other mixings of uppercase and lowercase) are valid as identifiers but not as Boolean values.
+  - The `Boolean()` casting function can be called on any type of data and will always return a Boolean value.
+
+  | Data type | Values converted to true | Values converted to false |
+  | --------- | ------------------------ | ------------------------- |
+  | Boolean   | true                     | false                     |
+  | String    | Any nonempty string      | "" (empty string)         |
+  | Number    | Any nonzero number(including infinity) | 0, NaN      |
+  | Object    | Any object               | null                      |
+  | Undefined | n/a                      | undefined                 |
+
 #### 5.5 Operators
 
 #### 5.6 Statements
