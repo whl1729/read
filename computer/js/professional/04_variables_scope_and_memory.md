@@ -97,6 +97,47 @@
 
 #### 4.2 Execution Context and Scope
 
+- Execution context
+  - The execution context of a variable or function defines what other data it has access to,
+    as well as how it should behave.
+  - Each execution context has an associated variable object upon which all of its defined variables and functions exist.
+  - This object is not accessible by code but is used behind the scenes to handle data.
+  - When an execution context has executed all of its code, it is destroyed,
+    taking with it all of the variables and functions defined within it
+
+- The global execution context
+  - In web browsers
+    - The global context is the window object.
+    - All global variables and functions defined with var are created as properties and methods on the window object.
+    - Declarations using let and const at the top level are not defined in the global context.
+  - In nodejs
+    - The global context is the `global` object.
+
+- Each function call has its own execution context.
+  - context stack
+
+- Scope chain
+  - When code is executed in a context, a scope chain of variable objects is created.
+  - The purpose of the scope chain is to provide ordered access to all variables and functions that an execution context has access to.
+  - The front of the scope chain is always the variable object of the context whose code is executing.
+  - The last of the scope chain is always the global context’s variable object.
+
+- Activation object
+  - If the context is a function, then the activation object is used as the variable object.
+  - An activation object starts with a single defined variable called arguments.
+
+- Identifier Resolution
+  - Identifiers are resolved by navigating the scope chain in search of the identifier name.
+  - The search always begins at the front of the chain and proceeds to the back until the identifier is found.
+
+##### 4.2.1 Scope Chain Augmentation
+
+- Two statements that add a variable object to the front of the scope chain
+  - The catch block in a try-catch statement
+  - A with statement
+
+##### 4.2.2 Variable Declaration
+
 #### 4.3 Garbage Collection
 
 ### Q6：作者是怎么论述的？
