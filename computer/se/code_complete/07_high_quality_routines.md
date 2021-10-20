@@ -88,14 +88,58 @@
 
 #### 7.3 Good Routine Names
 
-#### 7.4 How Long Can a Routine Be?
+- Guidelines for Creating effective routine names
+  - Describe everything the routine does
+  - Avoid meaningless, vague, or wishy-washy(表述不清) verbs
+  - Don't differentiate routine names solely by number
+  - Make names of routines as long as necessary
+  - To name a function, use a description of the return value
+    - The function names should indicate precisely what the functions return
+  - To name a procedure, use a strong verb followed by an object
+  - Use opposites precisely
+  - Establish conventions for common operations
 
 #### 7.5 How to Use Routine Paramters
 
-#### 7.6 Special Considerations in the Use of Functions
+- Guidelines for minimizing interface problems
+  - Put parameters in input-modify-output order
+  - Consider creating your own in and out keywords
+  - If several routines use similar parameters, put the similar parameters in a consistent order
+  - Use all the parameters
+  - Put status or error variables last
+  - Don't use routine parameters as working variables
+  - Document interface assumptions about parameters
+  - Limit the number of a routine's parameters to about seven
+  - Consider an input, modify, and output naming convention for parameters
+  - **Pass the variables or objects that the routine needs to maintain its interface abstraction**
+    - If the abstraction is that the routine expects you to have three specific data elements,
+      and it is only a coincidence that those three elements happen to be provided by the same object,
+      then you should pass the three specific data elements individually.
+    - If the abstraction is that you will always have that particular object in hand and the routine will do something or other with that object,
+      then you truly do break the abstraction when you expose the three specific data elements.
+  - Make sure actual parameters match formal parameters
 
-#### 7.7 Macro Routines and Inline Routines
+#### 7.6 Checklist: High-Quality Routines
 
+- Big-Picture Issues
+  - [ ] Is the reason for creating the routine sufficient?
+  - [ ] Have all parts of the routine that would benefit from being put into routines of their own been put into routines of their own?
+  - [ ] Is the routine's name a strong, clear verb-plus-object name for a procedure or a description of the return value for a function?
+  - [ ] Does the routine's name describe everything the routine does?
+  - [ ] Have you established naming conventions for common operations?
+  - [ ] Does the routine have strong, functional cohesion—doing one and only one thing and doing it well?
+  - [ ] Do the routines have loose coupling—are the routine's connections to other routines small, intimate, visible, and flexible?
+  - [ ] Is the length of the routine determined naturally by its function and logic, rather than by an artificial coding standard?
+
+- Parameter-Passing Issues
+  - [ ] Does the routine's parameter list, taken as a whole, present a consistent interface abstraction?
+  - [ ] Are the routine's parameters in a sensible order, including matching the order of parameters in similar routines?
+  - [ ] Are interface assumptions documented?
+  - [ ] Does the routine have seven or fewer parameters?
+  - [ ] Is each input parameter used?
+  - [ ] Is each output parameter used?
+  - [ ] Does the routine avoid using input parameters as working variables?
+  - [ ] If the routine is a function, does it return a valid value under all possible circumstances?
 
 ### Q6：作者是怎么论述的？
 
