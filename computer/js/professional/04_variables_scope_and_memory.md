@@ -138,7 +138,50 @@
 
 ##### 4.2.2 Variable Declaration
 
+- Scope Declaration
+  - Global Scope: When a variable is initialized without first being declared
+  - Function Scope Declaration Using `var`
+  - Block Scope Declaration Using `let`
+  - Constant Block Scope Declaration Using `const`
+
+- `var` Hoisting
+  - A var declaration will be brought to the top of the function or global scope and before any existing code inside it.
+
+- The const declaration only applies to the top-level primitive or object.
+  - A const variable assigned to an object cannot be reassigned to another reference value,
+    but the keys inside that object are not protected.
+  - If you wish to make the entire object immutable, you can use `Object.freeze()`,
+    **although attempted property assignment will not raise errors; it will just silently fail.**
+
+  ```javascript
+  const o3 = Object.freeze({});
+  o3.name = 'Jake';  // silently fail
+  console.log(o3.name); // undefined
+  ```
+
+> Wu: Why not raise errors? I think this is a terrible design!
+
+- Best practices for declaration
+  - Use const as often as possible unless you really need a variable that can undergo reassignment.
+  - This will allow you to catch an entire vein of reassignment bugs much earlier than you normally would.
+
+- Identifier Lookup
+  - Objects in the scope chain also have a **prototype chain**,
+    so searching may include each object’s prototype chain.
+
 #### 4.3 Garbage Collection
+
+- Two Strategies for Garbage Collection
+  - Mark-and-Sweep
+  - Reference Counting
+    - A serious issue: circular references
+
+- Managing Memory
+  - keep around only data that is necessary for the execution of your code.
+  - When data is no longer necessary, it’s best to set the value to null, freeing up the reference—
+    this is called dereferencing the value.
+  - Performance Boosts with const and let Declarations.
+  - Hidden Classes and the delete Operation.
 
 ### Q6：作者是怎么论述的？
 
@@ -149,6 +192,8 @@
 #### Q8.1: What is execution context?
 
 #### Q8.2: What is scope chain augmentation?
+
+#### Q8.3: What is prototype chain?
 
 ### Q9：这一章说得有道理吗？为什么？
 
