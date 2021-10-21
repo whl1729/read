@@ -27,6 +27,7 @@
   - Reference Counting
   - Performance
   - Managing Memory
+  - Object churn
 
 ### Q3：作者想要解决什么问题？
 
@@ -39,6 +40,7 @@
 - Execution Context
 - Scope Chain Augmentation
 - Garbage Collection
+- Hidden Class
 
 ### Q5：这一章的关键句是什么？
 
@@ -178,10 +180,37 @@
 
 - Managing Memory
   - keep around only data that is necessary for the execution of your code.
-  - When data is no longer necessary, it’s best to set the value to null, freeing up the reference—
+  - When data is no longer necessary, it’s best to **set the value to null**, freeing up the reference—
     this is called dereferencing the value.
   - Performance Boosts with const and let Declarations.
   - Hidden Classes and the delete Operation.
+    - During runtime, V8 will associate hidden classes for every object created to keep track of the shape of its properties.
+    - Avoid JavaScript’s ready-fire-aim dynamic property assignment and instead declare all properties inside the constructor.
+  - Memory Leaks
+    - Accidentally declaring global variables
+    - Interval timers
+    - Closures
+  - Static Allocation and Object Pools
+    - For performance, you should minimize the number of garbage collection operations the browser performs.
+    - One important metric measured by the browser to decide when to schedule garbage collection is the rate of **object churn**.
+    - Object pool
+    - In most cases, this is a form of premature optimization and is not appropriate.
+
+  ```javascript
+  let name = 'Jake';
+  setInterval(() => {
+    console.log(name);
+  }, 100);
+  ```
+
+  ```javascript
+  let outer = function() {
+    let name = 'Jake';
+    return function() {
+      return name;
+    };
+  };
+  ```
 
 ### Q6：作者是怎么论述的？
 
