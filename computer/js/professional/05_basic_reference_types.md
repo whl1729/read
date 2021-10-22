@@ -67,9 +67,35 @@
 - Date methods
   - `Date.parse()`
   - `Date.UTC()`
-  - `Date.now()`
+  - `Date.now()` Return timestamp in millisecond
+
+- Inherited Methods
+  - `toLocaleString()` locale, includes AM or PM
+  - `toString()` with time-zone information, 24-hour notation
+  - `valueOf()` return the milliseconds representation of the date
+    so that operators (such as less-than and greater-than) will work appropriately for date values.
+
+- Date-Formatting Methods
+  - `toDateString()` Displays the date’s day of the week, month, day of the month, and year in an implementation-specific format.
+  - `toTimeString()` Displays the date’s hours, minutes, seconds, and time zone in an implementation-specific format.
+  - `toLocaleDateString()` Displays the date’s day of the week, month, day of the month, and year in an implementation- and locale-specific format.
+  - `toLocaleTimeString()` Displays the date’s hours, minutes, and seconds in an implementation-specific format.
+  - `toUTCString()` Displays the complete UTC date in an implementation-specific format.
 
 #### 5.2 The RegExp Type
+
+- Regular expressions
+  - `let expression = /pattern/flags;`
+
+- Flags
+  - `g` Indicates global mode, meaning the pattern will be applied to all of the string instead of stopping after the first match is found.
+  - `i` Indicates case-insensitive mode, meaning the case of the pattern and the string are ignored when determining matches.
+  - `m` Indicates multiline mode, meaning the pattern will continue looking for matches after reaching the end of one line of text.
+  - `y` Indicates sticky mode, meaning the pattern will only look at the string contents beginning at lastIndex.
+  - `u` Indicates Unicode mode is enabled.
+
+- Metacharacters
+  - `( [ { \ ^ $ | ) ] } ? * + .`
 
 #### 5.3 Primitive Wrapper Type
 
