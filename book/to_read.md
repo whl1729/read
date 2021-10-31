@@ -2,6 +2,7 @@
 
 ## 计算机
 
+- [ ] Dreaming in Code: Two Dozen Programmers, Three Years, 4732 Bugs, and One Quest for Transcendent Software (梦断代码)
 - [ ] 哥德尔、艾舍尔、巴赫——集异璧之大成 ([美]侯世达)
 - [ ] 图灵的秘密：他的生平、思想及论文解读 （Charles Petzold）
 - [ ] 信息简史：一部历史、一个理论、一股洪流 （【美】詹姆斯·格雷克）
