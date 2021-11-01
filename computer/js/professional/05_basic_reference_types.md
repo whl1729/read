@@ -97,6 +97,39 @@
 - Metacharacters
   - `( [ { \ ^ $ | ) ] } ? * + .`
 
+- Two ways to define regular expressions
+  - The literal form: `let pattern1 = /[bc]at/i`
+  - The RegExp constructor: `let pattern2 = new RegExp("[bc]at", "i")`
+    - Regular-expression literals should not be passed into the RegExp constructor.
+    - All metacharacters must be double-escaped.
+  - The literal form can't accept dynamic input, i.e. from variables, whereas the constructor can.
+  - How to choose
+    - For small regex, literals are definitely the way to go.
+    - If you have a dynamic expression or a very long regex to maintain, RegExp is a nice option.
+
+- RegExp Instance Properties
+  - global
+  - ignoreCase
+  - unicode
+  - sticky
+  - lastIndex
+  - multiline
+  - source
+  - flags
+
+- RegExp Instance Methods
+  - `exec`
+    - `index`
+    - `input`
+  - `test`
+
+- How flag affects `exec`
+  - With the global g flag set on the pattern,
+    each call to exec() moves further into the string looking for matches.
+  - With the sticky y flag set on the pattern,
+    each call to exec() will search for a match in the string only at lastIndex.
+    The sticky flag overrides the global flag.
+
 #### 5.3 Primitive Wrapper Type
 
 #### 5.4 Singleton Built-in Objects
