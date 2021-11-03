@@ -118,10 +118,11 @@
   - flags
 
 - RegExp Instance Methods
-  - `exec`
-    - `index`
-    - `input`
-  - `test`
+  - `exec` returns an array of information about the first match or null if no match was found.
+    - `index` returns the location in the string where the pattern was matched.
+    - `input` returns the string that the expression was run against.
+  - `test` returns true if the pattern matches the argument and false if it does not.
+  - `toLocaleString` and `toString` return the literal representation of the regular expression.
 
 - How flag affects `exec`
   - With the global g flag set on the pattern,
@@ -130,7 +131,60 @@
     each call to exec() will search for a match in the string only at lastIndex.
     The sticky flag overrides the global flag.
 
+- RegExp Constructor Properties
+  - `input` or `$_`
+  - `lastMatch` or `$&`
+  - `lastParen` or `$+`
+  - `leftContext` or $\`
+  - `rightContext` or `$'`
+
 #### 5.3 Primitive Wrapper Type
+
+- A special behavior of primitive wrapper type
+  - Every time a primitive value is read,
+    an object of the corresponding primitive wrapper type is created behind the scenes,
+    allowing access to any number of methods for manipulating the data.
+
+  ```javascript
+  let s1 = "some text"
+  let s2 = s1.substring(2)
+
+  // The above codes is equal to
+  let s1 = new String("some text")
+  let s2 = s1.substring(2)
+  s1 = null
+  ```
+
+- The major difference between reference types and primitive wrapper types is the **lifetime** of the object.
+  - When you instantiate a reference type using the new operator, it stays in memory until it goes out of scope,
+  - whereas automatically created primitive wrapper objects exist for only one line of code before they are destroyed.
+
+  ```javascript
+  let s1 = "some text"
+  s1.color = "red"
+  console.log(s1.color)  // undefined
+  ```
+
+> 伍注：js的这个怪异行为看上去很挫，写代码时要小心。
+
+- The Boolean Type
+  - `valueOf` returns true or false
+  - `toString` returns "true" or "false"
+  - `typeof` returns "object"
+
+- The Number Type
+  - `valueOf` returns the primitive numeric value
+  - `toString`
+  - Format floating numbers as strings
+    - `toFixed`
+    - `toExponential`
+    - `toPrecision`
+  - `isInterger`
+  - `isSafeInteger` returns true if the integer is between [-2^53 + 1, 2^53 - 1]
+
+- The String Type
+  - `valueOf`, `toLocaleString` and `toString` returns the object's primitive string value
+  - `length`
 
 #### 5.4 Singleton Built-in Objects
 
