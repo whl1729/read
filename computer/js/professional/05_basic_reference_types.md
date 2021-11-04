@@ -182,9 +182,64 @@
   - `isInterger`
   - `isSafeInteger` returns true if the integer is between [-2^53 + 1, 2^53 - 1]
 
-- The String Type
+##### 5.3.3 The String Type
+
+- Methods of String type
   - `valueOf`, `toLocaleString` and `toString` returns the object's primitive string value
   - `length`
+  - String-Manipulation Methods
+    - `slice(start, end)` not include end
+    - `substr(start, length)`
+    - `substring(start, end)` not include end
+  - String Location Methods
+    - `indexOf`
+    - `lastIndexOf`
+  - String Inclusion Methods
+  - String Trim Methods
+    - `trim`
+    - `trimLeft`
+    - `trimRight`
+  - String Padding Methods
+    - `padStart`
+    - `padEnd`
+  - String Case Methods
+    - `toLowerCase`
+    - `toUpperCase`
+    - `toLocaleLowerCase`
+    - `toLocaleUpperCase`
+  - String Pattern-Matching Methods
+    - `match` returns an array whose first item is the string that matches the entire pattern,
+              and each other item (if applicable) represents capturing groups in the expression.
+    - `search` returns the index of the first pattern occurrence in the string or -1 if it's not found.
+    - `replace` If the first argument is a string, then only the first occurrence of the substring will be replaced.
+                The only way to replace all instances of a substring is to provide a regular expression with the global flag specified.
+    - `split`
+  - `localeCompare` do alphabetically comparison
+
+- The JavaScript Character
+  - JavaScript strings consist of 16 bit code units.
+  - `charAt` returns the character at a given index
+  - `charCodeAt` returns the character encoding of a given code unit
+  - `fromCharCode` create characters from their UTF-16 code unit representation
+  - `codePointAt` returns the code point at the given index.
+  - A code point refers to the full Unicode identifier for a single character.
+  - supplementary plane and surrogate pair
+
+- The `normalize` Method
+  - Unicode offers 4 normalization forms
+    - Normalization FormD (NFD)
+    - Normalization FormC (NFC)
+    - Normalization FormKD (NFKD)
+    - Normalization FormKC (NFKC)
+
+- Special character sequences for the second arguments in `replace()`
+  - `$$`
+  - `$&`
+  - `$'`
+  - $\`
+  - `$n` or `$nn`
+
+- String Iterators and Destructuring
 
 #### 5.4 Singleton Built-in Objects
 
