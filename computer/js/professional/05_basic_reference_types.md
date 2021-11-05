@@ -243,6 +243,81 @@
 
 #### 5.4 Singleton Built-in Objects
 
+- Built-in object
+  - Definition
+    - Any object supplied by an ECMAScript implementation, independent of the host environment,
+      which is present at the start of the execution of an ECMAScript program.
+  - Explanation
+    - The developer does not need to explicitly instantiate a built-in object;
+      it is already instantiated.
+  - Example
+    - Common built-in objects: Object, Array, String
+    - singleton built-in objects: Global, Math
+
+##### 5.4.1 The Global Object
+
+- Global object methods
+  - URI-Encoding Methods
+    - `encodeURI`
+    - `encodeURIComponent`
+    - `decodeURI`
+    - `decodeURIComponent`
+  - `eval`
+
+- Global object properties
+  - The special value: undefined, NaN, Infinity
+  - Type Constructor: Object, Array, Function, Boolean, String, Number, Date, RegExp
+  - Error Constructor: Error, EvalError, RangeError, ReferenceError, SyntaxError, TypeError, URIError
+
+- The Window Object
+  - In Web browsers, the `window` is the Global object’s delegate.
+  - In Node environment, the `global` is the Global object's delegate.
+
+##### 5.4.2 The Math Object
+
+- The static properties
+  - `Math.E` The value of e, the base of the natural logarithms
+  - `Math.LN10` The natural logarithm of 10
+  - `Math.LN2` The natural logarithm of 2
+  - `Math.LOG2E` The base 2 logarithm of e
+  - `Math.LOG10E` The base 10 logarithm of e
+  - `Math.PI` The value of π
+  - `Math.SQRT1_2` The square root of ½
+  - `Math.SQRT2` The square root of 2
+
+- Rounding Methods
+  - `Math.ceil`
+  - `Math.floor`
+  - `Math.round`
+  - `Math.fround`
+
+- Other Methods
+  - `Math.random` Returns a random number between the 0 and the 1, not including either 0 or 1.
+  - `Math.abs(x)` Returns the absolute value of x
+  - `Math.exp(x)` Returns Math.E raised to the power of x
+  - `Math.expm1(x)` Equivalent to Math.exp(x) - 1
+  - `Math.log(x)` Returns the natural logarithm of x
+  - `Math.log1p(x)` Equivalent to 1 + Math.log(x)
+  - `Math.pow(x,` power)
+  - `Returns` x raised to the power of power
+  - `Math.pow(...nums)` Returns the square root of the sum of the squares of each
+  - `number` in nums
+  - `Math.clz32(x)` Returns the number of leading zeroes of a 32-bit integer x
+  - `Math.sign(x)` Returns 1, 0, -0, or -1 indicating the sign of x
+  - `Math.trunc(x)` Returns the integer component of x, removing any decimals
+  - `Math.sqrt(x)` Returns the square root of x
+  - `Math.cbrt(x)` Returns the cubic root of x
+  - `Math.acos(x)` Returns the arc cosine of x
+  - `Math.acosh(x)` Returns the hyperbolic arc cosine of x
+  - `Math.asin(x)` Returns the arc sine of x
+  - `Math.asin(x)` Returns the hyperbolic arc sine of x
+  - `Math.atan(x)` Returns the arc tangent of x
+  - `Math.atanh(x)` Returns the hyperbolic arc tangent of x
+  - `Math.atan2(y,` x) Returns the arc tangent of y/x
+  - `Math.cos(x)` Returns the cosine of x
+  - `Math.sin(x)` Returns the sine of x
+  - `Math.tan(x)` Returns the tangent of x
+
 ### Q6：作者是怎么论述的？
 
 ### Q7：作者解决了什么问题？
