@@ -30,9 +30,13 @@
 ## Q5：这本书的关键词是什么？
 
 - 优绩（merit）
+  - claim to respect and praise; excellence; worth. 优点、价值、功绩
+  - something that deserves or justifies a reward or commendation; a commendable quality, act, etc.
+- 优绩至上（meritocracy）
+  - A political system in which economic goods and/or political power are vested in individual people
+    on the basis of talent, effort, and achievement, rather than wealth or social class.
 - tyranny（专横、严酷、残暴）
-- 民粹主义（Populism）
-- 优绩至上
+- 民粹主义（populism）
 - 文凭主义
 - 罗尔斯正义论
 - 自由主义的个人观
@@ -183,6 +187,10 @@
 ### Q11.1：为什么是这样的？为什么发展成这样？为什么需要它？
 
 ### Q11.2：有哪些相似的知识点？它们之间的联系是什么？
+
+#### 相关书籍
+
+- The Rise of the Meritocracy, Michael Dunlop Young
 
 ### Q11.3：其他领域/学科有没有相关的知识点？日常生活中有没有类似的现象？
 
