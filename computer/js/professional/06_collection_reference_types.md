@@ -21,6 +21,8 @@
 
 ### Q5：这一章的关键句是什么？
 
+- SameValueZero
+
 #### 6.1 The Object Type
 
 - Two ways to explicitly create an instance of Object
@@ -55,7 +57,7 @@
   - Initializing an array with an array literal allows you to create "holes" using sequential commas.
 
 - Array length
-  - By setting the length property, 
+  - By setting the length property,
     you can easily remove items from or add items to the end of the array.
   - Arrays can contain a maximum of 4,294,967,295 items.
   - If you try to add more than that number, an exception occurs.
@@ -79,7 +81,7 @@
   - `valueOf()`
   - `toLocaleString()` calls each item's toLocaleString() instead of toString() to get its string value
   - `join()` construct a string with a different separator
-  - If an item in the array is null or undefined, it is represented by an empty string 
+  - If an item in the array is null or undefined, it is represented by an empty string
     in the result of join(), toLocaleString(), toString(), and valueOf().
 
 - Stack Methods
@@ -142,15 +144,123 @@
 
 #### 6.3 Typed Arrays
 
+- What is Typed Arrays
+  - The typed array is a construct designed for efficiently passing binary data to native libraries.
+  - There is no actual "TypedArray" type in JavaScript—
+    rather, the term refers to a collection of specialized arrays that contain numeric types.
+
+- History
+  - Rendering graphics-intensive applications inside the browser without requiring any plugins
+  - The goal was to develop a JavaScript API that
+    could make use of a 3D graphics API and GPU acceleration
+    to enable rendering of complex graphics on a `<canvas>` element.
+  - CanvasFloatArray -> Float32Array
+
+- Using ArrayBuffers
+  - An ArrayBuffer can never be resized once it is created.
+  - However, you are able to copy all or part of an existing ArrayBuffer into a new instance using `slice()`.
+
+- JavaScript's ArrayBuffer vs C++'s malloc
+  - Failure Handling
+    - When malloc() fails to allocate, it returns a null pointer.
+    - If ArrayBuffer allocation fails, it throws an error.
+  - Maximum size
+    - A malloc() call can take advantage of virtual memory,
+      so the maximum size of the allocation is only bounded by the addressable system memory.
+    - ArrayBuffer allocation cannot exceed Number.MAX _ SAFE _ INTEGER (2 ^ 53) bytes.
+  - Initialization
+    - A successful malloc() invocation performs no initialization of the actual addresses.
+    - Declaring an ArrayBuffer initializes all the bits to 0s.
+  - Garbage Collection
+    - Heap memory allocated by malloc() cannot be used by the system until free() is invoked or the program exits.
+    - Heap memory allocated by declaring an ArrayBuffer is still garbage collected—no manual memory management is required.
+
+- DataViews
+  - ElementType
+    - get
+    - set
+    - byteOffset
+  - Big-Endian vs Little-Endian
+  - Corner Cases
+    - A DataView will only complete a read or write if there is sufficient buffer space to do so;
+      otherwise it throws a RangeError
+
+- Typed Arrays
+  - Typed arrays still use array buffers as their storage, and array buffers cannot be resized.
+  - Therefore, the following methods are not supported by typed arrays:
+    `concat, pop, push, shift, splice, unshift`
+  - `set()` Copies the values from a provided array or typed array into the current typed array at the specified index.
+  - `subarray()` Returns a new typed array with values copied out of the original.
+  - Underflow and Overflow
+    - `Uint8ClampedArray`
+
 #### 6.4 The Map Type
+
+- Basic API
+  - `new Map()`
+  - `has()`
+  - `get()`
+  - `set()`
+  - `clear()`
+  - `size`
+
+- Order and Iteration
+  - `entries()`
+  - `Symbol.iterator`
+  - `keys()`
+  - `values()`
+
+- Choosing Between Objects and Maps
+  - For developers that care about memory and performance,
+    there are notable differences between objects and maps that may be of interest.
+  - Memory Profile: Map is better
+    - Results may vary by browser,
+      but given a fixed amount of memory,
+      a Map will be able to store roughly 50 percent more key/value pairs than an Object.
+  - Insertion Performance: Map is better
+  - Lookup Performance: Object is better
+  - Delete Performance: Map is Metter
 
 #### 6.5 The WeakMap Type
 
+- Why WeakMap
+  - Avoid preventing garbage collection, so as to avoid memory leak
+
+- WeakMap's keys
+  - keys in a WeakMap are "weakly held,"
+    meaning they are not counted as formal references that would otherwise prevent garbage collection.
+  - Keys in a WeakMap can only be of type or inherit from Object.
+  - If primitives were allowed,
+    the WeakMap instance would have no way of differentiating
+    between the string primitive that was initially used to set the key/value pair
+    and an identical string primitive that was initialized later
+    — an undesirable behavior. (Wu: Question: Not understand?)
+  - Non-Iterable Keys
+
+- Utility
+  - Private Variables
+  - DOM Node Metadata
+
 #### 6.6 The Set Type
+
+- Basic API
+  - `new Set()`
+  - `size()`
+  - `add()`
+  - `delete()`
+  - `has()`
+
+- Order and Iteration
+  - A Set instance can provide an Iterator that contains the set contents in insertion order.
+  - `values()`
+  - `keys()` same as `values()`
+  - `entries()` returns an iterator that contains a two-element array containing a duplicate of all values in the Set in insertion order
+  - `Symbol.iterator`
 
 #### 6.7 The WeakSet Type
 
-#### 6.8 Iteration and Spread Operators
+- Similar to the WeakMap type.
+- WeakSet are valuable to use for tagging objects.
 
 ### Q6：作者是怎么论述的？
 
