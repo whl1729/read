@@ -29,6 +29,25 @@
 
 ### Q5：这一章的关键句是什么？
 
+#### 7.1 Introduction to Iteration
+
+- Perfoming iteration using the common loop is not ideal
+  - Iterating through the data structure requires a specific knowledge of how to use the data structure.
+  - The order of traversal is not inherent to the data structure.
+
+#### 7.2 The Iterator Pattern
+
+- Iterable vs Iterator
+  - Anything that implements the Iterable interface
+    can be "consumed" by an object that implements the Iterator interface.
+  - An iterator is a separate object created on demand and intended for a single use.
+  - Each iterator is associated with an iterable,
+    and the iterator exposes an API to iterate through the associated iterable a single time.
+  - The iterator doesn’t need to understand the structure of the iterable it is associated with;
+    it only must know how to retrieve sequential values.
+
+#### 7.3 Generators
+
 ### Q6：作者是怎么论述的？
 
 ### Q7：作者解决了什么问题？
