@@ -46,6 +46,25 @@
   - The iterator doesn’t need to understand the structure of the iterable it is associated with;
     it only must know how to retrieve sequential values.
 
+- The Iterable Protocol
+  - Default iterator: `Symbol.iterator`
+    - Iterator factory function
+
+- The Iterator Protocol
+  - `next()` returns `{done, value}`
+
+- Garbage Collection
+  - An iterator maintains a reference to the iterable object,
+    so be aware that the iterator’s existence will prevent garbage collection of the iterable object.
+
+- Early Termination of Iterators
+  - The optional `return()` method allows for specifying behavior that will execute only if the iterator is closed prematurely.
+  - Scenarios where this might happen include the following:
+    - A for...of loop exits early via break, continue, return, or throw.
+    - A destructuring operation does not consume all values.
+  - Because the return() method is optional, not all iterators are closable.
+    - Array Iterators are not closable.
+
 #### 7.3 Generators
 
 ### Q6：作者是怎么论述的？
