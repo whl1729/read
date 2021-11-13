@@ -67,11 +67,35 @@
 
 #### 7.3 Generators
 
+- Generator Basics
+  - `function* generatorFn() {}`
+  - Arrow functions cannot be used as generator functions.
+  - Generator function execution will only begin upon the initial next() invocation.
+  - Generator objects implement the Iterable interface.
+
+- Interrupting Execution with "yield"
+  - The yield keyword allows generators to stop and start execution.
+  - A generator function exiting via the yield keyword will have a done value of false;
+    a generator function exiting via the return keyword will have a done value of true.
+
+- Using a Generator Object as an Iterable
+
+- Using "yield" for Input and Output
+
+- Early Termination of Generators
+  - `return()`
+  - `throw()`
+  - If the generator object has not yet begun execution,
+    calling throw() cannot be caught inside the function
+    because the error is thrown from outside the function block.
+
 ### Q6：作者是怎么论述的？
 
 ### Q7：作者解决了什么问题？
 
 ### Q8：我有哪些疑问？
+
+#### Q8.1: what is the differences between "iterator is closeable" and "iterator has return function"?
 
 ### Q9：这一章说得有道理吗？为什么？
 
