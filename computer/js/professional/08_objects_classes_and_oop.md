@@ -33,9 +33,13 @@
     - `let person = new Person('Guo Jing', 20, 'Soldier')`
     - Constructors as Functions
     - Problems with Constructors
+      - Waste of memory
   - The Prototype Pattern
     - How Prototypes Work
+      - `Person.prototype.constructor === Person`
+      - `person1.__proto__ === Person.prototype`
     - Understanding the Prototype Hierarchy
+      - First instance, then prototype
     - Prototypes and the "in" Operator
     - Property Enumeration Order
   - Object Iteration
@@ -136,6 +140,82 @@
   - Parameter Context Matching
 
 #### 8.2 Object creation
+
+##### 8.2.2 The Function Constructor Pattern
+
+- Calling a constructor using the new operator will do the following:
+ - A new object is created in memory.
+ - The new object's internal `[[Prototype]]` pointer is assigned to the constructor's prototype property.
+ - The this value of the constructor is assigned to the new object (so this points to the new object).
+ - The code inside the constructor is executed (adds properties to the new object).
+ - If the constructor function returns a non-null value, that object is returned.
+   Otherwise, the new object that was just created is returned.
+
+- Constructor functions vs normal functions
+  - The only difference is the way in which they are called
+  - Any function that is called with the new operator acts as a constructor,
+    whereas any function called without it acts as a normal function.
+
+- The this object always points to the Global object (window in web browsers)
+  when a function is called without an explicitly set this value
+  (by being an object method or through `call()/apply()`).
+
+- The major downside to constructors is that methods are created once for each instance.
+
+##### 8.2.3 The Prototype Pattern
+
+- Each function is created with a prototype property,
+  which is an object containing properties and methods that should be available to instances of a particular reference type.
+
+- The benefit of using the prototype is that all of its properties and methods are shared among object instances.
+
+- How Prototypes Work
+  - All prototypes automatically get a property called constructor
+    that points back to the function on which it is a property.
+    E.g., `Person.prototype.constructor === Person`
+  - A direct link exists between the instance and the constructor’s prototype: `__proto__`
+  - `isPrototypeOf`
+  - `getPrototypeOf`
+  - `setPrototypeOf`
+
+- Understanding the Prototype Hierarchy
+  - The search begins on the object instance first, then on the prototype.
+  - Property name shadowing
+    - Once a property is added to the object instance, it shadows any properties of the same name on the prototype.
+    - Use the delete operator to remove the instance property, which allows the prototype property to be accessed again.
+    - The `hasOwnProperty()` method determines if a property exists on the instance or on the prototype.
+
+- Prototype and the "in" Operator
+  - the in operator returns true when a property of the given name is accessible by the object,
+    which is to say that the property may exist on the instance or on the prototype.
+  - `Object.keys()` returns a list of all **enumerable instance properties** on an object.
+  - `Object.getOwnPropertyNames()` returns a list of all instance properties.
+  - `Object.getOwnPropertySymbols()` returns a list of all instance symbols.
+
+- Property Enumeration Order
+  - `for-in, Object.keys()`
+    - no deterministic order of enumeration
+  - `Object.getOwnPropertyNames(), Object.getOwnPropertySymbols(), Object.assign()`
+    - First number keys
+    - Then string and symbol keys enumerated in insertion order
+
+##### 8.2.4 Object Iteration
+
+- Converting an object's contents
+  - `Object.values()` returns an array of the object's values.
+  - `Object.entries()` returns an array of array pairs, each representing a `[key, value]` pair in the object.
+
+- Alternate Prototype Syntax
+  - `Person.prototype = {}` the constructor property no longer points to Person.
+
+- Dynamic Nature of Prototypes
+  - Overwriting the prototype on the constructor means that new instances will reference the new prototype
+    while any previously existing object instances still reference the old prototype.
+
+- Problems with Prototypes
+  - it negates the ability to pass initialization arguments into the constructor,
+    meaning that all instances get the same property values by default.
+  - All properties on the prototype are shared among instances.
 
 #### 8.3 Inheritance
 
