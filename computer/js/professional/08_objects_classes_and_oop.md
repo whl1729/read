@@ -7,13 +7,85 @@
 ### Q2：这一章的大纲是什么？
 
 - Understanding Objects
+  - Types of Properties
+    - Data Properties
+    - Accessor Properties
+  - Defining Multiple Properties
+    - `Object.defineProperties`
+  - Reading Property Attributes
+    - `Object.getOwnPropertyDescriptors`
+  - Merging Objects
+    - `Object.assign`
+  - Object Identity and Equality
+    - `Object.is` and `===`
+  - Enhanced Object Syntax
+    - Property Value Shorthand: `let person = { name }`
+    - Computed Property Keys: `let person = { [nameKey]: 'Guo Jing' }`
+    - Concise Method Syntax: omit the function keyword
+  - Object Destructuring
+    - Nested Destructuring
+    - Partial Destructuring Completion
+    - Parameter Context Matching
 - Object creation
+  - The Factory Pattern
+    - `function createPerson(name, age, job) {}`
+  - The Function Constructor Pattern
+    - `let person = new Person('Guo Jing', 20, 'Soldier')`
+    - Constructors as Functions
+    - Problems with Constructors
+  - The Prototype Pattern
+    - How Prototypes Work
+    - Understanding the Prototype Hierarchy
+    - Prototypes and the "in" Operator
+    - Property Enumeration Order
+  - Object Iteration
+    - Alternate Prototype Syntax
+    - Dynamic Nature of Prototypes
+    - Native Object Prototypes
+    - Problems with Prototypes
 - Inheritance
+  - Prototype Chaining
+    - Default Prototypes
+    - Prototype and Instance Relationships
+    - Working with Methods
+    - Problems with Prototype Chaining
+  - Constructor Stealing
+    - Passing Arguments
+    - Problems with Constructor Stealing
+  - Combination Inheritance
+  - Prototypal Inheritance
+  - Parasitic Inheritance
+  - Parasitic Combination Inheritance
 - Classes
+  - Class Definition Basics
+    - Class Composition
+  - The Class Constructor
+    - Instantiation
+    - Understanding Classes as Special Functions
+  - Instance, Prototype and Class Members
+    - Instance Members
+    - Prototype Methods and Accessors
+    - Static Class Methods and Accessors
+    - Non-Function Prototype and Class Members
+    - Iterator and Generator Methods
+  - Inheritance
+    - Inheritance Basics
+    - Constructors, HomeObjects, and super()
+    - Abstract Base Classes
+    - Inheriting from Built-in Types
+    - Class Maxins
 
 ### Q3：作者想要解决什么问题？
 
 ### Q4：这一章的关键词是什么？
+
+- Prototype
+- Prototype Chaining
+- Constructor Stealing
+- Combination Inheritance
+- Prototypal Inheritance
+- Parasitic Inheritance
+- Parasitic Combination Inheritance
 
 ### Q5：这一章的关键句是什么？
 
@@ -27,12 +99,12 @@
 #### 8.1 Understanding Objects
 
 - Types of Properties
-  - Data Properties
+  - Data Properties: Contain a single location for a **data value**
     - `[[Configurable]]`
     - `[[Enumerable]]`
     - `[[Writable]]`
     - `[[Value]]`
-  - Accessor Properties
+  - Accessor Properties: contain a combination of a getter function and a setter function
     - `[[Configurable]]`
     - `[[Enumerable]]`
     - `[[Get]]`
