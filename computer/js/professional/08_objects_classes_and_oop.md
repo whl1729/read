@@ -50,6 +50,7 @@
 - Inheritance
   - Prototype Chaining
     - Default Prototypes
+      - An instance of `Object`
     - Prototype and Instance Relationships
     - Working with Methods
     - Problems with Prototype Chaining
@@ -90,6 +91,11 @@
 - Prototypal Inheritance
 - Parasitic Inheritance
 - Parasitic Combination Inheritance
+- `apply()`
+  - calls a function with a given this value, and arguments provided as an array.
+- `call()`
+  - calls a function with a given this value and arguments provided individually.
+  - allows for a function/method belonging to one object to be assigned and called for a different object.
 
 ### Q5：这一章的关键句是什么？
 
@@ -218,6 +224,79 @@
   - All properties on the prototype are shared among instances.
 
 #### 8.3 Inheritance
+
+##### 8.3.1 Prototype Chaining
+
+- Default Prototypes
+  - All reference types inherit from Object by default, which is accomplished through prototype chaining.
+  - The default prototype for any function is an instance of Object.
+
+- Prototype and Instance Relationships
+  - `instanceof` returns true whenever an instance is used with a constructor that appears in its prototype chain
+  - `isPrototypeOf` returns true for an instance in the prototype chain
+
+- Working with Methods
+  - The object literal approach to creating prototype methods cannot be used with prototype chaining
+    because you end up overwriting the chain.
+
+- Problems with Prototype Chaining
+  - Prototype properties containing reference values are shared with all instances.
+  - You cannot pass arguments into the supertype constructor when the subtype instance is being created.
+
+##### 8.3.2 Constructor Stealing
+
+- Basic idea
+  - call the supertype constructor from within the subtype constructor.
+
+- Implementation
+  - the apply() and call() methods can be used to execute a constructor on the newly created object.
+
+- One advantage that constructor stealing offers over prototype chaining
+  - the ability to **pass arguments** into the supertype constructor from within the subtype constructor.
+
+- Problems with Constructor Stealing
+  - Methods must be defined inside the constructor, so there's no function reuse.
+  - Methods defined on the supertype's prototype are not accessible on the subtype,
+    so all types can use only the constructor pattern.
+
+##### 8.3.3 Combination Inheritance
+
+- Definition
+  - combines prototype chaining and constructor stealing to get the best of each approach.
+
+- Basic idea
+  - use prototype chaining to inherit properties and methods on the prototype and
+    use constructor stealing to inherit instance properties.
+
+- Problems
+  - The supertype constructor is always called twice:
+    - once to create the subtype’s prototype,
+    - once inside the subtype constructor.
+
+##### 8.3.4 Prototypal Inheritance
+
+- `Object.create()` accepts two arguments
+  - The first is an object to use as the prototype for a new object
+  - The second is an optional object defining additional properties to apply to the new object
+
+- Problems
+  - Properties containing reference values will always share those values
+
+##### 8.3.5 Parasitic Inheritance
+
+- Basic Idea
+  - create a function that does the inheritance,
+    augments the object in some way,
+    and then returns the object as if it did all the work.
+
+- Problems
+  - Adding functions to objects using parasitic inheritance leads to inefficiencies related to function reuse.
+
+##### 8.3.6 Parasitic Combination Inheritance
+
+- Basic Idea
+  - Instead of calling the supertype constructor to assign the subtype’s prototype,
+    all you need is a copy of the supertype’s prototype.
 
 #### 8.4 Classes
 
