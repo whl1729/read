@@ -153,21 +153,9 @@
 
 - Catalog 关于本书介绍的所有重构技巧的目录
 - The Two Hats 将增加功能与重构活动分离
-  - When I use refactoring to develop software, I divide my time between two distinct activities: adding functionality and refactoring.
-  - When I add functionality, I shouldn’t be changing existing code; I'm just adding new capabilities.
-    I measure my progress by adding tests and getting the tests to work.
-  - When I refactor, I make a point of not adding functionality; I only restructure the code.
-    I don’t add any tests (unless I find a case I missed earlier); I only change tests when I have to accommodate a change in an interface.
 - The Rule of Three 重复三次以上就应该重构
-  - Here’s a guideline Don Roberts gave me:
-    The first time you do something, you just do it.
-    The second time you do something similar, you wince at the duplication, but you do the duplicate thing anyway.
-    The third time you do something similar, you refactor.
-  - Or for those who like baseball: **Three strikes, then you refactor.**
 - Bad Smells in Code
-  - Shotgun Surgery 霰弹式修改
-    - Shotgun surgery is an antipattern in software development and occurs 
-      where a developer adds features to an application codebase which span a multiplicity of implementors or implementations in a single change.
+  - Shotgun Surgery 霰弹式修改，一次修改太多地方或增加太多功能
   - Feature Envy
   - Data Clumps
   - Primitive Obsession
@@ -182,7 +170,6 @@
 
 ## Q6：这本书的关键句是什么？
 
-
 ## Q7：作者是怎么论述的？
 
 ## Q8：作者解决了什么问题？
@@ -191,13 +178,37 @@
 
 ## Q10：这本书说得有道理吗？为什么？
 
-## Q11：如何拓展这本书？
+## Q11: 这本书讨论的知识的本质是什么？
 
-### Q11.1：为什么是这样的？为什么发展成这样？为什么需要它？
+重构的本质（或者说重构的定义）：
 
-### Q11.2：有哪些相似的知识点？它们之间的联系是什么？
+在不改变软件可观察行为的前提下，
+为提高其可理解性和降低其修改成本，
+对软件内部结构进行的调整。
 
-#### 相关网站
+## Q12: 这本书讨论的知识的第一原则是什么？
+
+## Q13：这本书讨论的知识的结构是怎样的？
+
+这本书讨论了「重构」的基本知识，主要包括四个部分：
+
+- 重构的原则
+- 代码坏味道
+- 测试方法
+- 重构技巧
+
+这四个部分之间是递进关系：
+
+- 对于重构活动，我们首先需要知道重构的基本原则，用来指导我们的实践。
+- 为什么需要重构？因为我们闻到了代码的坏味道。
+- 重构的第一步应该做什么？写测试用例、搭建测试环境。
+- 闻到代码坏味道，并且写好测试用例后，接下来便是运用各种重构技巧去对代码进行重构。
+
+## Q14：这本书讨论的知识为什么是这样的？为什么发展成这样？为什么需要它？
+
+## Q15：有哪些相似的知识？它们之间的联系是什么？
+
+### 相关网站
 
 - [refactoring.com][1]
 - [refactoring.guru][2]
@@ -206,7 +217,9 @@
   [1]: https://refactoring.com/
   [2]: https://refactoring.guru/
 
-### Q11.3：其他领域/学科有没有相关的知识点？日常生活中有没有类似的现象？
+## Q16：其他领域/学科有没有相关的知识？日常生活中有没有类似的现象？
 
-## Q12：这本书和我有什么关系？
+## Q17: 这本书对我有哪些用处/帮助/启示？
+
+## Q18: 我如何应用这本书的知识去解决问题？
 
