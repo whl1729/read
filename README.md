@@ -15,6 +15,12 @@
 - [ ] vim 实用技巧
 - [ ] 鸟哥的Linux私房菜
 
+### 方法论
+
+- [ ] 如何阅读一本书
+- [ ] Learn More, Study Less
+- [ ] 暗时间
+
 ### 历史
 
 - [ ] [极简欧洲史](history/shortest_europe)
