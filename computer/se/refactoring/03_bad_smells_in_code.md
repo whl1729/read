@@ -188,17 +188,72 @@
 
 #### Lazy Element
 
+- Definition
+  - Sometimes the structure isn't needed.
+
+> 伍注：有时会出现定义了一个不必要的函数或类，这时应该去除它。
+
+- Refactoring Skills
+  - Inline Function
+  - Inline Class
+  - Collapse Hierarchy
+
 #### Speculative Generality
+
+- Definition
+  - You get it when people say,
+    "Oh, I think we'll need the ability to do this kind of thing someday"
+    and thus add all sorts of hooks and special cases to handle things that aren’t required.
+
+- Refactoring Skills
+  - Collapse Hierarchy
+  - Inline Function
+  - Inline Class
+  - Change Function Declaration
+  - Remove Dead Code
 
 #### Temporary Field
 
+- Definition
+  - Sometimes you see a class in which a field is set only in certain circumstances.
+
+- Refactoring Skills
+  - Extract Class
+  - Move Function
+  - Introduce Special Case
+
 #### Message Chains
+
+> 伍注：过长的消息链会导致耦合度高，进而导致难以修改。
+
+- Refactoring Skills
+  - Hide Delegate
+  - Extract Function
+  - Move Function
 
 #### Middle Man
 
+- Refactoring Skills
+  - Remove Middle Man
+  - Inline Function
+  - Replace Superclass with Delegate
+  - Replace Subclass with Delegate
+
 #### Insider Trading
 
+- Refactoring Skills
+  - Move Function
+  - Move Field
+  - Hide Delegate
+  - Replace Subclass with Delegate
+  - Replace Superclass with Delegate
+
 #### Large Class
+
+- Refactoring Skills
+  - Extract Class
+  - Extract Superclass
+  - Replace Type Code with Subclass
 
 #### Alternative Classes with Different Interfaces
 
@@ -211,6 +266,8 @@
 ### Q9：我有哪些疑问？
 
 #### Q9.1: 如何理解Combine Functions into Transform这个重构技巧？
+
+#### Q9.2: 如何理解Replace Superclass with Delegate 和 Replace Subclass with Delegate 这两个技巧？
 
 ### Q10：这一章说得有道理吗？为什么？
 
