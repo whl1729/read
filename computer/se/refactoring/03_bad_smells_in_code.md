@@ -8,29 +8,30 @@
 
 ### Q3：这一章的大纲是什么？
 
-- Mysterious Name
-- Duplicated Code
-- Long Function
-- Long Parameter List
-- Global Data
-- Mutable Data
-- Divergent Change
-- Shotgun Surgery
-- Feature Envy
-- Data Clumps
-- Primitive Obsession
-- Repeated Switches
-- Loops
-- Lazy Element
-- Speculative Generality
-- Temporary Field
-- Message Chains
-- Middle Man
-- Insider Trading
-- Large Class
-- Alternative Classes with Different Interfaces
-- Data Class
-- Refused Bequest
+- Mysterious Name （神秘命名）
+- Duplicated Code （重复代码）
+- Long Function （过长函数）
+- Long Parameter List （过长参数列表）
+- Global Data （全局数据）
+- Mutable Data （可变数据）
+- Divergent Change （发散式变化）
+- Shotgun Surgery （霰弹式修改）
+- Feature Envy （依恋情结）
+- Data Clumps （数据泥团）
+- Primitive Obsession （基本类型偏执）
+- Repeated Switches （重复的switch）
+- Loops （循环语句）
+- Lazy Element （冗余的元素）
+- Speculative Generality （夸夸其谈通用性）
+- Temporary Field （临时字段）
+- Message Chains （过长的消息链）
+- Middle Man （中间人）
+- Insider Trading （黑幕交易）
+- Large Class （过大的类）
+- Alternative Classes with Different Interfaces （异曲同工的类）
+- Data Class （纯数据类）
+- Refused Bequest （被拒绝的遗赠）
+- Comments （注释）
 
 ### Q4：作者想要解决什么问题？
 
@@ -250,6 +251,10 @@
 
 #### Large Class
 
+- Bad Smells
+  - Large class often has too many fields, which means duplicated code cannot be far behind.
+  - A class with too much code is a prime breeding ground for duplicated code, chaos, and death.
+
 - Refactoring Skills
   - Extract Class
   - Extract Superclass
@@ -257,7 +262,55 @@
 
 #### Alternative Classes with Different Interfaces
 
+- Refactoring Skills
+  - Change Function Declaration
+  - Move Function
+  - Extract Superclass
+
 #### Data Class
+
+- Bad Smells
+  - Such classes are dumb data holders and are often being manipulated in far too much detail by other classes.
+  - You can make big progress by moving it from the client into the data class itself.
+
+> 伍注：如果一个类只提供getter/setter方法，可能意味着它的封装性不够好。
+
+- Refactoring Skills
+  - Encapsulate Record
+  - Remove Setting Method
+  - Move Function
+  - Extract Function
+
+#### Refused Bequest
+
+- Bad Smells
+  - The subclass is reusing behavior but does not want to support the interface of the superclass
+
+- Refactoring Skills
+  - Push Down Method
+  - Push Down Field
+  - Replace Subclass with Delegate
+  - Replace Superclass with Delegate
+
+#### Comments
+
+- Bad Smells
+  - Comments are often used as a deodorant.
+  - Usually comments are there because the code is bad.
+
+- Refactoring Skills
+  - Extract Function
+  - Change Function Declaration
+  - Introduce Assertion
+
+- When you feel the need to write a comment,
+  first try to refactor the code so that any comment becomes superfluous.
+
+- When to comment
+  - A good time to use a comment is when you don't know what to do.
+  - In addition to describing what is going on, comments can indicate areas in which you aren't sure.
+  - A comment can also explain why you did something.
+  - This kind of information helps future modifiers, especially forgetful ones.
 
 ### Q7：作者是怎么论述的？
 
@@ -268,6 +321,8 @@
 #### Q9.1: 如何理解Combine Functions into Transform这个重构技巧？
 
 #### Q9.2: 如何理解Replace Superclass with Delegate 和 Replace Subclass with Delegate 这两个技巧？
+
+#### Q9.3: 如何理解Alternative Classes with Different Interfaces这个技巧？
 
 ### Q10：这一章说得有道理吗？为什么？
 
