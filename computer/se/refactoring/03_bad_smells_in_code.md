@@ -215,8 +215,12 @@
 
 #### Temporary Field
 
-- Definition
+- Bad Smells
   - Sometimes you see a class in which a field is set only in certain circumstances.
+  - Such code is difficult to understand, because you expect an object to need all of its fields.
+  - Trying to understand why a field is there when it doesn’t seem to be used can drive you nuts.
+
+> 伍注：临时字段会增加复杂性、降低可读性。
 
 - Refactoring Skills
   - Extract Class
@@ -224,6 +228,10 @@
   - Introduce Special Case
 
 #### Message Chains
+
+- Bad Smells
+  - The client is coupled to the structure of the navigation.
+  - Any change to the intermediate relationships causes the client to have to change.
 
 > 伍注：过长的消息链会导致耦合度高，进而导致难以修改。
 
@@ -234,6 +242,12 @@
 
 #### Middle Man
 
+- Bad Smells
+  - Half the methods of a class are delegating to another class.
+
+> 伍注：中间人会增加复杂性。如果一个类绝大多数情况下都是充当传声筒、转发的角色，
+> 那么就要考虑这个类是否有存在的必要性。
+
 - Refactoring Skills
   - Remove Middle Man
   - Inline Function
@@ -241,6 +255,14 @@
   - Replace Subclass with Delegate
 
 #### Insider Trading
+
+- Bad Smells
+  - Trading data around too much increases coupling
+
+> 伍注：内幕交易会增加耦合度。内幕交易也意味着模块化做得不好。
+> 什么叫做模块化呢？这本书第198页的「Move Function」一节给了一个贴切的描述：
+> 「My ability to make most modifications to a program while only having to understand a small part of it.」
+> 可见，模块化是降低复杂性的一个有效武器。
 
 - Refactoring Skills
   - Move Function
@@ -255,12 +277,16 @@
   - Large class often has too many fields, which means duplicated code cannot be far behind.
   - A class with too much code is a prime breeding ground for duplicated code, chaos, and death.
 
+> 伍注：过大的类容易导致重复代码、混乱，从而使得修改代码变得困难。
+
 - Refactoring Skills
   - Extract Class
   - Extract Superclass
   - Replace Type Code with Subclass
 
 #### Alternative Classes with Different Interfaces
+
+> 伍注：暂时不理解这个条目？
 
 - Refactoring Skills
   - Change Function Declaration
@@ -284,7 +310,11 @@
 #### Refused Bequest
 
 - Bad Smells
+  - Sometimes this means the hierarchy is wrong and causing confusion and problems.
   - The subclass is reusing behavior but does not want to support the interface of the superclass
+  - We don’t mind refusing implementations—but refusing interface gets us on our high horses.
+
+> 伍注：「被拒绝的遗赠」可能会增加复杂性、降低可读性。
 
 - Refactoring Skills
   - Push Down Method
@@ -323,6 +353,8 @@
 #### Q9.2: 如何理解Replace Superclass with Delegate 和 Replace Subclass with Delegate 这两个技巧？
 
 #### Q9.3: 如何理解Alternative Classes with Different Interfaces这个技巧？
+
+#### Q9.4: 在Refused Bequest中，作者为什么说不介意拒绝实现、但介意拒绝接口？
 
 ### Q10：这一章说得有道理吗？为什么？
 
