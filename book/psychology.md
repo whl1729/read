@@ -37,6 +37,8 @@
 
 ## B84 心理学
 
+- [ ] Psychology and Life (心理学与生活)
+- [ ] Forty Studies That Changed Psychology: Explorations Into the History of Psychological Research (改变心理学的40项研究)
 - [ ] 自私的基因 （【英】理查德·道金斯）
 - [ ] 性学三论
 - [ ] 梦的解析
@@ -47,11 +49,9 @@
 - [ ] 乌合之众：大众心理研究
 - [ ] 无从选择：为何多即是少
 - [ ] 与“众”不同的心理学
-- [ ] 心理学与生活
 - [ ] 人格心理学
 - [ ] 情绪心理学
 - [ ] 趣味心理学
-- [ ] 改变心理学的40项研究
 - [ ] 态度改变与社会影响
 - [ ] 裸猿
 

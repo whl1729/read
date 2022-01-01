@@ -152,7 +152,7 @@
 
 ## TP311.3 软件架构与软件设计
 
-- [ ] Agile Software Development, Principles, Patterns, and Practices (敏捷软件开发 原则、模式和实践)
+- [ ] Agile Software Development: Principles, Patterns, and Practices (敏捷软件开发 原则、模式和实践)
 - [ ] The Design of Design (设计原本)
 - [ ] Patterns of Enterprise Application Architecture (企业应用架构模式)
 - [ ] The Architecture of Open Source Applications
@@ -169,6 +169,7 @@
 ## TP311.4 编程方法
 
 - [ ] Design Patterns: Elements of Reusable Object-Oriented Software
+- [ ] The Elements of Programming (编程格调)
 - [ ] The Practices of Programming（程序设计实践）
 - [ ] Code Complete（代码大全）
 - [ ] Beautiful Code: Leading Programmers Explain How They Think（代码之美）
@@ -217,9 +218,9 @@
 
 ## Html/Xml/CSS/AJAX/JSON/Javascript/PHP
 
-- [ ] JavaScript DOM 编程艺术
-- [ ] JavaScript高级程序设计
 - [ ] JavaScript语言精粹与编程实践
+- [ ] Professional JavaScript for Web Developers (JavaScript高级程序设计)
+- [ ] DOM Scripting: Web Design with JavaScript and the Document Object Model (JavaScript DOM 编程艺术)
 - [ ] You Don't Know JavaScript （你不知道的JavaScript）
 - [ ] JavaScript: The Good Parts （JavaScript语言精粹）
 - [ ] High Performance JavaScript （高性能JavaScript）
