@@ -47,6 +47,11 @@
   - requestAnimationFrame() is 1 shot.
     Your callback routine must itself call requestAnimationFrame() again if you want to animate another frame at the next repaint.
 
+- Pass information to the vertex shader
+  - By creating a buffer object for each type of data in this way and then allocating it to the attribute variables,
+    you can pass several pieces of information about each vertex to the vertex shader.
+  - Other types of information that can be passed include color, texture coordinates, and normals, as well as point size.
+
 ### Q7：作者是怎么论述的？
 
 ### Q8：作者解决了什么问题？
