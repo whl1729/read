@@ -50,7 +50,8 @@
 - 通过修改表来定义外键约束
 
   ```sql
-  ALTER TABLE <slave_table_name> constrait_name FOREIGN KEY field_name
+  ALTER TABLE <slave_table_name> ADD CONSTRAINT constrait_name
+  FOREIGN KEY (field_name)
   REFERENCES main_table_name (field_name);
   ```
 
