@@ -70,6 +70,13 @@
     constraint_name = 'fk_importdetails_importhead';
   ```
 
+- 删除外键约束
+
+  ```sql
+  ALTER TABLE tbl_name
+  DROP FOREIGN KEY fk_symbol;
+  ```
+
 #### 连接
 
 - 在 MySQL 中，有 2 种类型的连接，分别是内连接（INNER JOIN）和外连接（OUTER JOIN）。
