@@ -129,7 +129,7 @@ pid_t fork(void);
     - In the case of an abnormal termination, however, the kernel—not the process — generates a termination status to indicate the reason for the abnormal termination.
     - In any case, the parent of the process can obtain the termination status from either the wait or the waitpid function (described in the next section)
 
-- Note that we differentiate between the **exit status**, which is the argument to one of the three exit functions or the return value from main, and **the termination status**. The exit status is converted into a termination status by the kernel when `_exit` is finally called. Figure 8.4 describes the various ways the parent can examine the termination status of a child. If the child terminated normally, the parent can obtain the exit status of the child.  
+- Note that we differentiate between the **exit status**, which is the argument to one of the three exit functions or the return value from main, and **the termination status**. The exit status is converted into a termination status by the kernel when `_exit` is finally called. Figure 8.4 describes the various ways the parent can examine the termination status of a child. If the child terminated normally, the parent can obtain the exit status of the child.
     ![macros_to_examine_the_termination_status](images/macros_to_examine_the_termination_status.md)
 
 - The status stored by waitpid() encodes both the reason that the child process was terminated and the exit code. The reason is stored in the least-significant byte (obtained by status & 0xff), and the exit code is stored in the next byte (masked by status & 0xff00 and extracted by WEXITSTATUS()). When the process terminates normally, the reason is 0 and so WEXITSTATUS is just equivalent to shifting by 8 (or dividing by 256). However, if the process is killed by a signal (such as SIGSEGV), there is no exit code, and you have to use WTERMSIG to extract the signal number from the reason byte. (For more details ,see [exit_status][1]).
@@ -311,86 +311,159 @@ int fexecve(int fd, char *const argv[], char *const envp[]);
 
 #### 8.11 Changing User IDs and Group IDs
 
-- In general, we try to use the **least-privilege** model when we design our applications.  According to this model, our programs should use the least privilege necessary to accomplish any given task. This reduces the risk that security might be compromised by a malicious user trying to trick our programs into using their privileges in unintended ways.
+- **Lease-privilege** model
+  - In general, we try to use the **least-privilege** model when we design our applications.
+  - According to this model, our programs should use the least privilege necessary to accomplish any given task.
+  - This reduces the risk that security might be compromised by a malicious user
+    trying to trick our programs into using their privileges in unintended ways.
 
-- We can set the real user ID and effective user ID with the setuid function. Similarly, we can set the real group ID and the effective group ID with the setgid function.
-```
-#include <unistd.h>
+- Set the real/effective user/group ID
+  - We can set the real user ID and effective user ID with the `setuid` function.
+  - Similarly, we can set the real group ID and the effective group ID with the `setgid` function.
 
-int setuid(uid_t uid);
-int setgid(gid_t gid);
+  ```c
+  #include <unistd.h>
 
-// Both return: 0 if OK, −1 on error
-```
+  int setuid(uid_t uid);
+  int setgid(gid_t gid);
+
+  // Both return: 0 if OK, −1 on error
+  ```
 
 - There are rules for who can change the IDs. (Everything we describe for the user ID also applies to the group ID.)
-    - If the process has superuser privileges, the setuid function sets the real user ID, effective user ID, and saved set-user-ID to uid.
-    - If the process does not have superuser privileges, but uid equals either the real user ID or the saved set-user-ID, setuid sets only the effective user ID to uid. The real user ID and the saved set-user-ID are not changed.
-    - If neither of these two conditions is true, errno is set to EPERM and -1 is returned.
+  - If the process has superuser privileges, 
+    the `setuid` function sets the real user ID, effective user ID, and saved set-user-ID to uid.
+  - If the process does not have superuser privileges, but uid equals either the real user ID or the saved set-user-ID,
+    `setuid` sets only the effective user ID to uid. The real user ID and the saved set-user-ID are not changed.
+  - If neither of these two conditions is true, `errno` is set to `EPERM` and -1 is returned.
 
 - We can make a few statements about the three user IDs that the kernel maintains.
-    - Only a superuser process can change the real user ID. Normally, the real user ID is set by the login(1) program when we log in and never changes. Because login is a superuser process, it sets all three user IDs when it calls setuid.
-    - The effective user ID is set by the exec functions only if the set-user-ID bit is set for the program file. If the set-user-ID bit is not set, the exec functions leave the effective user ID as its current value. We can call setuid at any time to set the effective user ID to either the real user ID or the saved set-user-ID. Naturally, we can’t set the effective user ID to any random value.
-    - The saved set-user-ID is copied from the effective user ID by exec. If the file’s set-user-ID bit is set, this copy is saved after exec stores the effective user ID from the file’s user ID.
+  - Only a superuser process can change the real user ID.
+    - Normally, the real user ID is set by the `login` program when we log in and never changes.
+    - Because `login` is a superuser process, it sets all three user IDs when it calls setuid.
+  - The effective user ID is set by the `exec` functions only if the set-user-ID bit is set for the program file.
+    - If the set-user-ID bit is not set, the exec functions leave the effective user ID as its current value.
+    - We can call setuid at any time to set the effective user ID to either the real user ID or the saved set-user-ID.
+    - Naturally, we can’t set the effective user ID to any random value.
+  - The saved set-user-ID is copied from the effective user ID by `exec`.
+    - If the file's set-user-ID bit is set, this copy is saved after `exec` stores the effective user ID from the file’s user ID.
 
-- Historically, BSD supported the swapping of the real user ID and the effective user ID with the setreuid function.
-```
-#include <unistd.h>
+- Historically, BSD supported the swapping of the real user ID and the effective user ID with the `setreuid` function.
 
-int setreuid(uid_t ruid, uid_t euid);
-int setregid(gid_t rgid, gid_t egid);
+  ```c
+  #include <unistd.h>
 
-// Both return: 0 if OK, −1 on error
-```
+  int setreuid(uid_t ruid, uid_t euid);
+  int setregid(gid_t rgid, gid_t egid);
 
-- POSIX.1 includes the two functions seteuid and setegid. These functions are similar to setuid and setgid, but only the effective user ID or effective group ID is changed.
-```
-#include <unistd.h>
+  // Both return: 0 if OK, −1 on error
+  ```
 
-int seteuid(uid_t uid);
-int setegid(gid_t gid);
+- Set effective user ID or effective group ID
+  - POSIX.1 includes the two functions `seteuid` and `setegid`.
+  - These functions are similar to setuid and setgid, but only the effective user ID or effective group ID is changed.
 
-// Both return: 0 if OK, −1 on error
-```
+  ```c
+  #include <unistd.h>
+
+  int seteuid(uid_t uid);
+  int setegid(gid_t gid);
+
+  // Both return: 0 if OK, −1 on error
+  ```
 
 #### 8.12 Interpreter Files
 
-- All contemporary UNIX systems support interpreter files. These files are text files that begin with a line of the form
-```
-#! pathname [ optional-argument ]
-```
+- All contemporary UNIX systems support interpreter files.
+  - These files are text files that begin with a line of the following form.
+  - The space between the exclamation point and the pathname is optional.
+  - The pathname is normally an absolute pathname, since no special operations are performed on it (i.e., PATH is not used).
 
-- The space between the exclamation point and the pathname is optional.
+  ```shell
+  #! pathname [ optional-argument ]
+  ```
 
-- The pathname is normally an absolute pathname, since no special operations are performed on it (i.e., PATH is not used).
+- How kernel executes these files
+  - The recognition of these files is done within the kernel as part of processing the exec system call.
+  - The actual file that gets executed by the kernel is not the interpreter file,
+    but rather the file specified by the pathname on the first line of the interpreter file.
+  - Be sure to differentiate
+    between the interpreter file—a text file that begins with `#!`—
+    and the interpreter, which is specified by the pathname on the first line of the interpreter file.
 
-- The recognition of these files is done within the kernel as part of processing the exec system call. The actual file that gets executed by the kernel is not the interpreter file, but rather the file specified by the pathname on the first line of the interpreter file. (Note: Be sure to differentiate between the interpreter file—a text file that begins with #!—and the interpreter, which is specified by the pathname on the first line of the interpreter file.)
-
-- A common use for the optional argument following the interpreter pathname is to specify the `-f` option for programs that support this option.
+- A common use for the optional argument following the interpreter pathname is
+  to specify the `-f` option for programs that support this option.
 
 - Interpreter files are useful for the following reasons:
-    - They hide that certain programs are scripts in some other language.
-    - Interpreter scripts provide an efficiency gain.
-    - Interpreter scripts let us write shell scripts using shells other than /bin/sh.
+  - They hide that certain programs are scripts in some other language.
+  - Interpreter scripts provide an efficiency gain.
+  - Interpreter scripts let us write shell scripts using shells other than `/bin/sh`.
 
 #### 8.13 system Function
 
-- It is convenient to execute a command string from within a program.
+- `system` function
+  - It is convenient to execute a command string from within a program.
+  - ISO C defines the `system` function, but its operation is strongly system dependent.
+  - POSIX.1 includes the system interface, expanding on the ISO C definition to describe its behavior in a POSIX environment.
 
-- ISO C defines the system function, but its operation is strongly system dependent.  POSIX.1 includes the system interface, expanding on the ISO C definition to describe its behavior in a POSIX environment.
-```
-#include <stdlib.h>
-int system(const char *cmdstring);
-```
+  ```c
+  #include <stdlib.h>
+  int system(const char *cmdstring);
+  ```
 
-- Because system is implemented by calling fork, exec, and waitpid, there are three types of return values.
-    - If either the fork fails or waitpid returns an error other than EINTR, system returns -1 with errno set to indicate the error.
-    - If the exec fails, implying that the shell can’t be executed, the return value is as if the shell had executed exit(127).
-    - Otherwise, all three functions—fork, exec, and waitpid—succeed, and the return value from system is the termination status of the shell, in the format specified for waitpid.
+- Return values of `system` function
+  - If cmdstring is a null pointer, system returns nonzero only if a command processor is available.
+  - Because `system` is implemented by calling `fork`, `exec`, and `waitpid`, there are three types of return values.
+  - If either the `fork` fails or `waitpid` returns an error other than `EINTR`,
+    `system` returns -1 with errno set to indicate the error.
+  - If the `exec` fails, implying that the shell can't be executed,
+    the return value is as if the shell had executed `exit(127)`.
+  - Otherwise, all three functions—`fork`, `exec`, and `waitpid`—succeed, 
+    and the return value from system is the termination status of the shell, in the format specified for waitpid.
+
+- Execute the command by shell
+  - The shell parses this null-terminated C string and breaks it up into separate command-line arguments for the command.
+  - The actual command string that is passed to the shell can contain any valid shell commands.
+    For example, input and output redirection using `<` and `>` can be used.
+
+- Execute the command ourself
+  - If we didn't use the shell to execute the command, but tried to execute the command ourself, it would be more difficult.
+  - First, we would want to call execlp, instead of execl, to use the `PATH` variable, like the shell.
+  - We would also have to break up the null-terminated C string into separate command-line arguments for the call to execlp.
+  - Finally, we wouldn't be able to use any of the shell metacharacters.
 
 #### 8.14 Process Accounting
 
-- Most UNIX systems provide an option to do process accounting. When enabled, the kernel writes an accounting record each time a process terminates. These accounting records typically contain a small amount of binary data with the name of the command, the amount of CPU time used, the user ID and group ID, the starting time, and so on.
+- Option of Process Accounting
+  - Most UNIX systems provide an option to do process accounting.
+  - When enabled, the kernel writes an accounting record each time a process terminates.
+
+- Content of Process Accounting
+  - These accounting records typically contain a small amount of binary data with the name of the command,
+  - the amount of CPU time used,
+  - the user ID and group ID,
+  - the starting time,
+  - and so on.
+
+- `acct` and `accton`
+  - `acct` function enables and disables process accounting
+  - `accton` command turns process accounting on or off
+  - The accounting records are written to the specified file, which is usually `/var/log/account/pacct` on Linux.
+
+#### 8.15 User Identification
+
+- The system normally keeps track of the name we log in under, and the `getlogin` function provides a way to fetch that login name.
+
+  ```c
+  #include <unistd.h>
+
+  char *getlogin(void);
+
+  // Returns: pointer to string giving login name if OK, NULL on error
+  ```
+
+- This function can fail if the process is not attached to a terminal that a user logged in to.
+  We normally call these processes **daemons**.
 
 #### 8.16 Process Scheduling
 
@@ -421,6 +494,9 @@ int system(const char *cmdstring);
   // Returns: (new nice value - NZERO) if OK, -1 on error
   // 伍注：成功时返回的是新的 nice 值减去 NZERO 的结果
   ```
+
+> 伍注：我在 Ubuntu 20.04 上测试本书的 nice 函数样例代码，得到的结果跟书中不太一样：
+> 将子进程的 nice 值增加 20 后，结果跟父进程并无明显区别，不像书中的两者相差 10 倍。
 
 - `incr` argument
   - The incr argument is added to the nice value of the calling process.
