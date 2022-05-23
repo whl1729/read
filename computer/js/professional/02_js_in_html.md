@@ -98,8 +98,8 @@
   - To unify the dynamic script loading behavior, you can explicitly mark the tag as synchronous.
 
 - Deprecated Syntax
-  -  Unless you are using XHTML or the `<script>` tag requests or wraps non-JavaScript,
-     the best practice is to not specify a type attribute at all.
+  - Unless you are using XHTML or the `<script>` tag requests or wraps non-JavaScript,
+    the best practice is to not specify a type attribute at all.
 
 #### 2.2 Inline Code vs External Files
 
@@ -117,7 +117,7 @@
 
 - To ensure that your page uses full standards mode, make sure that your page has a DOCTYPE like this: `<!DOCTYPE html>`
 
-#### 2.4 The <noscript> Element
+#### 2.4 The `<noscript>` Element
 
 - The `<noscript>` HTML element defines a section of HTML to be inserted
   if a script type on the page is unsupported or if scripting is currently turned off in the browser.

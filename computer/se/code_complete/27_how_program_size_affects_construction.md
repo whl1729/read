@@ -30,7 +30,7 @@
 #### 27.1 Communication and size
 
 - The more communication paths you have,
-  the more time you spend communicating and 
+  the more time you spend communicating and
   the more opportunities are created for communication mistakes.
 
 - The typical approach taken to streamlining communication is
@@ -72,14 +72,14 @@
     - Used by itself by the person who developed it or, informally, by a few others.
   - Software product
     - Used by people other than the original developer.
-    - Used in environments that differ from the environment in which the product was created. 
+    - Used in environments that differ from the environment in which the product was created.
   - Software system
     - A group of programs that work together.
   - System product
     - Polish of a product and the multiple parts of a system.
 
 - A common cause of estimation errors
-  - A failure to appreciate the differences in polish and complexity among programs, products, systems, and system products 
+  - A failure to appreciate the differences in polish and complexity among programs, products, systems, and system products
 
 - Another cause of estimation errors
   - As you scale up, construction becomes a smaller part of the total effort in a project.
@@ -106,4 +106,3 @@
 #### Q10.3：其他领域/学科有没有相关的知识点？日常生活中有没有类似的现象？
 
 ### Q11：这一章和我有什么关系？
-

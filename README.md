@@ -2,7 +2,7 @@
 
 记录我的读书感想。
 
-### 计算机
+## 计算机
 
 - [ ] [Code Complete](computer/se/code_complete/index.md)
 - [ ] [淘宝技术这十年](computer/it/taobao)
@@ -15,13 +15,13 @@
 - [ ] vim 实用技巧
 - [ ] 鸟哥的Linux私房菜
 
-### 方法论
+## 方法论
 
 - [ ] 如何阅读一本书
 - [ ] Learn More, Study Less
 - [ ] 暗时间
 
-### 历史
+## 历史
 
 - [ ] [极简欧洲史](history/shortest_europe)
 - [ ] 菊与刀
@@ -31,7 +31,7 @@
 
 - [ ] [精英的傲慢](politics/the_tyranny_of_merit.md)
 
-### 文学
+## 文学
 
 - [ ] 未央歌
 - [x] [史铁生文集](literature/shitiesheng)

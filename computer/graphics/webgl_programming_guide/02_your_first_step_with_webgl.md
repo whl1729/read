@@ -26,7 +26,7 @@
 
 ### Q6：这一章的关键句是什么？
 
-#### What is a canvas?
+#### What is a canvas
 
 - Using the `<canvas>` tag
   - id
@@ -103,4 +103,3 @@
 ### Q17: 这一章对我有哪些用处/帮助/启示？
 
 ### Q18: 我如何应用这一章的知识去解决问题？
-

@@ -37,7 +37,6 @@
 - Dogmatic methodologies and high-quality software development don't mix.
   - Fill your intellectual toolbox with programming alternatives, and improve your skill at choosing the right tool for the job.
 
-
 ### Q6：作者是怎么论述的？
 
 ### Q7：作者解决了什么问题？
@@ -55,4 +54,3 @@
 #### Q10.3：其他领域/学科有没有相关的知识点？日常生活中有没有类似的现象？
 
 ### Q11：这一章和我有什么关系？
-

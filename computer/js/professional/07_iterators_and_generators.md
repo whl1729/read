@@ -95,7 +95,7 @@
 
 ### Q8：我有哪些疑问？
 
-#### Q8.1: what is the differences between "iterator is closeable" and "iterator has return function"?
+#### Q8.1: what is the differences between "iterator is closeable" and "iterator has return function"
 
 ### Q9：这一章说得有道理吗？为什么？
 
@@ -108,4 +108,3 @@
 #### Q10.3：其他领域/学科有没有相关的知识点？日常生活中有没有类似的现象？
 
 ### Q11：这一章和我有什么关系？
-

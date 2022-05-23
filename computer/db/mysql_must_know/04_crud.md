@@ -77,7 +77,7 @@
 - 我们要习惯在删除数据的时候，添加条件语句 WHERE，防止误操作。
 
 - 删除数据语句的语法结构
--
+
   ```sql
   DELETE FROM table_name
   WHERE condition

@@ -38,7 +38,7 @@
 ### Q4：这一章的关键词是什么？
 
 - Psychological Distance
-  - The ease with which two items can be differentiated. 
+  - The ease with which two items can be differentiated.
 
 ### Q5：这一章的关键句是什么？
 
@@ -142,7 +142,7 @@
 - Psychological set vs Debugging
   - First, it speaks to the importance of good programming practices.
     Good formatting, commenting, variable names, routine names, and other elements of programming style
-    help structure the programming background so that likely defects appear as variations and stand out. 
+    help structure the programming background so that likely defects appear as variations and stand out.
   - The second impact of psychological set is in selecting parts of the program to examine when an error is found,
     you should be careful to overcome the "debugging blindness".
 
@@ -187,4 +187,3 @@
 #### Q10.3：其他领域/学科有没有相关的知识点？日常生活中有没有类似的现象？
 
 ### Q11：这一章和我有什么关系？
-

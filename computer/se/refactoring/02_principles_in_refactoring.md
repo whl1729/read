@@ -71,7 +71,7 @@
 - Merging vs Integration
   - Mergeing: merge mainline into my code, this is a one-way movement—
     my branch changes but the mainline doesn't.
-  - Integration: A two-way process that pulls changes from mainline into my branch and 
+  - Integration: A two-way process that pulls changes from mainline into my branch and
     then pushes the result back into mainline, changing both.
 - CI: Continuous Integration
 - Legacy Code: 历史代码
@@ -101,7 +101,7 @@
     I don’t add any tests (unless I find a case I missed earlier);
     I only change tests when I have to accommodate a change in an interface.
 
-#### Why Should We Refactor?
+#### Why Should We Refactor
 
 - Refactoring Improves the Design of Software
   - Without refactoring, the internal design—the architecture—of software tends to decay.
@@ -111,7 +111,7 @@
   - An important aspect of improving design is to eliminate duplicated code.
 
   > The essence of good design:
-  >     The code says everything once and only once.
+  > The code says everything once and only once.
 
 - Refactoring Makes Software Easier to Understand
   - Programming is all about **saying exactly what I want**.
@@ -121,7 +121,7 @@
   - Help in understanding the code also means help in spotting bugs.
 
   > Kent Beck:
-  >     I'm not a great programmer; I'm just a good programmer with great habits.
+  > I'm not a great programmer; I'm just a good programmer with great habits.
 
 - Refactoring Helps Me Program Faster
   - Software with a good internal design allows me to easily find how and where I need to make changes to add a new feature.
@@ -132,7 +132,7 @@
   - By putting our effort into a good internal design,
     we increase the stamina of the software effort, allowing us to go faster for longer.
 
-#### When Should We Refactor?
+#### When Should We Refactor
 
 - The Rule of Three
   - The first time you do something, you just do it.
@@ -162,7 +162,7 @@
 - The fastest way to add a new feature is to change the code to make it easy to add.
 
   > Kent Beck:
-  >   For each desired change, make the change easy (warning: this may be hard), then make the easy change
+  > For each desired change, make the change easy (warning: this may be hard), then make the easy change
 
 - Long-Term Refactoring
   - A useful strategy is to agree to gradually work on the problem over the course of the next few weeks.
@@ -252,7 +252,7 @@
   - To write tunable software first and then tune it for sufficient speed.
 
 - 3 approaches to writing fast software
-  - Time Budgeting 
+  - Time Budgeting
     - Often used in hard real-time systems
     - As you decompose the design, you give each component a budget for resources—time and footprint.
   - Constant Attention Approach
@@ -266,7 +266,7 @@
   - If I optimize all the code equally,
     I'll end up with 90 percent of my work wasted because it's optimizing code that isn't run much.
 
-#### Where did Refactoring Come From?
+#### Where did Refactoring Come From
 
 - Ward Cunningham and Kent Beck
   - Two of the first people to recognize the importance of refactoring
@@ -279,7 +279,7 @@
 
 - Bill Opdyke
   - Bill was interested in refactorings that would be useful for C++ framework development
-  - He researched the necessary semantics-preserving refactorings and 
+  - He researched the necessary semantics-preserving refactorings and
     showed how to prove they were semantics-preserving and
     how a tool could implement these ideas.
   - Bill's doctoral thesis was the first substantial work on refactoring.
@@ -339,4 +339,3 @@
 ### Q17: 这一章对我有哪些用处/帮助/启示？
 
 ### Q18: 我如何应用这一章的知识去解决问题？
-

@@ -30,7 +30,7 @@
   kf(x) = f(kx)
   ```
 
-- Affine transform 
+- Affine transform
   - One that performs a linear transform and then a translation.
   - All translation, rotation, scaling, reflection, and shearing matrices are affine.
   - The main characteristic of an affine matrix is that it preserves the parallelism of lines, but not necessarily lengths and angles.
@@ -61,7 +61,7 @@
 
 #### 4.7 Projections
 
-- The reason for transforming into the canonical view volume 
+- The reason for transforming into the canonical view volume
   - Clipping is more efficiently performed there.
 
 ### Q7：作者是怎么论述的？
@@ -87,4 +87,3 @@
 ### Q17: 这一章对我有哪些用处/帮助/启示？
 
 ### Q18: 我如何应用这一章的知识去解决问题？
-

@@ -39,7 +39,8 @@
 
 - Design Is a Wicked Problem
   - Horst Rittel and Melvin Webber defined a "wicked" problem as one that could be clearly defined only by solving it, or by solving part of it.
-  - This paradox implies, essentially, that you have to "solve" the problem once in order to clearly define it and then solve it again to create a solution that works.
+  - This paradox implies, essentially, that you have to "solve" the problem once in order to clearly define it
+    and then solve it again to create a solution that works.
 
 - Design Is a Sloppy Process (Even If it Produces a Tidy Result)
   - You take many false steps and go down many blind alleys— you make a lot of mistakes.
@@ -82,8 +83,10 @@
   - The accidental difficulties
 
 - The Accidental Difficulties
-  - Accidental difficulties related to clumsy language syntaxes were largely eliminated in the evolution from assembly language to third-generation languages and have declined in significance incrementally since then.
-  - Accidental difficulties related to noninteractive computers were resolved when time-share operating systems replaced batch-mode systems.
+  - Accidental difficulties related to clumsy language syntaxes were largely eliminated in the evolution
+    from assembly language to third-generation languages and have declined in significance incrementally since then.
+  - Accidental difficulties related to noninteractive computers were resolved
+    when time-share operating systems replaced batch-mode systems.
   - Integrated programming environments further eliminated inefficiencies in programming work arising from tools that worked poorly together.
 
 - The Essential Difficulties
@@ -303,13 +306,15 @@
 
 - Kinds of Coupling
   - Simple-data-parameter coupling
-    - Two modules are simple-data-parameter coupled if all the data passed between them are of primitive data types and all the data is passed through parameter lists.
+    - Two modules are simple-data-parameter coupled if all the data passed between them are of primitive data types
+      and all the data is passed through parameter lists.
   - Simple-object coupling
     - A module is simple-object coupled to an object if it instantiates that object.
   - Object-parameter coupling
     - Two modules are object-parameter coupled to each other if Object1 requires Object2 to pass it an Object3.
   - Semantic coupling
-    - The most insidious kind of coupling occurs when one module makes use not of some syntactic element of another module but of some semantic knowledge of another module’s inner workings.
+    - The most insidious kind of coupling occurs when one module makes use not of some syntactic element of another module
+      but of some semantic knowledge of another module’s inner workings.
 
 ##### 5.3.9 Look for Common Design Patterns
 
@@ -352,10 +357,12 @@
   - [ ] Have you iterated, selecting the best of several attempts rather than the first attempt?
   - [ ] Have you tried decomposing the system in several different ways to see which way will work best?
   - [ ] Have you approached the design problem both from the top down and from the bottom up?
-  - [ ] Have you prototyped risky or unfamiliar parts of the system, creating the absolute minimum amount of throwaway code needed to answer specific questions?
+  - [ ] Have you prototyped risky or unfamiliar parts of the system,
+        creating the absolute minimum amount of throwaway code needed to answer specific questions?
   - [ ] Has your design been reviewed, formally or informally, by others?
   - [ ] Have you driven the design to the point that its implementation seems obvious?
-  - [ ] Have you captured your design work using an appropriate technique such as a Wiki, e-mail, flip charts, digital photography, UML, CRC cards, or comments in the code itself?
+  - [ ] Have you captured your design work using an appropriate technique
+        such as a Wiki, e-mail, flip charts, digital photography, UML, CRC cards, or comments in the code itself?
 - Design Goals
   - [ ] Does the design adequately address issues that were identified and deferred at the architectural level?
   - [ ] Is the design stratified into layers?
@@ -401,12 +408,12 @@
 
 ### Q8：我有哪些疑问？
 
-#### Q8.1: What are the design challenges?
+#### Q8.1: What are the design challenges
 
 根据第5.1节的内容，软件设计的挑战来自于其本身的特点——
 软件设计充满不确定性，需要满足各种约束条件，需要平衡各方面资源，需要不断试错、不断改进。
 
-#### Q8.2: What are the key design concepts?
+#### Q8.2: What are the key design concepts
 
 根据第5.2节的内容，软件设计的关键概念包括：
 
@@ -442,4 +449,3 @@
 #### Q10.3：其他领域/学科有没有相关的知识点？日常生活中有没有类似的现象？
 
 ### Q11：这一章和我有什么关系？
-

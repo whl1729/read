@@ -21,7 +21,7 @@
 - Storage Oualifiers
   - `in` Specifies that the variable is an input to the shader stage.
   - `out` Specifies that the variable is an output from a shader stage.
-  - `uniform` Specifies that the value is passed to the shader from the application and 
+  - `uniform` Specifies that the value is passed to the shader from the application and
     is constant across a given primitive.
   - `buffer` Specifies read-write memory shared with the application.
 
@@ -62,4 +62,3 @@
 ### Q17: 这一章对我有哪些用处/帮助/启示？
 
 ### Q18: 我如何应用这一章的知识去解决问题？
-

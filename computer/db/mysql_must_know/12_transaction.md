@@ -79,11 +79,11 @@
   -> END
   -> //                                              -- 完成创建存储过程
   Query OK, 0 rows affected (0.05 sec)
-   
+
   mysql> DELIMITER ;                                 -- 恢复分隔符为；
   mysql> CALL demo.mytest();                         -- 调用存储过程
   Query OK, 0 rows affected (0.00 sec)
-   
+
   mysql> SELECT * FROM demo.mytrans;                 -- 销售流水没有插入
   Empty set (0.00 sec)
   mysql> SELECT * FROM demo.inventory;               -- 库存也没有消减，说明事务回滚了
@@ -118,4 +118,3 @@
 - 在 MySQL 中，并不是所有的操作都可以回滚。
   - 比如创建数据库、创建数据表、删除数据库、删除数据表等，这些操作是不可以回滚的。
   - 所以，你在操作的时候要特别小心，特别是在删除数据库、数据表时，最好先做备份，防止误操作。
-

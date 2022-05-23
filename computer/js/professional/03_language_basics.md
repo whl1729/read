@@ -121,7 +121,7 @@
     - Including semicolons helps prevent errors of omission.
     - Including semicolons also improves performance in certain situations
       because parsers try to correct syntax errors by inserting semicolons where they appear to belong.
-  -  it is a best practice to always use code blocks with control statements, even if there’s only one statement.
+  - It is a best practice to always use code blocks with control statements, even if there’s only one statement.
 
 #### 3.2 Keywords and Reserved Words
 
@@ -456,20 +456,20 @@
 将小数不断乘以2的若干次方，若最终能变成整数，则该小数能精确表示，否则不难。
 这也意味着：每次运算时，小数的最后一位只能为5，若不为5则可以立即判断不能精确表示了。
 
-#### Q8.2: Why is Number.MIN_VALUE 5e-324, and why is Number.MAX_VALUE 1.7976931348623157e+308 ?
+#### Q8.2: Why is Number.MIN_VALUE 5e-324, and why is Number.MAX_VALUE 1.7976931348623157e+308
 
 MIN_VALUE的取值与subnormal有关。MAX_VALUE的取值直接由最大底数乘以最大指数得到。
 
 详见[Double-precision floating-point format][1]。
 
-```
+```text
 0000 0000 0000 0001 ≙ +2−1022 × 2−52 = 2−1074 ≈ 4.9406564584124654 × 10−324 (Min. subnormal positive double)
 000F FFFF FFFF FFFF ≙ +2−1022 × (1 − 2−52) ≈ 2.2250738585072009 × 10−308 (Max. subnormal double)
 0010 0000 0000 0000 ≙ +2−1022 × 1 ≈ 2.2250738585072014 × 10−308 (Min. normal positive double)
 7FEF FFFF FFFF FFFF ≙ +21023 × (1 + (1 − 2−52)) ≈ 1.7976931348623157 × 10308 (Max. Double)
 ```
 
-#### Q8.3 Why does `isFinite(Number.MAX_VALUE + 1000)` still return true?
+#### Q8.3 Why does `isFinite(Number.MAX_VALUE + 1000)` still return true
 
 IEEE 754 标准规定: 只有大于等于`1.7976931348623158e+308` 的数才会被 round 到 Infinity.
 而 Number.MAX_VALUE 才是 `1.7976931348623157e+308`, 加上 1000 还远远不到 Infinity.
@@ -487,7 +487,6 @@ IEEE 754 标准规定: 只有大于等于`1.7976931348623158e+308` 的数才会�
 #### Q10.3：其他领域/学科有没有相关的知识点？日常生活中有没有类似的现象？
 
 ### Q11：这一章和我有什么关系？
-
 
   [1]: https://en.wikipedia.org/wiki/Double-precision_floating-point_format
   [2]: https://www.zhihu.com/question/24423421/answer/140269663

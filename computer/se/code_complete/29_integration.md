@@ -59,7 +59,7 @@
   - [ ] Does the strategy lead to easy diagnosis of defects?
   - [ ] Does the strategy keep scaffolding to a minimum?
   - [ ] Is the strategy better than other approaches?
-  - [ ] Have the interfaces between components been specified well? 
+  - [ ] Have the interfaces between components been specified well?
         (Specifying interfaces isn’t an integration task, but verifying that they have been specified well is.)
 
 - Daily Build and Smoke Test
@@ -88,4 +88,3 @@
 #### Q10.3：其他领域/学科有没有相关的知识点？日常生活中有没有类似的现象？
 
 ### Q11：这一章和我有什么关系？
-

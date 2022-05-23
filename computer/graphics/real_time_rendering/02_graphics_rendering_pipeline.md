@@ -120,7 +120,7 @@
 #### 2.3 Geometry Processing
 
 - This geometry processing stage is further divided into a pipeline of functional stages:
-  - vertex shading -> projection -> clipping -> screen mapping 
+  - vertex shading -> projection -> clipping -> screen mapping
 
 ##### 2.3.1 Vertex Shading
 
@@ -129,7 +129,8 @@
   - to evaluate whatever the programmer may like to have as vertex output data, such as a normal and texture coordinates.
 
 - Why it's called "Vertex Shading" (History)
-  - Traditionally much of the shade of an object was computed by applying lights to each vertex’s location and normal and storing only the resulting color at the vertex.
+  - Traditionally much of the shade of an object was computed by applying lights to each vertex's location and normal
+    and storing only the resulting color at the vertex.
   - These colors were then interpolated across the triangle.
   - For this reason, this programmable vertex processing unit was named the vertex shader.
   - With the advent of the modern GPU, along with some or all of the shading taking place per pixel,
@@ -193,4 +194,3 @@
 ### Q17: 这一章对我有哪些用处/帮助/启示？
 
 ### Q18: 我如何应用这一章的知识去解决问题？
-

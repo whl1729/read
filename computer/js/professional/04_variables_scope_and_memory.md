@@ -65,7 +65,7 @@
 - Primitive vs Reference Values
   - Changing Properties
     - For reference values, you can add, change, or delete properties and methods at any time.
-    - Primitive values can’t have properties added to them even though attempting to do so won’t cause an error. 
+    - Primitive values can’t have properties added to them even though attempting to do so won’t cause an error.
   - Coping Values
     - For primitive value,
       once the operation is complete, two variables can be used separately with no side effects.
@@ -235,4 +235,3 @@
 #### Q10.3：其他领域/学科有没有相关的知识点？日常生活中有没有类似的现象？
 
 ### Q11：这一章和我有什么关系？
-

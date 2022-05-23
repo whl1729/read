@@ -78,7 +78,7 @@
 
 - The need to measure the impact of each and every attempt at code tuning has been a constant.
 
-- Code tuning invariably involves tradeoffs among complexity, readability, simplicity, and maintainability on the one hand and 
+- Code tuning invariably involves tradeoffs among complexity, readability, simplicity, and maintainability on the one hand and
   a desire to improve performance on the other.
 
 #### Checklist: Code-Tuning Techniques
@@ -130,4 +130,3 @@
 #### Q10.3：其他领域/学科有没有相关的知识点？日常生活中有没有类似的现象？
 
 ### Q11：这一章和我有什么关系？
-

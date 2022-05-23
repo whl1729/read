@@ -22,7 +22,7 @@
 ### Q5：这一章的关键句是什么？
 
 - Defensive Programming
-  - The main idea is that if a routine is passed bad data, 
+  - The main idea is that if a routine is passed bad data,
     it won’t be hurt, even if the bad data is another routine’s fault.
 
 #### 8.1 Protecting Your Program from Invalid Input
@@ -75,7 +75,7 @@
     - Robustness means always trying to do something that will allow the software to keep operating,
       even if that leads to results that are inaccurate sometimes.
   - Which is more important
-    - Safety-critical applications tend to favor correctness to robustness. 
+    - Safety-critical applications tend to favor correctness to robustness.
     - Consumer applications tend to favor robustness to correctness.
 
 #### 8.4 Exceptions
@@ -134,7 +134,7 @@
 - Too much defensive programming creates problems of its own.
   - If you check data passed as parameters in every conceivable way in every conceivable place,
     your program will be fat and slow.
-  - What's worse, the additional code needed for defensive programming adds complexity to the software. 
+  - What's worse, the additional code needed for defensive programming adds complexity to the software.
 
 #### 8.9 Checklist: Defensive Programming
 
@@ -160,7 +160,8 @@
   - [ ] Is the code free of empty catch blocks? (Or if an empty catch block truly is appropriate, is it documented?)
 
 - Security Issues
-  - [ ] Does the code that checks for bad input data check for attempted buffer overflows, SQL injection, HTML injection, integer overflows, and other malicious inputs?
+  - [ ] Does the code that checks for bad input data check for
+        attempted buffer overflows, SQL injection, HTML injection, integer overflows, and other malicious inputs?
   - [ ] Are all error-return codes checked?
   - [ ] Are all exceptions caught?
   - [ ] Do error messages avoid providing information that would help an attacker break into the system?
@@ -168,7 +169,7 @@
 #### 8.10 Additional Resources
 
 - Security
-  - Howard, Michael, and David LeBlanc. Writing Secure Code, 2d ed. 
+  - Howard, Michael, and David LeBlanc. Writing Secure Code, 2d ed.
 - Assertions
   - Maguire, Steve. Writing Solid Code.
   - Meyer, Bertrand. Object-Oriented Software Construction.
@@ -196,4 +197,3 @@
 #### Q10.3：其他领域/学科有没有相关的知识点？日常生活中有没有类似的现象？
 
 ### Q11：这一章和我有什么关系？
-

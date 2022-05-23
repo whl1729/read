@@ -80,7 +80,7 @@
 
 - Unacceptable Cohesion
   - Procedural cohesion
-    - Operations in a routine are done in a specified order. 
+    - Operations in a routine are done in a specified order.
   - Logical cohesion
     - Several operations are stuffed into the same routine and one of the operations is selected by a control flag that's passed in.
   - Coincidental cohesion
@@ -147,9 +147,9 @@
 
 ### Q8：我有哪些疑问？
 
-#### Q8.1 Why are sequential cohesion, communicational cohesion and temporal cohesion less than ideal?
+#### Q8.1 Why are sequential cohesion, communicational cohesion and temporal cohesion less than ideal
 
-#### Q8.2 Why are procedural cohesion, logical cohesion and coincidental cohesion unacceptable?
+#### Q8.2 Why are procedural cohesion, logical cohesion and coincidental cohesion unacceptable
 
 ### Q9：这一章说得有道理吗？为什么？
 
@@ -162,4 +162,3 @@
 #### Q10.3：其他领域/学科有没有相关的知识点？日常生活中有没有类似的现象？
 
 ### Q11：这一章和我有什么关系？
-

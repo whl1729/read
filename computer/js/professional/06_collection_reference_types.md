@@ -118,7 +118,7 @@
   - `find()`
   - `findIndex()`
 
- - Iterative Methods
+- Iterative Methods
   - `every()` Runs the given function on every item in the array and
               returns true if the function returns true for every item.
   - `filter()` Runs the given function on every item in the array and
@@ -133,9 +133,9 @@
 - Reduction Methods
   - `reduce()`
   - `reduceRight()`
-  -  Both methods accept two arguments:
-     a function to call on each item and an optional initial value upon which the reduction is based.
-  -  The function passed into reduce() or reduceRight() accepts four arguments:
+  - Both methods accept two arguments:
+    a function to call on each item and an optional initial value upon which the reduction is based.
+  - The function passed into reduce() or reduceRight() accepts four arguments:
     - the previous value,
     - the current value,
     - the item’s index,
@@ -167,7 +167,7 @@
   - Maximum size
     - A malloc() call can take advantage of virtual memory,
       so the maximum size of the allocation is only bounded by the addressable system memory.
-    - ArrayBuffer allocation cannot exceed Number.MAX _ SAFE _ INTEGER (2 ^ 53) bytes.
+    - ArrayBuffer allocation cannot exceed Number.MAX_SAFE_ INTEGER (2 ^ 53) bytes.
   - Initialization
     - A successful malloc() invocation performs no initialization of the actual addresses.
     - Declaring an ArrayBuffer initializes all the bits to 0s.
@@ -279,4 +279,3 @@
 #### Q10.3：其他领域/学科有没有相关的知识点？日常生活中有没有类似的现象？
 
 ### Q11：这一章和我有什么关系？
-

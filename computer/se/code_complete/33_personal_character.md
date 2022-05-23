@@ -27,7 +27,7 @@
 - Your personal character directly affects your ability to write computer programs.
 - The characteristics that matter most are
   humility, curiosity, intellectual honesty, creativity and discipline, and enlightened laziness.
-- The characteristics of a superior programmer have almost nothing to do with talent and 
+- The characteristics of a superior programmer have almost nothing to do with talent and
   everything to do with a commitment to personal development.
 - Surprisingly, raw intelligence, experience, persistence, and guts hurt as much as they help.
 - Many programmers don’t actively seek new information and techniques and
@@ -54,4 +54,3 @@
 #### Q10.3：其他领域/学科有没有相关的知识点？日常生活中有没有类似的现象？
 
 ### Q11：这一章和我有什么关系？
-

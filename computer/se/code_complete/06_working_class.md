@@ -90,7 +90,7 @@
   - Implement "has a" through containment.
   - Implement "has a" through private inheritance as a last resort.
   - Be critical of classes that contain more than about seven data members.
-    - If a class contains more than about seven data members, 
+    - If a class contains more than about seven data members,
       consider whether the class should be decomposed into multiple smaller classes.
 
 - Inheritance ("is a" Relationships)
@@ -114,7 +114,7 @@
     will the data member be visible to derived classes?
 
 - Multiple Inheritance
-  - Multiple inheritance is useful primarily for defining "mixins". 
+  - Multiple inheritance is useful primarily for defining "mixins".
   - For the sake of controlling complexity, you should maintain a heavy bias against inheritance.
 
 - When to use inheritance and when to use containment
@@ -163,7 +163,7 @@
 - Classes to Avoid
   - Avoid creating god classes.
   - Eliminate irrelevant classes.
-    - If a class consists only of data but no behavior, ask yourself whether it’s really a class and 
+    - If a class consists only of data but no behavior, ask yourself whether it’s really a class and
       consider demoting it so that its member data just becomes attributes of one or more other classes.
   - Avoid classes named after verbs.
     - A class that has only behavior but no data is generally not really a class.
@@ -183,7 +183,7 @@
 - If you’re programming in a language that doesn’t support packages directly,
   you can create your own poor-programmer’s version of a package and enforce it through programming standards that include the following:
   - Naming conventions that differentiate which classes are public and which are for the package’s private use
-  - Naming conventions, code-organization conventions (project structure), 
+  - Naming conventions, code-organization conventions (project structure),
     or both that identify which package each class belongs to
   - Rules that define which packages are allowed to use which other packages,
     including whether the usage can be inheritance, containment, or both
@@ -243,13 +243,13 @@
 
 ### Q8：我有哪些疑问？
 
-#### Q8.1: What are good class interfaces?
+#### Q8.1: What are good class interfaces
 
-#### Q8.2: How to design a class?
+#### Q8.2: How to design a class
 
-#### Q8.3: How to implement a class?
+#### Q8.3: How to implement a class
 
-#### Q8.4: When should we create a class, and when shouldn't?
+#### Q8.4: When should we create a class, and when shouldn't
 
 ### Q9：这一章说得有道理吗？为什么？
 
@@ -262,4 +262,3 @@
 #### Q10.3：其他领域/学科有没有相关的知识点？日常生活中有没有类似的现象？
 
 ### Q11：这一章和我有什么关系？
-

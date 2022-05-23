@@ -48,7 +48,7 @@
 
 - Awk instructions consist of **patterns**, **actions**, or a combination of patterns and actions.
   - A pattern is a statement consisting of an expression of some type.
-  - Actions consist of one or more statements separated by semicolons or newlines and enclosed in curly braces. 
+  - Actions consist of one or more statements separated by semicolons or newlines and enclosed in curly braces.
 
 #### 6.3 How awk Works
 
@@ -130,11 +130,11 @@
   - When the default value of FS is used, awk separates fields by spaces and/or tabs, stripping leading blanks and tabs.
   - The value of FS can be changed by assigning a new value to it, either in a BEGIN statement or at the command line.
   - You may specify more than one input separator.
-    - If more than one character is used for FS, then the string is a regular expression and is enclosed in square brackets. 
+    - If more than one character is used for FS, then the string is a regular expression and is enclosed in square brackets.
     - e.g. `awk -F'[ :\t]'`
 
 - The Output Field Separator.
-  - The default output field separator is a single space and is stored in awk’s internal variable, OFS. 
+  - The default output field separator is a single space and is stored in awk’s internal variable, OFS.
   - The fields are jammed together if a comma is not used to separate the fields.
   - The OFS will not be evaluated unless the comma separates the fields.
   - The OFS can be changed.
@@ -220,7 +220,8 @@
   - `ARGV` Array of command-line arguments
   - `CONVFMT` Conversion format for numbers, %.6g, by default (gawk only)
   - `ENVIRON` An array containing the values of the current environment variables passed in from the shell
-  - `ERRNO` Contains a string describing a system error occurring from redirection when reading from the getline function or when using the close function (gawk only)
+  - `ERRNO` Contains a string describing a system error occurring from redirection
+    when reading from the getline function or when using the close function (gawk only)
   - `FIELDWIDTHS` A whitespace-separated list of fieldwidths used instead of FS when splitting records of fixed fieldwidth (gawk only)
   - `FILENAME` Name of current input file
   - `FNR` Record number in current file
@@ -239,7 +240,7 @@
 
 - BEGIN Patterns
   - The BEGIN pattern is followed by an action block that is executed before awk processes any lines from the input file.
-  - The BEGIN action is often used to change the value of the built-in variables, OFS, RS, FS, and so forth, 
+  - The BEGIN action is often used to change the value of the built-in variables, OFS, RS, FS, and so forth,
     to assign initial values to user-defined variables and to print headers or titles as part of the output.
   - 伍注: The shell commands in BEGIN action must be enclosed in **double quotes**.
 
@@ -377,4 +378,3 @@
 #### Q10.3：其他领域/学科有没有相关的知识点？日常生活中有没有类似的现象？
 
 ### Q11：这一章和我有什么关系？
-

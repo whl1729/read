@@ -79,4 +79,3 @@
   ALTER TABLE demo.importheadhist
   MODIFY importquantity DECIMAL(10,3);
   ```
-

@@ -24,7 +24,7 @@
 
 #### 8.1 Introduction
 
-- The First Line. 
+- The First Line.
   - The first line at the top left corner of the script will indicate the program that will be executing the lines in the script.
   - This line, known as the **shbang line**, is commonly written as `#!/bin/sh`.
   - The `#!` is called a magic number and is used by the kernel to identify the program that should be interpreting the lines in the script.
@@ -71,7 +71,7 @@
   - This command is also linked to the **bracket symbol**.
   - Either the test command is used, or the expression can be enclosed in set of single brackets.
   - Shell metacharacters (wildcards) are not expanded by the test command.
-  - The result of a command is tested, with zero status indicating success and nonzero status indicating failure. 
+  - The result of a command is tested, with zero status indicating success and nonzero status indicating failure.
 
 - String Test
   - `string1 = string2` String1 is equal to String2 (space surrounding = required)
@@ -109,7 +109,7 @@
 
 ##### 8.5.2 The if Command
 
-- The command or UNIX utility following the if construct is executed and its exit status is returned. 
+- The command or UNIX utility following the if construct is executed and its exit status is returned.
 
 - If the exit status is zero, the command succeeded and the statement(s) after the then keyword are executed.
 
@@ -134,7 +134,7 @@
   - The value of the case variable is matched against value1, value2, and so forth, until a match is found.
   - When a value matches the case variable, the commands following the value are executed until the double semicolons are reached.
     Then execution starts after the word esac.
-  - If the case variable is not matched, the program executes the commands after the `*)`, the default value, 
+  - If the case variable is not matched, the program executes the commands after the `*)`, the default value,
     until `;;` or `esac` is reached.
 
 - The case values allow the use of shell wildcards and the vertical bar (pipe symbol) for ORing two values.
@@ -168,6 +168,7 @@ esac
 ##### 8.6.1 The for Command
 
 - The for Command Format
+
   ```shell
   for variable in word_list
   do
@@ -175,12 +176,13 @@ esac
   done
   ```
 
-- If the for loop is not provided with a wordlist, it iterates through the positional parameters. 
+- If the for loop is not provided with a wordlist, it iterates through the positional parameters.
   This is the same as for `file in $*`.
 
 ##### 8.6.3 The while Command
 
 - The while Command Format
+
   ```shell
   while command
   do
@@ -194,6 +196,7 @@ esac
 ##### 8.6.4 The until Command
 
 - The until Command Format
+
   ```shell
   until command
   do
@@ -372,7 +375,7 @@ esac
 
 #### 8.9 The Command Line
 
-##### 8.9.1 Processing Command-Line Options with getopts.
+##### 8.9.1 Processing Command-Line Options with getopts
 
 - If you are writing scripts that require a number of command-line options, positional parameters are not always the most efficient.
 
@@ -403,7 +406,7 @@ esac
 
 ##### 8.10.1 The set Command and Options
 
-- The `set` Command 
+- The `set` Command
   - Can be used to turn shell options on and off, as well as for handling command-line arguments.
   - To turn an option on, the dash (-) is prepended to the option;
   - To turn an option off, the plus sign (+) is prepended to the option.
@@ -423,42 +426,43 @@ esac
 
 ##### 8.10.2 Shell Built-In Commands
 
-  - `:` Do-nothing command; returns exit status 0
-  - `. file` The dot command reads and executes command from file
-  - `break [n]` See “The break Command” on page 361
-  - `cd` Change directory
-  - `continue [n]`
-  - `echo [ args ]` Echo arguments
-  - `eval command` Shell scans the command line twice before execution
-  - `exec command` Runs command in place of this shell
-  - `exit [ n ]` Exit the shell with status n
-  - `export [ var ]` Make var known to subshells
-  - `hash` Controls the internal hash table for quicker searches for commands
-  - `kill [ –signal process ]` Sends the signal to the PID number or job number of the process
-  - `getopts` Used in shell scripts to parse command line and check for legal options
-  - `login [ username ]` Sign onto the system
-  - `newgrp [ arg ]` Logs a user into a new group by changing the real group and effective group ID
-  - `pwd` Print present working directory
-  - `read [ var ]` Read line from standard input into variable var
-  - `readonly [ var ]` Make variable var read-only; cannot be reset
-  - `return [ n ]` Return from a function where n is the exit value given to the return
-  - `set` See section 8.10.1.
-  - `shift [ n ]` Shift positional parameters to the left n times
-  - `stop pid` Halt execution of the process number PID
-  - `suspend` Stops execution of the current shell (but not if a login shell)
-  - `times` Print accumulated user and system times for processes run from this shell
-  - `trap [ arg ] [ n ]` When shell receives signal n ( 0, 1, 2, or 15 ), execute arg
-  - `type [ command ]` Prints the type of command; for example, pwd has a built-in shell
-  - `umask [ octal digits ]` User file creation mode mask for owner, group, and others
-  - `unset [ name ]` Unset value of variable or function
-  - `wait [ pid#n ]` Wait for background process with PID number n and report termination status
-  - `ulimit [ options size ]` Set maximum limits on processes
-  - `umask [ mask ]` Without argument, print out file creation mask for permissions
-  - `wait [ pid#n ]` Wait for background process with PID number n and report termination status
+- `:` Do-nothing command; returns exit status 0
+- `. file` The dot command reads and executes command from file
+- `break [n]` See “The break Command” on page 361
+- `cd` Change directory
+- `continue [n]`
+- `echo [ args ]` Echo arguments
+- `eval command` Shell scans the command line twice before execution
+- `exec command` Runs command in place of this shell
+- `exit [ n ]` Exit the shell with status n
+- `export [ var ]` Make var known to subshells
+- `hash` Controls the internal hash table for quicker searches for commands
+- `kill [ –signal process ]` Sends the signal to the PID number or job number of the process
+- `getopts` Used in shell scripts to parse command line and check for legal options
+- `login [ username ]` Sign onto the system
+- `newgrp [ arg ]` Logs a user into a new group by changing the real group and effective group ID
+- `pwd` Print present working directory
+- `read [ var ]` Read line from standard input into variable var
+- `readonly [ var ]` Make variable var read-only; cannot be reset
+- `return [ n ]` Return from a function where n is the exit value given to the return
+- `set` See section 8.10.1.
+- `shift [ n ]` Shift positional parameters to the left n times
+- `stop pid` Halt execution of the process number PID
+- `suspend` Stops execution of the current shell (but not if a login shell)
+- `times` Print accumulated user and system times for processes run from this shell
+- `trap [ arg ] [ n ]` When shell receives signal n ( 0, 1, 2, or 15 ), execute arg
+- `type [ command ]` Prints the type of command; for example, pwd has a built-in shell
+- `umask [ octal digits ]` User file creation mode mask for owner, group, and others
+- `unset [ name ]` Unset value of variable or function
+- `wait [ pid#n ]` Wait for background process with PID number n and report termination status
+- `ulimit [ options size ]` Set maximum limits on processes
+- `umask [ mask ]` Without argument, print out file creation mask for permissions
+- `wait [ pid#n ]` Wait for background process with PID number n and report termination status
 
 #### 8.11 LAB 8: Bourne Shell -- Getting Started
 
 - How do you know what shell you are using?
+
   ```shell
   echo $0
   echo $SHELL
@@ -475,6 +479,7 @@ esac
   ```
 
 - Remove two-character files starting with a or A.
+
   ```shell
   rm [aA]?
   ```
@@ -496,4 +501,3 @@ esac
 #### Q10.3：其他领域/学科有没有相关的知识点？日常生活中有没有类似的现象？
 
 ### Q11：这一章和我有什么关系？
-

@@ -272,7 +272,7 @@ product=`awk -v x=2.45 -v y=3.123 'BEGIN{printf "%.2f\n", x*y}'`
 
 ### Q8：我有哪些疑问？
 
-#### Q8.1 What is Word Splitting?
+#### Q8.1 What is Word Splitting
 
 - The shell scans the results of parameter expansion, command substitution, and arithmetic expansion
   that did  not  occur  within  double quotes for word splitting.
@@ -305,4 +305,3 @@ product=`awk -v x=2.45 -v y=3.123 'BEGIN{printf "%.2f\n", x*y}'`
 #### Q10.3：其他领域/学科有没有相关的知识点？日常生活中有没有类似的现象？
 
 ### Q11：这一章和我有什么关系？
-

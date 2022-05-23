@@ -65,4 +65,3 @@
 ALTER TABLE demo.goodsmaster
 MODIFY COLUMN price DOUBLE;
 ```
-

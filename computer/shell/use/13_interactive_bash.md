@@ -51,11 +51,11 @@
 #### 13.1 Introduction
 
 - Bash provides you with a large assortment of built-in commands and command-line shortcuts,
-  such as history, aliases, file and command completion, command-line editing, and many more. 
+  such as history, aliases, file and command completion, command-line editing, and many more.
 
 ##### 13.1.1 Versions of bash
 
-- The Bourne Again shell is a Capricorn, born on **January 10, 1988**, fathered by **Brian Fox** and 
+- The Bourne Again shell is a Capricorn, born on **January 10, 1988**, fathered by **Brian Fox** and
   later adopted by **Chet Ramey**, who now officially maintains bash, enhances it, and fixes bugs.
 
 ##### 13.1.2 Startup
@@ -63,14 +63,14 @@
 - Startup Process
   - the first process to run is called `init`, PID #1
   - `init` spawns a `getty` process
-  - `getty` opens up the terminal ports, 
+  - `getty` opens up the terminal ports,
     providing a place where standard input comes from and a place where standard output and errors go,
     and puts a login prompt on your screen.
   - `/bin/login` program is then executed.
     The login program prompts for a password, encrypts and verifies the password, sets up an initial environment,
     and starts up the login shell, `/bin/bash`, the last entry in the passwd file.
   - The `bash` process first executes `/etc/profile`, then `.bash_profile`, then `.bashrc`,
-    and finally the default dollar sign ($) prompt appears on your screen and the shell waits for commands. 
+    and finally the default dollar sign ($) prompt appears on your screen and the shell waits for commands.
 
   ![starting_the_bash_shell](images/starting_the_bash_shell.png)
 
@@ -79,7 +79,7 @@
 
 #### 13.2 The Environment
 
-- The environment of a process consists of 
+- The environment of a process consists of
   - variables,
   - open files,
   - the current working directory,
@@ -119,7 +119,7 @@
   - `--noprofile`
 
 - `.inputrc`
-  - Contains variables to customize keystroke behavior and settings that bind strings, macros, and control functions to keys. 
+  - Contains variables to customize keystroke behavior and settings that bind strings, macros, and control functions to keys.
 
 ##### 13.2.2 Setting bash Options with the Built-In set and shopt Commands
 
@@ -156,7 +156,7 @@
 - Setting the Prompt with Special Escape Sequences.
   - By inserting special backslash/escape sequences into the prompt string, you can customize the prompts.
 
-> Wu: Read the "PROMPTING" section of the bash manpage for more details. 
+> Wu: Read the "PROMPTING" section of the bash manpage for more details.
 
 ##### 13.2.4 The Search Path
 
@@ -248,8 +248,9 @@
 ##### 13.3.5 Multiple Commands at the Command Line
 
 - A command line can consist of multiple commands. Each command is separated by a **semicolon**.
+
   ```shell
-  $ ls; pwd; date;
+  ls; pwd; date;
   ```
 
 - The exit status is that of the last command in the chain of commands.
@@ -259,15 +260,16 @@
 - Commands may also be grouped so that all of the output is either piped to another command or redirected to a file.
 
   ```shell
-  $ ( ls; pwd; date ) > outputfile
+  (ls; pwd; date) > outputfile
   ```
 
 ##### 13.3.7 Conditional Execution of Commands
 
 - With conditional execution, two command strings are separated by the special metacharacters, `&&` and `||`.
+
   ```shell
-  $ cc prgm1.c –o prgm1 && prgm1
-  $ cc prog.c >& err || mail bob < err
+  cc prgm1.c –o prgm1 && prgm1
+  cc prog.c >& err || mail bob < err
   ```
 
 - The command on the right metacharacters will or will not be executed based on the exit condition of the command on the left.
@@ -275,7 +277,7 @@
 ##### 13.3.8 Commands in the Background
 
 - When you place an ampersand (&) at the end of the command line,
-  the shell will return the shell prompt immediately and execute the command in the background concurrently. 
+  the shell will return the shell prompt immediately and execute the command in the background concurrently.
 
 - The `!` variable contains the PID number of the last job put in the background.
 
@@ -313,7 +315,7 @@
 
 ##### 13.5.1 Command and Filename Completion
 
-- To save typing, bash implements command and filename completion, a mechanism that 
+- To save typing, bash implements command and filename completion, a mechanism that
   allows you to type part of a command or filename, press the Tab key, and the rest of the word will be completed for you.
 
 ##### 13.5.2 History
@@ -327,7 +329,7 @@
 - History Variables
   - `HISTFILE` Specifies file in which to store command history.
     The default value is `~/.bash_history`.
-    If unset, the command history is not saved when an interactive shell exits. 
+    If unset, the command history is not saved when an interactive shell exits.
   - `HISTFILESIZE` The maximum number of lines contained in the history file.
     When this variable is assigned a value, the history file is truncated, if necessary, to contain no more than that number of lines.
     The default value is 500.
@@ -353,7 +355,7 @@
 
 ##### 13.5.4 Command-Line Editing
 
-- The bash shell provides two built-in editors, emacs and vi, that allow you to interactively edit your history list. 
+- The bash shell provides two built-in editors, emacs and vi, that allow you to interactively edit your history list.
 
   ```shell
   set -o vi       # Sets the built-in vi editor for command-line editing of the history list.
@@ -391,7 +393,7 @@
   - `dirs -N` Displays the Nth entry counting from the right of the list shown by dirs, starting with zero.
 
 - `pushd`
-  - Adds a directory to the top of the directory stack, 
+  - Adds a directory to the top of the directory stack,
     or rotates the stack, making the new top of the stack the current working directory.
   - With no arguments, exchanges the top two directories.
 
@@ -468,7 +470,7 @@
 
 ##### 13.10.3 The declare Built-In
 
--  The `declare` command
+- The `declare` command
   - Declare variables and give them attributes.
   - If no NAMEs are given, display the attributes and values of all variables.
   - When used in a function, `declare` make each name local, as with the local command, unless the `-g` option is supplied.
@@ -552,7 +554,7 @@
   - `${parameter##word}` Matches the largest leading portion of the value of variable to pattern and removes it.
   - `${parameter%word}` Matches the smallest trailing portion of the value of variable to pattern and removes it.
   - `${parameter%%word}` Matches the largest trailing portion of the value of variable to pattern and removes it.
-  - `${parameter/pattern/string}` Pattern substitution. 
+  - `${parameter/pattern/string}` Pattern substitution.
 
 ##### 13.10.10 Positional Parameters
 
@@ -566,7 +568,7 @@
   - Backslash
     - Used to quote (or escape) a single character from interpretation.
     - The backslash is not interpreted if placed in single quotes.
-    - The backslash will protect the dollar sign ($), backquotes (` `), and the backslash from interpretation if enclosed in double quotes.
+    - The backslash will protect the dollar sign ($), backquotes (\`), and the backslash from interpretation if enclosed in double quotes.
   - Single quotes
     - They protect all metacharacters from interpretation.
     - To print a single quote, it must be enclosed in double quotes or escaped with a backslash.
@@ -580,7 +582,7 @@
 
 - Two Forms of Command Substitution
   - All shells use backquotes to perform command substitution.
-  - Bash allows two forms: 
+  - Bash allows two forms:
     - `command`, the older form
     - $(command), the new Korn-style form
 
@@ -602,7 +604,7 @@
 
 - When you are performing the expansion of variables, commands, arithmetic expressions, and pathnames,
   the shell is programmed to follow a specific order when scanning the command line.
-  Assuming that the variables are not quoted, the processing is performed in the following order: 
+  Assuming that the variables are not quoted, the processing is performed in the following order:
   - Brace expansion
   - Tilde expansion
   - Parameter expansion
@@ -621,7 +623,7 @@
   # Method 1: Create by declare command
   declare -a nums=(1 2 3)
   declare -a -r names=(GuoJing Huangrong YangGuo)  # readonly array
-  
+
   # Method 2: Create by local command (Only works inside function)
   local -a nums=(1 2 3)
 
@@ -700,7 +702,7 @@
 
 #### 13.19 Shell Invocation Options
 
-- There are two types of options: 
+- There are two types of options:
   - single-character options and multicharacter options.
   - The single-character options consist of a single leading dash followed by a single character.
   - The multicharacter options consist of two leading dashes and any number of characters.
@@ -718,7 +720,7 @@
 
 #### 13.20 Shell Built-In Commands
 
-- The help feature (Wu: e.g., `help` command) provided with bash gives you online help for any built-in command. 
+- The help feature (Wu: e.g., `help` command) provided with bash gives you online help for any built-in command.
 
 > Wu: Read the "SHELL BUILTIN COMMANDS" section for more details.
 
@@ -758,4 +760,3 @@
 #### Q10.3：其他领域/学科有没有相关的知识点？日常生活中有没有类似的现象？
 
 ### Q11：这一章和我有什么关系？
-

@@ -13,33 +13,33 @@
 ### 一级大纲
 
 - What Is JavaScript
-- JavaScript in HTML 
-- Language Basics 
-- Variables, Scope, and Memory 
-- Basic Reference Types 
-- Collection Reference Types 
-- Iterators and Generators 
-- Objects, Classes, and Object-Oriented Programming 
-- Proxies and Reflect 
-- Functions 
-- Promises and Async Functions 
-- The Browser Object Model 
-- Client Detection 
-- The Document Object Model 
-- DOM Extensions 
-- DOM Levels 2 and 3 
-- Events 
-- Animation and Graphics with Canvas 
-- Scripting Forms 
-- JavaScript APIs 
-- Error Handling and Debugging 
-- XML in JavaScript 
-- JSON 
-- Network Requests and Remote Resources 
-- Client-Side Storage 
-- Modules 
-- Workers 
-- Best Practices 
+- JavaScript in HTML
+- Language Basics
+- Variables, Scope, and Memory
+- Basic Reference Types
+- Collection Reference Types
+- Iterators and Generators
+- Objects, Classes, and Object-Oriented Programming
+- Proxies and Reflect
+- Functions
+- Promises and Async Functions
+- The Browser Object Model
+- Client Detection
+- The Document Object Model
+- DOM Extensions
+- DOM Levels 2 and 3
+- Events
+- Animation and Graphics with Canvas
+- Scripting Forms
+- JavaScript APIs
+- Error Handling and Debugging
+- XML in JavaScript
+- JSON
+- Network Requests and Remote Resources
+- Client-Side Storage
+- Modules
+- Workers
+- Best Practices
 
 ### 二级大纲
 
@@ -48,12 +48,12 @@
   - JavaScript Implementations
   - The Document Object Model
   - The Browser Object Model
-- JavaScript in HTML 
+- JavaScript in HTML
   - The `<script>` Element
   - Inline Code versus External Files
   - Document Modes
   - The `<noscript>` Element
-- Language Basics 
+- Language Basics
   - Syntax
   - Keywords and Reserved Words
   - Variables
@@ -61,7 +61,7 @@
   - Operators
   - Statements
   - Functions
-- Variables, Scope, and Memory 
+- Variables, Scope, and Memory
   - Primitive and Reference Values
   - Execution Context and Scope
   - Garbage Collection
@@ -70,7 +70,7 @@
   - The RegExp Type
   - Primitive Wrapper Types: Boolean, Number, String
   - Singleton Built-in Objects
-- Collection Reference Types 
+- Collection Reference Types
   - The Object Type
   - The Array Type
   - Typed Arrays
@@ -79,20 +79,20 @@
   - The Set Type
   - The WeakSet Type
   - Iteration and Spread Operators
-- Iterators and Generators 
+- Iterators and Generators
   - Introduction to Iteration
   - The Iterator Pattern
   - Generators
-- Objects, Classes, and Object-Oriented Programming 
+- Objects, Classes, and Object-Oriented Programming
   - Understanding Objects
   - Object Creation
   - Inheritance
   - Classes
-- Proxies and Reflect 
+- Proxies and Reflect
   - Proxy Fundamentals
   - Proxy Traps and Reflect Methods
   - Proxy Patterns
-- Functions 
+- Functions
   - Arrow Functions
   - Function Names
   - Arguments
@@ -109,53 +109,53 @@
   - Closures
   - Immediately Invoked Function Expressions
   - Private Variables
-- Promises and Async Functions 
+- Promises and Async Functions
   - Introduction to Asynchronous Programming
   - Promises
   - Async Functions
-- The Browser Object Model 
+- The Browser Object Model
   - The window Object
   - The location Object
   - The navigator Object
   - The screen Object
   - The history Object
-- Client Detection 
+- Client Detection
   - Capability Detection
   - User-Agent Detection
   - Software and Hardware Detection
-- The Document Object Model 
+- The Document Object Model
   - Hierarchy of Nodes
   - Working with the DOM
   - Matution Observers
-- DOM Extensions 
+- DOM Extensions
   - Selectors API
   - Element Traversal
   - HTML5
   - Proprietary Extensions
-- DOM Levels 2 and 3 
+- DOM Levels 2 and 3
   - DOM Changes
   - Styles
   - Traversals
   - Ranges
-- Events 
+- Events
   - Event Flow
   - Event Handlers
   - The Event Object
   - Event Types
   - Memory and Performance
   - Simulating Events
-- Animation and Graphics with Canvas 
+- Animation and Graphics with Canvas
   - Using requestAnimationFrame
   - Basic Canvas Usage
   - The 2D Context
   - WebGL
-- Scripting Forms 
+- Scripting Forms
   - Form Basics
   - Scripting Text Boxes
   - Scripting Select Boxes
   - Form Serialization
   - Rich Text Editing
-- JavaScript APIs 
+- JavaScript APIs
   - Atomics and SharedArrayBuffer
   - Cross-Context Messaging
   - Encoding API
@@ -168,19 +168,19 @@
   - Timing APIs
   - Web Components
   - The Web Cryptography API
-- Error Handling and Debugging 
+- Error Handling and Debugging
   - Browser Error Reporting
   - Error Handling
   - Debugging Techniques
   - Common Legacy Internet Explorer Errors
-- XML in JavaScript 
+- XML in JavaScript
   - XML DOM Support in Browsers
   - XPath Support in Browsers
   - XSLT Support in Browsers
-- JSON 
+- JSON
   - Syntax
   - Parsing and Serialization
-- Network Requests and Remote Resources 
+- Network Requests and Remote Resources
   - The XMLHttpRequest Object
   - XMLHttpRequest Level 2
   - Progress Events
@@ -189,16 +189,16 @@
   - The Fetch API
   - The Beacon API
   - Web Sockets
-- Client-Side Storage 
+- Client-Side Storage
   - Cookies
   - Web Storage
   - IndexedDB
-- Modules 
+- Modules
   - Understanding the module pattern
   - Improvising Module Systems
   - Working with pre-ES6 module loaders
   - Working with ES6 modules
-- Workers 
+- Workers
   - Introduction to Workers
   - Dedicated Workers
   - Shared Workers
@@ -240,7 +240,7 @@
 - Tail Call Optimization
 - Closures
 - Matution Observers
-- Scripting Forms 
+- Scripting Forms
   - Form Serialization
   - Rich Text Editing
 - XMLHttpRequest
@@ -279,4 +279,3 @@
 ### Q11.3：其他领域/学科有没有相关的知识点？日常生活中有没有类似的现象？
 
 ## Q12：这本书和我有什么关系？
-

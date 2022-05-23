@@ -150,12 +150,12 @@
 ##### 8.2.2 The Function Constructor Pattern
 
 - Calling a constructor using the new operator will do the following:
- - A new object is created in memory.
- - The new object's internal `[[Prototype]]` pointer is assigned to the constructor's prototype property.
- - The this value of the constructor is assigned to the new object (so this points to the new object).
- - The code inside the constructor is executed (adds properties to the new object).
- - If the constructor function returns a non-null value, that object is returned.
-   Otherwise, the new object that was just created is returned.
+  - A new object is created in memory.
+  - The new object's internal `[[Prototype]]` pointer is assigned to the constructor's prototype property.
+  - The this value of the constructor is assigned to the new object (so this points to the new object).
+  - The code inside the constructor is executed (adds properties to the new object).
+  - If the constructor function returns a non-null value, that object is returned.
+    Otherwise, the new object that was just created is returned.
 
 - Constructor functions vs normal functions
   - The only difference is the way in which they are called
@@ -319,4 +319,3 @@
 #### Q10.3：其他领域/学科有没有相关的知识点？日常生活中有没有类似的现象？
 
 ### Q11：这一章和我有什么关系？
-

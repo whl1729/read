@@ -65,7 +65,7 @@
 #### 11.4 Informal Naming Conventions
 
 - Guidelines for a Language-Independent Convention
-  - Differentiate between variable names and routine names 
+  - Differentiate between variable names and routine names
   - Differentiate between classes and objects
   - Identify global variables
   - Identify member variables
@@ -173,4 +173,3 @@
 #### Q10.3：其他领域/学科有没有相关的知识点？日常生活中有没有类似的现象？
 
 ### Q11：这一章和我有什么关系？
-

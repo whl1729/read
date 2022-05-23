@@ -100,7 +100,7 @@
 - [ ] C++ Coding Standards: 101 Rules Guidelines and Best Practices
 - [ ] The C++ Programming Language
 - [ ] Effective STL
-- [ ] The C++ Standard Library 
+- [ ] The C++ Standard Library
 - [ ] Modern C++ Design: Generic Programming and Design Patterns Applied
 - [ ] ISO/IEC N4800（C++标准文档）
 

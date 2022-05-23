@@ -25,45 +25,45 @@
 ### 二级大纲
 
 - Laying the Foundation
-  - Welcome to Software Construction 
-  - Metaphors for a Richer Understanding of Software Development 
+  - Welcome to Software Construction
+  - Metaphors for a Richer Understanding of Software Development
   - Measure Twice, Cut Once: Upstream Prerequisites
-  - Key Construction Decisions 
+  - Key Construction Decisions
 - Creating High-Quality Code
-  - Design in Construction 
-  - Working Classes 
+  - Design in Construction
+  - Working Classes
   - High-Quality Routines
-  - Defensive Programming 
-  - The Pseudocode Programming Process 
+  - Defensive Programming
+  - The Pseudocode Programming Process
 - Variables
   - General Issues in Using Variables
-  - The Power of Variable Names 
-  - Fundamental Data Types 
-  - Unusual Data Types 
+  - The Power of Variable Names
+  - Fundamental Data Types
+  - Unusual Data Types
 - Statements
   - Organizing Straight-Line Code
   - Using Conditionals
-  - Controlling Loops 
+  - Controlling Loops
   - Unusual Control Structures
   - Table-Driven Methods
   - General Control Issues
 - Code Improvements
   - The Software-Quality Landscape
   - Collaborative Construction
-  - Developer Testing 
-  - Debugging 
-  - Refactoring 
+  - Developer Testing
+  - Debugging
+  - Refactoring
   - Code-Tuning Strategies
-  - Code-Tuning Techniques 
+  - Code-Tuning Techniques
 - System Considerations
-  - How Program Size Affects Construction 
-  - Managing Construction 
-  - Integration 
-  - Programming Tools 
+  - How Program Size Affects Construction
+  - Managing Construction
+  - Integration
+  - Programming Tools
 - Software Craftsmanship
   - Layout and Style
-  - Self-Documenting Code 
-  - Personal Character 
+  - Self-Documenting Code
+  - Personal Character
   - Themes in Software Craftsmanship
   - Where to Find More Information
 
@@ -74,7 +74,7 @@
 - Software Construction
 - Measure Twice, Cut Once
   - (carpentry, literally) One should double-check one's measurements for accuracy before cutting a piece of wood;
-    otherwise it may be necessary to cut again, wasting time and material. 
+    otherwise it may be necessary to cut again, wasting time and material.
   - (figuratively, by extension) Plan and prepare in a careful, thorough manner before taking action.
 - Straight-Line
 - Code-Tuning
@@ -122,4 +122,3 @@
 ### Q11.3：其他领域/学科有没有相关的知识点？日常生活中有没有类似的现象？
 
 ## Q12：这本书和我有什么关系？
-

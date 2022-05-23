@@ -42,9 +42,9 @@
 
 #### 7.2 The Environment
 
-- The environment of a process consists of 
-  - variables, 
-  - open files, 
+- The environment of a process consists of
+  - variables,
+  - open files,
   - the current working directory,
   - functions,
   - resource limits,
@@ -54,7 +54,7 @@
 - The `/etc/profile` File
   - The /etc/profile file is a systemwide initialization file set up by the system administrator to perform tasks when the user logs on.
   - It is executed when the Bourne shell starts up.
-  - It is available to all Bourne and Korn shell users on the system 
+  - It is available to all Bourne and Korn shell users on the system
   - and normally performs such tasks as checking the mail spooler for new mail and displaying the message of the day from the /etc/motd file.
 
 - The `.profile` File.
@@ -71,7 +71,9 @@
 
 - The `hash` command
   - Controls the internal hash table used by the shell to improve efficiency in searching for commands.
-  - Instead of searching the path each time a command is entered, the first time you type a command, the shell uses the search path to find the command, and then stores it in a table in the shell’s memory.
+  - Instead of searching the path each time a command is entered,
+    the first time you type a command, the shell uses the search path to find the command,
+    and then stores it in a table in the shell’s memory.
   - The next time you use the same command, the shell uses the hash table to find it.
 
 - The dot command
@@ -97,7 +99,7 @@
 
 - Commands in the Background
   - By placing an ampersand (`&`) at the end of the command line,
-    the shell will return the shell prompt immediately and execute the command in the background concurrently. 
+    the shell will return the shell prompt immediately and execute the command in the background concurrently.
 
 #### 7.4 Shell Metacharacters (Wildcards)
 
@@ -135,7 +137,7 @@
 
 - Local Variables
   - When assigning a value, there can be no whitespace surrounding the equal sign.
-  - To set the variable to null, the equal sign is followed by a newline. 
+  - To set the variable to null, the equal sign is followed by a newline.
   - A dollar sign is used in front of a variable to extract the value stored there.
 
 - The Scope of Local Variables
@@ -147,15 +149,15 @@
   - A read-only variable cannot be redefined or unset.
 
   ```shell
-  $ name=Tom
-  $ readonly name
+  name=Tom
+  readonly name
   ```
 
 - Environment Variables
   - Environment variables are available to the shell in which they are created and any subshells or processes spawned from that shell.
   - Some of the environment variables, such as HOME, LOGNAME, PATH, and SHELL, are set before you log on by the /bin/login program.
   - Normally, environment variables are defined and stored in the .profile file in the user’s home directory.
-  - To set environment variables, the `export` command is used either after assigning a value or when the variable is set. 
+  - To set environment variables, the `export` command is used either after assigning a value or when the variable is set.
   - Exported values are not propagated upward to the parent shell.
 
 - Bourne Shell Environment Variables
@@ -234,7 +236,7 @@
 - The Backslash
   - The backslash is used to quote (or escape) a single character from interpretation.
   - The backslash is not interpreted if placed in single quotes.
-  - The backslash will protect the dollar sign ($), backquotes (` `), and the backslash from interpretation if enclosed in double quotes. 
+  - The backslash will protect the dollar sign ($), backquotes (\`), and the backslash from interpretation if enclosed in double quotes.
 
 - Single Quotes
   - Single quotes must be matched.
@@ -254,6 +256,7 @@
 #### 7.9 An Introduction to Functions
 
 - Defining Functions
+
   ```shell
   function_name () { commands ; commands; }
   ```
@@ -326,4 +329,3 @@
 #### Q10.3：其他领域/学科有没有相关的知识点？日常生活中有没有类似的现象？
 
 ### Q11：这一章和我有什么关系？
-

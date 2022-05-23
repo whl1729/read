@@ -26,15 +26,15 @@
 
 ### Q5：这一章的关键句是什么？
 
-#### 5.1 What is sed?
+#### 5.1 What is sed
 
-- Sed is a streamlined, noninteractive editor. 
+- Sed is a streamlined, noninteractive editor.
 
 - The sed editor is nondestructive.
   - It does not change your file unless you save the output with shell redirection.
   - All lines are printed to the screen by default.
 
-#### 5.3 How does sed work?
+#### 5.3 How does sed work
 
 - The sed editor processes a file (or input) **one line at a time** and sends its output to the screen.
 
@@ -56,8 +56,8 @@
   some character, say x, is preceded by a backslash, followed by the regular expression, and that character.
 
   ```shell
-  $ sed -n '/12\/10\/04/p' datafile
-  $ sed -n '\x12/10/04xp' datafile
+  sed -n '/12\/10\/04/p' datafile
+  sed -n '\x12/10/04xp' datafile
   ```
 
 - Exit status
@@ -179,4 +179,3 @@
 #### Q10.3：其他领域/学科有没有相关的知识点？日常生活中有没有类似的现象？
 
 ### Q11：这一章和我有什么关系？
-

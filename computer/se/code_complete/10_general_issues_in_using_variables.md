@@ -106,7 +106,8 @@
   - The earlier the binding time, the lower the flexibility and the lower the complexity.
   - The greater the flexibility desired, the higher the complexity of the code needed to support that flexibility and the more error-prone the code will be.
   - Because successful programming depends on minimizing complexity,
-    a skilled programmer will build in as much flexibility as needed to meet the software's requirements but will not add flexibility—and related complexity—beyond what's required.
+    a skilled programmer will build in as much flexibility as needed to meet the software's requirements
+    but will not add flexibility—and related complexity—beyond what's required.
 
 #### 10.7 Relationship Between Data Types and Control Structures
 
@@ -168,4 +169,3 @@
 #### Q10.3：其他领域/学科有没有相关的知识点？日常生活中有没有类似的现象？
 
 ### Q11：这一章和我有什么关系？
-
