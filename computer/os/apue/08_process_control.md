@@ -53,7 +53,7 @@
   - No program on disk corresponds to this process, which is part of the kernel and is known as a system process.
 
 - Process ID 1
-  - Process ID 1 is usually the init process and is invoked by the kernel at the end of the bootstrap procedure.
+  - Process ID 1 is usually the `init` process and is invoked by the kernel at the end of the bootstrap procedure.
   - The program file for this process was `/etc/init` in older versions of the UNIX System and is `/sbin/init` in newer versions.
   - This process is responsible for bringing up a UNIX system after the kernel has been bootstrapped.
   - `init` usually reads the system-dependent initialization files —
@@ -63,7 +63,8 @@
   - It is a normal user process, not a system process within the kernel, like the swapper,
     although it does run with superuser privileges.
 
-- In addition to the process ID, there are other identifiers for every process. The following functions return these identifiers.
+- In addition to the process ID, there are other identifiers for every process.
+  The following functions return these identifiers.
 
   ```c
   #include <unistd.h>
@@ -87,7 +88,7 @@
   // Returns: effective group ID of calling process
   ```
 
-#### 8.3 fork Function
+#### 8.3 `fork` Function
 
 - An existing process can create a new one by calling the `fork` function.
 
@@ -109,6 +110,11 @@
     and the child can always call getppid to obtain the process ID of its parent.
     (Process ID 0 is reserved for use by the kernel, so it's not possible for 0 to be the process ID of a child.)
 
+- The child is a copy of the parent.
+  - For example, the child gets a copy of the parent’s data space, heap, and stack.
+  - Note that this is a copy for the child; the parent and the child do not share these portions of memory.
+  - However, the parent and the child do share the text segment.
+
 - COW (Copy-On-Write)
   - Modern implementations don't perform a complete copy of the parent's data, stack, and heap,
     since a `fork` is often followed by an `exec`.
@@ -117,8 +123,45 @@
   - If either process tries to modify these regions, the kernel then makes a copy of that piece of memory only,
     typically a "page" in a virtual memory system.
 
+- File Sharing
+  - All file descriptors that are open in the parent are duplicated in the child.
+  - It is important that the parent and the child share the same file offset.
+  - If both parent and child write to the same descriptor that was open before the `fork`,
+    without any form of synchronization, such as having the parent wait for the child,
+    their output will be intermixed.
+
+- There are two normal cases for handling the descriptors after a `fork`.
+  - The parent waits for the child to complete.
+    - In this case, the parent does not need to do anything with its descriptors.
+    - When the child terminates,
+      any of the shared descriptors that the child read from or wrote to
+      will have their file offsets updated accordingly.
+  - Both the parent and the child go their own ways.
+    - Here, after the fork, the parent closes the descriptors that it doesn't need,
+      and the child does the same thing.
+    - This way, neither interferes with the other's open descriptors.
+    - This scenario is often found with network servers.
+
+- Properties of the parent that are inherited by the child:
+  - Open files
+  - Real user ID, real group ID, effective user ID, and effective group ID
+  - Supplementary group IDs
+  - Process group ID
+  - Session ID
+  - Controlling terminal
+  - The set-user-ID and set-group-ID flags
+  - Current working directory
+  - Root directory
+  - File mode creation mask
+  - Signal mask and dispositions
+  - The close-on-exec flag for any open file descriptors
+  - Environment
+  - Attached shared memory segments
+  - Memory mappings
+  - Resource limits
+
 - The differences between the parent and child are
-  - The return values from fork are different.
+  - The return values from `fork` are different.
   - The process IDs are different.
   - The two processes have different parent process IDs:
     - the parent process ID of the child is the parent;
@@ -128,7 +171,21 @@
   - Pending alarms are cleared for the child.
   - The set of pending signals for the child is set to the empty set.
 
-#### 8.4 vfork Function
+- The two main reasons for fork to fail are
+  - if too many processes are already in the system, which usually means that something else is wrong.
+  - if the total number of processes for this real user ID exceeds the system’s limit.
+
+- There are two uses for fork:
+  - When a process wants to duplicate itself
+    so that the parent and the child can each execute different sections of code at the same time.
+    This is common for network servers—
+    - The parent waits for a service request from a client.
+    - When the request arrives, the parent calls `fork` and lets the child handle the request.
+    - The parent goes back to waiting for the next service request to arrive.
+  - When a process wants to execute a different program.
+    This is common for shells. In this case, the child does an exec right after it returns from the fork.
+
+#### 8.4 `vfork` Function
 
 - `vfork` vs `fork`
   - The `vfork` function was intended to create a new process for the purpose of executing a new program.
@@ -151,7 +208,7 @@
   - This can lead to **deadlock**
     if the child depends on further actions of the parent before calling either of these two functions.
 
-#### 8.5 exit Functions
+#### 8.5 `exit` Functions
 
 - A process can terminate normally in five ways:
   - Executing a return from the main function.
@@ -171,11 +228,11 @@
     - The return value of the thread is not used as the return value of the process.
     - When the last thread returns from its start routine, the process exits with a termination status of 0.
   - Calling the `pthread_exit` function from the last thread in the process.
-    - The exit status of the process in this situation is always 0, regardless of the argument passed to pthread_exit.
+    - The exit status of the process in this situation is always 0, regardless of the argument passed to `pthread_exit`.
 
 - The three forms of abnormal termination are as follows:
   - Calling `abort`.
-    - This is a special case of the next item, as it generates the SIGABRT signal.
+    - This is a special case of the next item, as it generates the `SIGABRT` signal.
   - When the process receives certain signals.
     - The signal can be generated
       - by the process itself (e.g., by calling the `abort` function),
@@ -207,7 +264,7 @@
 - Examine the termination status of a child
   - If the child terminated normally, the parent can obtain the exit status of the child.
 
-    ![macros_to_examine_the_termination_status](images/macros_to_examine_the_termination_status.md)
+    ![macros_to_examine_the_termination_status](images/macros_to_examine_the_termination_status.png)
 
 - [The reason and the exit code][1]
   - The status stored by `waitpid()` encodes both the reason that the child process was terminated and the exit code.
@@ -230,6 +287,14 @@
 > Wu: On Ubuntu 18, The `systemd --user`, whose pid isn't 1,  becomes the parent process of any orphan process.
 
 - What happens if the child terminates before the parent?
+  - The kernel keeps a small amount of information for every terminating process,
+    so that the information is available when the parent of the terminating process calls wait or waitpid.
+  - Minimally, this information consists of the process ID,
+    the termination status of the process,
+    and the amount of CPU time taken by the process.
+  - The kernel can discard all the memory used by the process and close its open files.
+
+- Zombie
   - In UNIX System terminology, a process that has terminated, but whose parent has not yet waited for it,
     is called a **zombie**.
 
@@ -239,7 +304,7 @@
     init calls one of the wait functions to fetch the termination status.
   - By doing this, init prevents the system from being clogged by zombies.
 
-#### 8.6 wait and waitpid Functions
+#### 8.6 `wait` and `waitpid` Functions
 
 - `SIGCHLD` signal
   - When a process terminates, either normally or abnormally,
@@ -267,17 +332,25 @@
     whereas `waitpid` has an option that prevents it from blocking.
   - The `waitpid` function doesn't wait for the child that terminates first;
     it has a number of options that control which process it waits for.
+  - The `waitpid` function provides 3 features that aren't provided by the `wait` function:
+    - The `waitpid` function lets us wait for one particular process,
+      whereas the `wait` function returns the status of any terminated child.
+    - The `waitpid` function provides a nonblocking version of `wait`.
+      There are times when we want to fetch a child's status, but we don't want to block.
+    - The `waitpid` function provides support for job control with the `WUNTRACED` and `WCONTINUED` options.
 
-- The value of pid in the waitpid function can be:
+- The value of `pid` in the `waitpid` function can be:
   - `< -1` meaning wait for any child process whose process group ID is equal to the absolute value of pid.
   - `-1`   meaning wait for any child process.
   - `0`    meaning wait for any child process whose process group ID is equal to that of the calling process.
   - `> 0`  meaning wait for the child whose process ID is equal to the value of pid.
 
-- The value of options is an OR of zero or more of the following constants:
+- The value of `options` is an OR of zero or more of the following constants:
   - `WNOHANG` return immediately if no child has exited.
   - `WUNTRACED` also return if a child has stopped.
   - `WCONTINUED` also return if a stopped child has been resumed by delivery of `SIGCONT`.
+
+  ![the_options_constants_for_waitpid](images/the_options_constants_for_waitpid.png)
 
 - **fork twice**
   - If we want to write a process
@@ -286,7 +359,7 @@
     and we don't want the child to become a zombie until we terminate,
     the trick is to call **fork twice**.
 
-#### 8.7 waitid Function
+#### 8.7 `waitid` Function
 
 - The `waitid` function is similar to `waitpid`, but provides extra flexibility.
 
@@ -319,7 +392,7 @@
 
 - **At least one of WCONTINUED, WEXITED, or WSTOPPED must be specified in the options argument.**
 
-#### 8.8 wait3 and wait4 Funcitons
+#### 8.8 `wait3` and `wait4` Funcitons
 
 - `wait3` and `wait4` provides an additional argument
   - that allows the kernel to return **a summary of the resources**
@@ -373,7 +446,7 @@
   } else if (pid == 0) { /* child */
       /* child does whatever is necessary ... */
 
-      TELL_PARENT(getppid()); /* tell parent we’re done */
+      TELL_PARENT(getppid()); /* tell parent we're done */
       WAIT_PARENT(); /* and wait for parent */
 
       /* and the child continues on its way ... */
@@ -391,7 +464,7 @@
   exit(0);
   ```
 
-#### 8.10 exec Functions
+#### 8.10 `exec` Functions
 
 - What `exec` does
   - The process ID does not change across an `exec`, because a new process is not created;
@@ -416,7 +489,7 @@
   // All seven return: −1 on error, no return on success
   ```
 
-- How to remember these exec functions?
+- How to remember these `exec` functions?
   - The letter p means that
     the function takes a filename argument and uses the PATH environment variable to find the executable file.
     - If the specified filename includes a slash character, then PATH is ignored,
@@ -426,6 +499,8 @@
     which means that it takes an `argv[]` vector.
   - The letter e means that
     the function takes an `envp[]` array instead of using the current environment.
+
+  ![relationship_of_the_seven_exec_functions](images/relationship_of_the_seven_exec_functions.png)
 
 - If the file isn't a machine executable
   - If either `execlp` or `execvp` finds an executable file using one of the path prefixes,
@@ -440,7 +515,7 @@
     - Normally, login creates a specific environment with only a few variables defined
       and lets us, through the shell start-up file, add variables to the environment when we log in.
 
-- After an exec, the new program inherits additional properties from the calling process:
+- After an `exec`, the new program inherits additional properties from the calling process:
   - Process ID and parent process ID
   - Real user ID and real group ID
   - Supplementary group IDs
@@ -461,9 +536,9 @@
 - Handle the open files
   - The handling of open files depends on the value of the `close-on-exec` flag for each descriptor.
   - Every open descriptor in a process has a `close-on-exec` flag.
-  - If this flag is set, the descriptor is closed across an exec.
-    Otherwise, the descriptor is left open across the exec.
-  - The default is to leave the descriptor open across the exec
+  - If this flag is set, the descriptor is closed across an `exec`.
+    Otherwise, the descriptor is left open across the `exec`.
+  - The default is to leave the descriptor open across the `exec`
     unless we specifically set the `close-on-exec` flag using `fcntl`.
 
 #### 8.11 Changing User IDs and Group IDs
@@ -487,21 +562,25 @@
   // Both return: 0 if OK, −1 on error
   ```
 
-- There are rules for who can change the IDs. (Everything we describe for the user ID also applies to the group ID.)
+- Rules for who can change the IDs (Everything we describe for the user ID also applies to the group ID.)
   - If the process has superuser privileges,
     the `setuid` function sets the real user ID, effective user ID, and saved set-user-ID to uid.
   - If the process does not have superuser privileges, but uid equals either the real user ID or the saved set-user-ID,
     `setuid` sets only the effective user ID to uid. The real user ID and the saved set-user-ID are not changed.
   - If neither of these two conditions is true, `errno` is set to `EPERM` and -1 is returned.
 
-- We can make a few statements about the three user IDs that the kernel maintains.
+- Real user ID
   - Only a superuser process can change the real user ID.
   - Normally, the real user ID is set by the `login` program when we log in and never changes.
-  - Because `login` is a superuser process, it sets all three user IDs when it calls setuid.
+  - Because `login` is a superuser process, it sets all three user IDs when it calls `setuid`.
+
+- Effective user ID
   - The effective user ID is set by the `exec` functions only if the set-user-ID bit is set for the program file.
-  - If the set-user-ID bit is not set, the exec functions leave the effective user ID as its current value.
-  - We can call setuid at any time to set the effective user ID to either the real user ID or the saved set-user-ID.
-  - Naturally, we can’t set the effective user ID to any random value.
+  - If the set-user-ID bit is not set, the `exec` functions leave the effective user ID as its current value.
+  - We can call `setuid` at any time to set the effective user ID to either the real user ID or the saved set-user-ID.
+  - Naturally, we can't set the effective user ID to any random value.
+
+- Saved set-user-ID
   - The saved set-user-ID is copied from the effective user ID by `exec`.
   - If the file's set-user-ID bit is set, this copy is saved after `exec` stores the effective user ID from the file’s user ID.
 
@@ -516,9 +595,9 @@
   // Both return: 0 if OK, −1 on error
   ```
 
-- Set effective user ID or effective group ID
+- Set effective user/group ID
   - POSIX.1 includes the two functions `seteuid` and `setegid`.
-  - These functions are similar to setuid and setgid, but only the effective user ID or effective group ID is changed.
+  - These functions are similar to `setuid` and `setgid`, but only the effective user ID or effective group ID is changed.
 
   ```c
   #include <unistd.h>
