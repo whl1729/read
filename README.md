@@ -4,22 +4,27 @@
 
 ## 计算机
 
-- [ ] [Code Complete](computer/se/code_complete/index.md)
+- [x] [Code Complete](computer/se/code_complete)
 - [ ] [淘宝技术这十年](computer/it/taobao)
 - [ ] [Professional JavaScript for Web Developers](computer/js/professional)
-- [ ] [Unix Shells by Example](computer/shell/use)
+- [x] [Unix Shells by Example](computer/shell/use)
 - [ ] [Advanced Programming in the UNIX Environment](computer/os/apue)
 - [ ] [Refactoring](computer/se/refactoring)
+- [x] [极客时间《MySQL 必知必会》](computer/db/mysql_must_know)
 - [ ] The Pragmatic Programmer
 - [ ] 代码整洁之道
 - [ ] vim 实用技巧
 - [ ] 鸟哥的Linux私房菜
 
+## 心理学
+
+- [ ] [社会性动物](psychology/the_social_animal)
+- [ ] 暗时间
+
 ## 方法论
 
 - [ ] 如何阅读一本书
 - [ ] Learn More, Study Less
-- [ ] 暗时间
 
 ## 历史
 
@@ -29,7 +34,10 @@
 
 ## 政治
 
-- [ ] [精英的傲慢](politics/the_tyranny_of_merit.md)
+- [x] [精英的傲慢](politics/the_tyranny_of_merit.md)
+- [x] [新技术革命与国家治理现代化](politics/new_technology_revolution)
+- [ ] [公正：该如何做是好？](politics/justice)
+- [ ] [置身事内：中国政府与经济发展](politics/zhishengshinei)
 
 ## 文学
 
