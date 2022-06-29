@@ -84,6 +84,8 @@
   - the exit status of the process is undefined.
 
 - Returning an integer value from the `main` function is equivalent to calling `exit` with the same value.
+  - 经过实测发现，如果 main 函数没显式返回某个值，则进程的返回值是 main 函数最后一个函数的返回值；
+    如果 main 函数没有调用任何函数，比如只有一些赋值语句，我的 Ubuntu 20.04 下是返回 41.
 
 - `exit` handlers
   - With ISO C, a process can register at least 32 functions that are automatically called by `exit`.
@@ -122,7 +124,7 @@
 - How to access to environment variables
   - Access to specific environment variables is normally through the `getenv` and `putenv` functions,
     instead of through the `environ` variable.
-  - But to go through the entire environment, the `environ` pointer must be used.
+  - **But to go through the entire environment, the `environ` pointer must be used.**
 
 #### 7.6 Memory Layout of a C Program
 
@@ -178,6 +180,21 @@
   - library functions can be replaced with new versions without having to relink edit every program that uses the library
     (assuming that the number and type of arguments haven't changed).
 
+- gcc defaults to use shared librares
+  - You can use `-static` to prevent gcc from using shared libraries
+
+  ```bash
+  $ gcc hello.c  # use shared libraries
+  $ size a.out
+   text       data        bss        dec        hex    filename
+   1566        600          8       2174        87e    a.out
+
+  $ gcc -static hello.c  # prevent gcc from using shared libraries
+  $ size a.out
+   text       data        bss        dec        hex    filename
+   762465      20804       6016     789285      c0b25    a.out
+  ```
+
 #### 7.8 Memory Allocation
 
 - ISO C specifies three functions for memory allocation:
@@ -219,7 +236,7 @@
   - This system call expands (or contracts) the heap of the process.
 
 - Lazy free
-  - Although sbrk can expand or contract the memory of a process,
+  - Although `sbrk` can expand or contract the memory of a process,
     most versions of malloc and free never decrease their memory size.
   - The space that we free is available for a later allocation,
     but the freed space is not usually returned to the kernel;
@@ -271,6 +288,8 @@
     and maintaining unused buffers on different free lists, depending on the buffer sizes.
   - Most modern allocators are based on quick-fit.
 
+> Wu: See [About Memory Allocators][1] for more information about Quick-fit.
+
 - `alloca`
   - The function `alloca` has the same calling sequence as `malloc`.
   - Instead of allocating memory from the heap, the memory is allocated from the stack frame of the current function.
@@ -316,7 +335,7 @@
     - Sets name to value.
     - If name already exists in the environment, then
       - (a) if rewrite is nonzero, the existing definition for name is first removed;
-      - or (b) if rewrite is 0,
+      - (b) if rewrite is 0,
         an existing definition for name is not removed, name is not set to the new value, and no error occurs.
   - `unsetenv`
     - Removes any definition of name.
@@ -355,7 +374,7 @@
 #### 7.10 `setjmp` and `longjmp` Functions
 
 - Special branching
-  - In C, we can't goto a label that’s in another function.
+  - In C, we can't goto a label that's in another function.
   - Instead, we must use the `setjmp` and `longjmp` functions to perform this type of branching.
 
   ```c
@@ -368,7 +387,7 @@
   ```
 
 - `setjmp()`
-  - saves various information about the calling environment in the buffer `env` for later use by `longjmp()`
+  - Saves various information about the calling environment in the buffer `env` for later use by `longjmp()`
     - the stack pointer
     - the instruction pointer
     - possibly the values of other registers and the signal mask.
@@ -419,6 +438,54 @@
     This lowering of the hard limit is irreversible for normal users.
   - Only a superuser process can raise a hard limit.
 
+- The result of calling `getrlimit` on my Ubuntu 20.04
+
+  ```bash
+  along:~/exercise/apue/07$ ./getrlimit
+  RLIMIT_AS              (infinite)  (infinite)
+  RLIMIT_CORE                     0  (infinite)
+  RLIMIT_CPU             (infinite)  (infinite)
+  RLIMIT_DATA            (infinite)  (infinite)
+  RLIMIT_FSIZE           (infinite)  (infinite)
+  RLIMIT_MEMLOCK           67108864    67108864
+  RLIMIT_MSGQUEUE            819200      819200
+  RLIMIT_NICE                     0           0
+  RLIMIT_NOFILE                1024     1048576
+  RLIMIT_NPROC                62735       62735
+  RLIMIT_RSS             (infinite)  (infinite)
+  RLIMIT_SIGPENDING           62735       62735
+  RLIMIT_STACK              8388608  (infinite)
+  ```
+
+- The result of executing `ulimit -a` on my Ubuntu 20.04
+
+  ```bash
+  along:~/exercise/apue/07$ ulimit -a
+  core file size          (blocks, -c) 0
+  data seg size           (kbytes, -d) unlimited
+  scheduling priority             (-e) 0
+  file size               (blocks, -f) unlimited
+  pending signals                 (-i) 62735
+  max locked memory       (kbytes, -l) 65536
+  max memory size         (kbytes, -m) unlimited
+  open files                      (-n) 1024
+  pipe size            (512 bytes, -p) 8
+  POSIX message queues     (bytes, -q) 819200
+  real-time priority              (-r) 0
+  stack size              (kbytes, -s) 8192
+  cpu time               (seconds, -t) unlimited
+  max user processes              (-u) 62735
+  virtual memory          (kbytes, -v) unlimited
+  file locks                      (-x) unlimited
+  ```
+
+- 我在自己的 Ubuntu 20.04 的实测结果
+  - 一直打开文件不释放，最多可以打开 1021 个。（因为 stdin、stdout 和 stderr 占用了 3 个）
+  - 一直 fork 子进程并让子进程立即 exit，最多可以 fork 40812 个。
+  - 在 main 函数里定义一个很长的字符数组，当长度超过 8375000 左右就会报 Segmentation Fault。
+  - 不停地调用 `pipe` 函数创建管道，最多可以创建 510 个。（每个 pipe 占用两个 int 整数 fd，共 8 字节）
+  - 调用 `mq_open` 函数时返回错误，暂未找到原因。
+
 #### Exercises
 
 - Exercise 7.3
@@ -466,3 +533,5 @@
 ### Q17: 这一章对我有哪些用处/帮助/启示？
 
 ### Q18: 我如何应用这一章的知识去解决问题？
+
+  [1]: http://www.flounder.com/memory_allocation.htm
