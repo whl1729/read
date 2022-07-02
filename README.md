@@ -19,6 +19,7 @@
 ## 心理学
 
 - [ ] [社会性动物](psychology/the_social_animal)
+- [ ] [被讨厌的勇气](psychology/beitaoyandeyongqi)
 - [ ] 暗时间
 
 ## 方法论
