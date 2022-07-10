@@ -1,0 +1,60 @@
+run:
+  skip-dirs: # 设置要忽略的目录
+    - util
+    - .*~
+    - api/swagger/docs
+  skip-files: # 设置不需要检查的go源码文件，支持正则匹配，这里建议包括：_test.go
+    - ".*\\.my\\.go$"
+    - _test.go
+linters-settings:
+  errcheck:
+    check-type-assertions: true # 这里建议设置为true，如果确实不需要检查，可以写成`num, _ := strconv.Atoi(numStr)`
+    check-blank: false
+  gci:
+    # 将以`github.com/marmotedu/iam`开头的包放在第三方包后面
+    local-prefixes: github.com/marmotedu/iam
+  godox:
+    keywords: # 建议设置为BUG、FIXME、OPTIMIZE、HACK
+      - BUG
+      - FIXME
+      - OPTIMIZE
+      - HACK
+  goimports:
+    # 设置哪些包放在第三方包后面，可以设置多个包，逗号隔开
+    local-prefixes: github.com/marmotedu/iam
+  gomoddirectives: # 设置允许在go.mod中replace的包
+    replace-local: true
+    replace-allow-list:
+      - github.com/coreos/etcd
+      - google.golang.org/grpc
+      - github.com/marmotedu/api
+      - github.com/marmotedu/component-base
+      - github.com/marmotedu/marmotedu-sdk-go
+  gomodguard: # 下面是根据需要选择可以使用的包和版本，建议设置
+    allowed:
+      modules:
+        - gorm.io/gorm
+        - gorm.io/driver/mysql
+        - k8s.io/klog
+      domains: # List of allowed module domains
+        - google.golang.org
+        - gopkg.in
+        - golang.org
+        - github.com
+        - go.uber.org
+    blocked:
+      modules:
+        - github.com/pkg/errors:
+            recommendations:
+              - github.com/marmotedu/errors
+            reason: "`github.com/marmotedu/errors` is the log package used by marmotedu projects."
+      versions:
+        - github.com/MakeNowJust/heredoc:
+            version: "> 2.0.9"
+            reason: "use the latest version"
+      local_replace_directives: false
+  lll:
+    line-length: 240 # 这里可以设置为240，240一般是够用的
+  importas: # 设置包的alias，根据需要设置
+    jwt: github.com/appleboy/gin-jwt/v2
+    metav1: github.com/marmotedu/component-base/pkg/meta/v1

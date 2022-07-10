@@ -11,6 +11,7 @@
 - [ ] [Advanced Programming in the UNIX Environment](computer/os/apue)
 - [ ] [Refactoring](computer/se/refactoring)
 - [x] [极客时间《MySQL 必知必会》](computer/db/mysql_must_know)
+- [x] [极客时间《Go 语言项目开发实战》](computer/go/go_project_develop_guide)
 - [ ] The Pragmatic Programmer
 - [ ] 代码整洁之道
 - [ ] vim 实用技巧
