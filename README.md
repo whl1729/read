@@ -16,6 +16,7 @@
 - [ ] 代码整洁之道
 - [ ] vim 实用技巧
 - [ ] 鸟哥的Linux私房菜
+- [x] [A Tour of Go](computer/go/a_tour_of_go/README.md)
 
 ## 心理学
 
