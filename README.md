@@ -4,19 +4,40 @@
 
 ## 计算机
 
+### database
+
+- [x] [极客时间《MySQL 必知必会》](computer/db/mysql_must_know)
+
+### Go
+
+- [x] [极客时间《Go 语言项目开发实战》](computer/go/go_project_develop_guide)
+- [x] [A Tour of Go](computer/go/a_tour_of_go/README.md)
+- [  ] [Go Talks](computer/go/go_talks)
+
+### js
+
+- [ ] [Professional JavaScript for Web Developers](computer/js/professional)
+
+### os
+
+- [ ] [Advanced Programming in the UNIX Environment](computer/os/apue)
+- [ ] 鸟哥的Linux私房菜
+
+### shell
+
+- [x] [Unix Shells by Example](computer/shell/use)
+
+### Software Engineer
+
 - [x] [Code Complete](computer/se/code_complete)
 - [ ] [淘宝技术这十年](computer/it/taobao)
-- [ ] [Professional JavaScript for Web Developers](computer/js/professional)
-- [x] [Unix Shells by Example](computer/shell/use)
-- [ ] [Advanced Programming in the UNIX Environment](computer/os/apue)
 - [ ] [Refactoring](computer/se/refactoring)
-- [x] [极客时间《MySQL 必知必会》](computer/db/mysql_must_know)
-- [x] [极客时间《Go 语言项目开发实战》](computer/go/go_project_develop_guide)
 - [ ] The Pragmatic Programmer
 - [ ] 代码整洁之道
+
+### Tools
+
 - [ ] vim 实用技巧
-- [ ] 鸟哥的Linux私房菜
-- [x] [A Tour of Go](computer/go/a_tour_of_go/README.md)
 
 ## 心理学
 
