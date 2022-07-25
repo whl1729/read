@@ -12,7 +12,8 @@
 
 - [x] [极客时间《Go 语言项目开发实战》](computer/go/go_project_develop_guide)
 - [x] [A Tour of Go](computer/go/a_tour_of_go/README.md)
-- [  ] [Go Talks](computer/go/go_talks)
+- [x] [Effective Go](computer/go/effective_go/README.md)
+- [ ] [Go Talks](computer/go/go_talks)
 
 ### js
 
