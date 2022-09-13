@@ -11,8 +11,8 @@
 ### Go
 
 - [x] [极客时间《Go 语言项目开发实战》](computer/go/go_project_develop_guide)
-- [x] [A Tour of Go](computer/go/a_tour_of_go/README.md)
-- [x] [Effective Go](computer/go/effective_go/README.md)
+- [x] [A Tour of Go](computer/go/a_tour_of_go)
+- [x] [Effective Go](computer/go/effective_go)
 - [ ] [Go Talks](computer/go/go_talks)
 
 ### js
@@ -42,6 +42,7 @@
 
 ## 心理学
 
+- [x] [非暴力沟通](psychology/nonviolent_communication)
 - [ ] [社会性动物](psychology/the_social_animal)
 - [ ] [被讨厌的勇气](psychology/beitaoyandeyongqi)
 - [ ] 暗时间
