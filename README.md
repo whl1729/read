@@ -69,3 +69,7 @@
 
 - [ ] 未央歌
 - [x] [史铁生文集](literature/shitiesheng)
+
+## 管理学
+
+- [x] [技术团队管理者的第一堂管理课](management/tech_team_manager_lesson)
