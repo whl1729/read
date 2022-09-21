@@ -54,6 +54,7 @@
 
 ## 历史
 
+- [x] [蒋经国传](history/jiangjingguozhuan)
 - [x] [台湾四百年](history/taiwan_400_years)
 - [ ] [极简欧洲史](history/shortest_europe)
 - [ ] 菊与刀
