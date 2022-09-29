@@ -217,4 +217,26 @@
 
 ## Q17: 这个教程对我有哪些用处/帮助/启示？
 
+### 一些值得我优先学习的资料
+
+- [How to read an academic article][r1]
+- [How to read and understand a scientific paper][r2]
+- [Should I Read Papers?][r3]
+- [The Refreshingly Rewarding Realm of Research Papers][r4]
+
+- [The Key To Accelerating Your Coding Skills][1]
+- [Two Minute Papers][2]
+- [慕课网在线课程：数据库设计的那些事][3]
+- [超完整的 Chrome 浏览器客户端调试大全][4]
+
 ## Q18: 我如何应用这个教程的知识去解决问题？
+
+  [r1]: https://organizationsandmarkets.com/2010/08/31/how-to-read-an-academic-article/
+  [r2]: https://violentmetaphors.com/2013/08/25/how-to-read-and-understand-a-scientific-paper-2/
+  [r3]: http://michaelrbernste.in/2014/10/21/should-i-read-papers.html
+  [r4]: https://www.youtube.com/watch?v=8eRx5Wo3xYA
+
+  [1]: http://blog.thefirehoseproject.com/posts/learn-to-code-and-be-self-reliant/
+  [2]: https://www.youtube.com/user/keeroyz
+  [3]: https://www.imooc.com/learn/117
+  [4]: https://www.shouce.ren/api/view/a/12775
