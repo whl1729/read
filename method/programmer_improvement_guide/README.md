@@ -228,6 +228,12 @@
 - [Two Minute Papers][2]
 - [慕课网在线课程：数据库设计的那些事][3]
 - [超完整的 Chrome 浏览器客户端调试大全][4]
+- [What are some of the most basic things every programmer should know?][5]
+- [Things Every Programmer Should Know][6]
+- [How To Ask Questions The Smart Way][7]
+- [X-Y Problem][8]
+  - 中文版：[X-Y 问题][9]
+- [FAQ for StackExchange Site][10]
 
 ## Q18: 我如何应用这个教程的知识去解决问题？
 
@@ -240,3 +246,9 @@
   [2]: https://www.youtube.com/user/keeroyz
   [3]: https://www.imooc.com/learn/117
   [4]: https://www.shouce.ren/api/view/a/12775
+  [5]: https://www.quora.com/What-are-some-of-the-most-basic-things-every-programmer-should-know
+  [6]: https://97-things-every-x-should-know.gitbooks.io/97-things-every-programmer-should-know/content/en/index.html
+  [7]: http://www.catb.org/~esr/faqs/smart-questions.html
+  [8]: https://xyproblem.info/
+  [9]: https://coolshell.cn/articles/10804.html
+  [10]: https://meta.stackexchange.com/questions/7931/faq-for-stack-exchange-sites
