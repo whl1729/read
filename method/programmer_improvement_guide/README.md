@@ -234,6 +234,9 @@
 - [X-Y Problem][8]
   - 中文版：[X-Y 问题][9]
 - [FAQ for StackExchange Site][10]
+- [陈皓「极客时间」课程：《编程范式游记》][11]
+- [The Twelve-Factor App][12]
+- [The Twelve-Factor App（中文版）][13]
 
 ## Q18: 我如何应用这个教程的知识去解决问题？
 
@@ -252,3 +255,6 @@
   [8]: https://xyproblem.info/
   [9]: https://coolshell.cn/articles/10804.html
   [10]: https://meta.stackexchange.com/questions/7931/faq-for-stack-exchange-sites
+  [11]: https://time.geekbang.org/column/article/301
+  [12]: https://12factor.net/
+  [13]: https://12factor.net/zh_cn/
