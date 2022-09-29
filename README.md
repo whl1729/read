@@ -2,6 +2,12 @@
 
 记录我的读书感想。
 
+## 方法论
+
+- [ ] [程序员练级攻略](method/programmer_improvement_guide)
+- [ ] 如何阅读一本书
+- [ ] Learn More, Study Less
+
 ## 计算机
 
 ### database
@@ -46,11 +52,6 @@
 - [ ] [社会性动物](psychology/the_social_animal)
 - [ ] [被讨厌的勇气](psychology/beitaoyandeyongqi)
 - [ ] 暗时间
-
-## 方法论
-
-- [ ] 如何阅读一本书
-- [ ] Learn More, Study Less
 
 ## 历史
 
