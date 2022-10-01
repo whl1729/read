@@ -237,6 +237,8 @@
 - [陈皓「极客时间」课程：《编程范式游记》][11]
 - [The Twelve-Factor App][12]
 - [The Twelve-Factor App（中文版）][13]
+- [Building Software Systems At Google and Lessons Learned][14]
+  - 2010 年，斯坦福大学请杰夫·迪恩到大学里给他们讲了一节课，回顾了 Google 发展的历史。
 
 ## Q18: 我如何应用这个教程的知识去解决问题？
 
@@ -258,3 +260,4 @@
   [11]: https://time.geekbang.org/column/article/301
   [12]: https://12factor.net/
   [13]: https://12factor.net/zh_cn/
+  [14]: https://www.youtube.com/watch?v=modXC5IWTJI
