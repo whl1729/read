@@ -428,11 +428,229 @@
   // Both return: 0 if OK, error number on failure
   ```
 
+##### 11.6.6 Condition Variables
+
+> 伍注：互斥量与条件变量的区别：前者保证对资源的互斥访问，后者保证同步，后者其实类似一种消息等待与通知机制。
+
+- Function
+  - When used with mutexes, condition variables allow threads to wait in a race-free way for arbitrary conditions to occur.
+
+- Condition variables vs Mutexes
+  - The condition itself is protected by a mutex.
+
+- Initialization and Destroy
+  - If the condition variable is allocated statically, we can assign the constant `PTHREAD_COND_INITIALIZER` to it.
+  - If the condition variable is allocated dynamically, we can use the `pthread_cond_init` function to initialize it.
+
+  ```c
+  #include <pthread.h>
+
+  // Set `attr` to NULL if you want to use default attributes.
+  int pthread_cond_init(pthread_cond_t *restrict cond,
+                        const pthread_condattr_t *restrict attr);
+
+  int pthread_cond_destroy(pthread_cond_t *cond);
+
+  // Both return: 0 if OK, error number on failure
+  ```
+
+- Wait for a condition to be true
+  - When it returns from a successful call to `pthread_cond_wait` or `pthread_cond_timedwait`,
+    a thread needs to reevaluate the condition,
+    since another thread might have run and already changed the condition.
+
+  ```c
+  #include <pthread.h>
+
+  // The `mutex` must be locked before passing to this function.
+  int pthread_cond_wait(pthread_cond_t *restrict cond,
+                        pthread_mutex_t *restrict mutex);
+
+  // The `tsptr` is an absolute time.
+  // If the timeout expires without the condition occurring,
+  // it will reacquire the mutex and return the error ETIMEDOUT.
+  int pthread_cond_timedwait(pthread_cond_t *restrict cond,
+                             pthread_mutex_t *restrict mutex,
+                             const struct timespec *restrict tsptr);
+
+  // Both return: 0 if OK, error number on failure
+  ```
+
+- How the `mutex` changes
+  - Before calling `pthread_cond_wait`, the `mutex` has been locked.
+  - During executing `pthread_cond_wait`, the os atomically places the calling thread on the list of threads waiting for the condition
+    and **unlocks** the mutex.
+  - After `pthread_cond_wait` returns, the `mutex` has been locked again.
+
+- Create a future time
+
+  ```c
+  #include <sys/time.h>
+  #include <stdlib.h>
+
+  void
+  maketimeout(struct timespec *tsp, long minutes)
+  {
+    struct timeval now;
+
+    /* get the current time */
+    gettimeofday(&now, NULL);
+    tsp->tv_sec = now.tv_sec;
+    tsp->tv_nsec = now.tv_usec * 1000; /* usec to nsec */
+
+    /* add the offset to get timeout value */
+    tsp->tv_sec += minutes * 60;
+  }
+  ```
+
+- Notify threads that a condition has been satisfied
+  - Be careful to signal the threads only after changing the state of the condition.
+
+  ```c
+  #include <pthread.h>
+
+  // Wake up at least one thread waiting on a condition
+  int pthread_cond_signal(pthread_cond_t *cond);
+
+  // Wake up all threads waiting on a condition.
+  int pthread_cond_broadcast(pthread_cond_t *cond);
+
+  Both return: 0 if OK, error number on failure
+  ```
+
+##### 11.6.7 Spin Locks
+
+- Spin Lock vs mutex
+  - When the process cannot acquire the mutex, it is blocked by sleeping.
+  - When the process cannot acquire the spin lock, it is blocked by busy-waiting (spinning) until the lock can be acquired.
+
+- When spin lock can be used
+  - A spin lock could be used in situations where locks are held for short periods of times
+    and threads don't want to incur the cost of being descheduled.
+  - Spin locks are often used as low-level primitives to implement other types of locks.
+
+- How spin lock can be implemented
+  - They can be implemented efficiently using test-and-set instructions.
+
+- The disadvantage of Spin lock
+  - Although efficient, they can lead to wasting CPU resources:
+  - while a thread is spinning and waiting for a lock to become available, the CPU can't do anything else.
+  - This is why spin locks should be held only for short periods of time.
+
+- The spin lock is less useful
+  - Many mutex implementations are so efficient that the performance of applications using mutex locks is equivalent to their performance if they had used spin locks.
+  - In fact, some mutex implementations will spin for a limited amount of time trying to acquire the mutex, and only sleep when the spin count threshold is reached.
+  - These factors, combined with advances in modern processors that allow them to context switch at faster and faster rates, make spin locks useful only in limited circumstances.
+
+- Initialization and Destroy
+
+  ```c
+  #include <pthread.h>
+
+  int pthread_spin_init(pthread_spinlock_t *lock, int pshared);
+  int pthread_spin_destroy(pthread_spinlock_t *lock);
+
+  // Both return: 0 if OK, error number on failure
+  ```
+
+- The `pshared` argument
+  - The `pshared` argument represents the process-shared attribute, which indicates how the spin lock will be acquired.
+  - If it is set to `PTHREAD_PROCESS_SHARED`, then the spin lock can be acquired by threads that have access to the lock's underlying memory,
+    even if those threads are from different processes.
+  - Otherwise, the pshared argument is set to `PTHREAD_PROCESS_PRIVATE` and the spin lock can be accessed only from threads within the process that initialized it.
+
+- Lock and Unlock
+
+  ```c
+  #include <pthread.h>
+
+  // If the thread already has it locked, the results are undefined.
+  int pthread_spin_lock(pthread_spinlock_t *lock);
+
+  // It will return the EBUSY error if the lock can't be acquired immediately.
+  int pthread_spin_trylock(pthread_spinlock_t *lock);
+
+  // If we try to unlock a spin lock that is not locked, the results are also undefined.
+  int pthread_spin_unlock(pthread_spinlock_t *lock);
+
+  // All return: 0 if OK, error number on failure
+  ```
+
+> 伍注：经过实测，在 Ubuntu 20.04 下，
+> 1. 同一个线程在已经获取到自旋锁的时候再次获取自旋锁，会导致线程被 blocked。
+> 2. 同一个线程在已经获取到自旋锁的时候调用 pthread_spin_trylock 尝试获取自旋锁，会立即返回错误码 16.
+> 3. 同一个线程在已经释放自旋锁的时候再次调用 pthread_spin_unlock 来释放自旋锁，会立即返回成功。
+
+- Don't sleep
+  - We need to be careful not to call any functions that might sleep while holding the spin lock.
+  - If we do, then we'll waste CPU resources by extending the time other threads will spin if they try to acquire it.
+
+##### 11.6.8 Barriers
+
+- Barriers
+  - A synchronization mechanism that can be used to coordinate multiple threads working in parallel.
+  - A barrier allows each thread to wait until all cooperating threads have reached the same point, and then continue executing from there.
+
+- Initialization and Destroy
+
+  ```c
+  #include <pthread.h>
+
+  // `count` specifies the number of threads that must reach the barrier before all of the threads will be allowed to continue.
+  int pthread_barrier_init(pthread_barrier_t *restrict barrier,
+                           const pthread_barrierattr_t *restrict attr,
+                           unsigned int count);
+
+  int pthread_barrier_destroy(pthread_barrier_t *barrier);
+
+  // Both return: 0 if OK, error number on failure
+  ```
+
+- Wait
+  - The thread calling `pthread_barrier_wait` is put to sleep if the barrier count is not yet satisfied.
+  - If the thread is the last one to call `pthread_barrier_wait`, thereby satisfying the barrier count, all of the threads are awakened.
+
+  ```c
+  #include <pthread.h>
+
+  int pthread_barrier_wait(pthread_barrier_t *barrier);
+
+  // Returns: 0 or PTHREAD_BARRIER_SERIAL_THREAD if OK, error number on failure
+  ```
+
+> 伍注：经过实测，在 Ubuntu 20.04 下，PTHREAD_BARRIER_SERIAL_THREAD 的取值为 -1.
+
+- PTHREAD_BARRIER_SERIAL_THREAD
+  - To one arbitrary thread, it will appear as if the `pthread_barrier_wait` function returned a value of `PTHREAD_BARRIER_SERIAL_THREAD`.
+  - The remaining threads see a return value of 0.
+  - This allows one thread to continue as the **master** to act on the results of the work done by all of the other threads.
+
 ### Q7：作者是怎么论述的？
 
 ### Q8：作者解决了什么问题？
 
 ### Q9：我有哪些疑问？
+
+#### Q9.1 互斥量与条件变量有什么区别？
+
+#### Q9.2 条件变量与信号量有什么区别？
+
+#### Q9.3 互斥量与自旋锁有什么区别？
+
+根据第 11.6.7 节开头的描述，两者的一个区别是在无法获得资源（互斥量或锁）时的处理方法：
+使用互斥量的线程会睡眠（sleeping），使用自旋锁的线程会一直忙等待（busy-waiting），
+这有什么区别呢？区别在于前者不会消耗 CPU 时间，后者会不断消耗 CPU 时间。
+那为什么前者不会消耗 CPU 时间呢？因为前者由于 sleep 而处于阻塞态（blocked），
+处于阻塞态的线程不会被调度——只有处于就绪态的线程才会被调度。
+
+使用生活中的例子来进行不太精确的类比，大概就是：
+A （类比互斥量）和 B （类比自旋锁）都想上厕所，但是厕所暂时被其他人使用。
+A 的策略是先去睡觉，等厕所管理员（虚构人物，类比 os）来通知厕所没人了再去上厕所；
+B 的策略是不断地在厕所门口等待。
+
+#### Q8.4 互斥量、读写锁、条件变量、自旋锁与信号量分别是怎样实现的？
+
+#### Q9.5 互斥量、读写锁、条件变量、自旋锁与信号量有什么区别与联系？
 
 ### Q10：这一章说得有道理吗？为什么？
 
