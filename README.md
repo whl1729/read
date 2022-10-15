@@ -4,7 +4,7 @@
 
 ## 方法论
 
-- [ ] [程序员练级攻略](method/programmer_improvement_guide)
+- [x] [程序员练级攻略](method/programmer_improvement_guide)
 - [ ] 如何阅读一本书
 - [ ] Learn More, Study Less
 
@@ -55,6 +55,7 @@
 
 ## 历史
 
+- [x] [他改变了中国：江泽民传](history/jiangzeminzhuan)
 - [x] [蒋经国传](history/jiangjingguozhuan)
 - [x] [台湾四百年](history/taiwan_400_years)
 - [ ] [极简欧洲史](history/shortest_europe)
