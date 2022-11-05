@@ -150,6 +150,19 @@
   - If a process caught a signal while the process was blocked in a "slow" system call, the system call was interrupted.
   - The system call returned an error and errno was set to EINTR.
 
+- Categories of system calls
+  - The system calls are divided into two categories: the "slow" system calls and all the others.
+  - The slow system calls are those that can block forever.
+
+- The slow system calls
+  - Reads that can block the caller forever if data isn’t present with certain file types (pipes, terminal devices, and network devices)
+  - Writes that can block the caller forever if the data can’t be accepted immediately by these same file types
+  - Opens on certain file types that block the caller until some condition occurs
+    (such as a terminal device open waiting until an attached modem answers the phone)
+  - The `pause` function (which by definition puts the calling process to sleep until a signal is caught) and the wait function
+  - Certain `ioctl` operations
+  - Some of the interprocess communication functions
+
 - Auto restart
   - To prevent applications from having to handle interrupted system calls,
     4.2BSD introduced the automatic restarting of certain interrupted system calls.
