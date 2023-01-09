@@ -29,11 +29,44 @@
 
 ## Q6：这本书的关键句是什么？
 
-- Item
-  - Item 20: Prefer Raising Exceptions to Returning None
-  - Item 40: Initialize Parent Classes with super
-  - Item 42: Prefer Public Attributes Over Private Ones
-  - Item 44: Use Plain Attributes Instead of Setter and Getter Methods
+### Item
+
+- Item 2: Follow the PEP 8 Style Guide
+- Item 20: Prefer Raising Exceptions to Returning None
+- Item 40: Initialize Parent Classes with super
+- Item 42: Prefer Public Attributes Over Private Ones
+- Item 44: Use Plain Attributes Instead of Setter and Getter Methods
+
+### ch01 Pythonic Thinking
+
+#### Item 2: Follow the PEP 8 Style Guide
+
+##### Whitespace
+
+- Continuations of long expressions onto additional lines should be indented by **four extra spaces** from their normal indentation level.
+
+- In a file, functions and classes should be separated by **two blank lines**.
+
+##### Expressions and Statements
+
+- Use inline negation (`if a is not b`) instead of negation of positive expressions (`if not a is b`).
+
+> 伍注：前者可读性更好。
+
+- Don’t check for empty containers or sequences (like [] or '' ) by comparing the length to zero (`if len(somelist) == 0`).
+  - Use `if not somelist` and assume that empty values will implicitly evaluate to False .
+
+> 伍注：后者可读性更好，也更简洁。
+
+- The same thing goes for non-empty containers or sequences (like [1] or 'hi' ).
+  - The statement `if somelist` is implicitly True for non-empty values.
+
+- Avoid single-line `if` statements, `for` and `while` loops, and `except` compound statements.
+  - Spread these over multiple lines for **clarity**.
+
+- If you can’t fit an expression on one line, surround it with parentheses and add line breaks and indentation to make it easier to read.
+
+- Prefer surrounding multiline expressions with parentheses over using the `\` line continuation character.
 
 ## Q7：作者是怎么论述的？
 
