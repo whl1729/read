@@ -4,22 +4,15 @@
 
 之前在网上看到有人推荐这本书，组员孙肖最近也推荐。
 网上查了一下豆瓣和知乎的评价，这本书属于进阶级别，涉及到 Python 底层实现。
-那么我看这本书的目的便是：了解 Python 的一些底层实现细节，写出高效的 Python 代码。
+从前言来看，这本书主要是介绍 Python 独有的一些特性。
+那么我的阅读目的确定为：
 
-2023-01-22：从前言来看，这本书主要是介绍 Python 独有的一些特性。
-那么我的阅读目的修改为：了解 Python 独有的一些特性，并善用它们来写出 Pythonic Code。
+- 了解 Python 独有的一些特性
+- 学会善用 Python 的特性来写出 Pythonic Code
 
 ## 我的问题是什么
 
 我主要有两个问题：
-
-- 如何写出流畅、高效的 Python 代码？
-- Python 底层是如何实现的？
-
-其中问题2与问题1密切相关，解决问题2有助于解决问题1.
-而问题2范围比较大，因为 Python 底层实现涉及太多内容，比如解析器、各种数据结构等。
-
-2023-01-22：根据本书的内容，修改问题如下：
 
 - Python 有哪些独有的特性？
 - 如何写出 Pythonic Code？
@@ -37,6 +30,7 @@ Python 解析器有 CPython、JPython 等，分别由 C、Java 等语言实现�
 
 Python 程序员应该编写具有 Python 风格的代码，也就是 Pythonic code。
 [The Zen of Python][1]、[PEP 8][2]、[PEP 257][3] 等有助于理解什么是 Pythonic Code.
+**此外，Fluent Python 的 Afterword 里面的 Further Reading 也提供了很多相关资料，待学习。**
 
 - Tuple Unpacking
 
@@ -131,53 +125,41 @@ PEP 8 大概有9节，前面几节讲的是代码布局（缩进、行长、空�
 
 包括5个部分，分别是数据结构、函数、类/协议、控制流和元编程。
 
-## Fluent Python 分析
+- 数据结构
+  - 数据模型
+  - 序列
+  - 字典和集合
+  - 文本和字节
+  - 数据类
+  - 对象引用、修改与复用
 
-### 01 The Python Data Model
+- 函数
+  - 第一等对象
+  - 类型提示
+  - 装饰器和闭包
+  - 函数的设计模式
 
-参考：[The "Data Model" chapter of The Python Language Reference][3]
+- 类和协议
+  - Python 风格的对象
+  - 序列的特殊方法
+  - 接口、协议和抽象基类
+  - 继承
+  - 类型提示
+  - 操作符重载
 
-- 一致性
-  - Python 最好的特点之一是一致性。
-
-- 数据模型
-  - 如果将 Python 语言视为一个框架
-  - 那么数据模型就是对这个框架的描述
-  - 具体地说，数据模型描述了 Python 这个框架各个组件的接口
-  - 包括序列、函数、类、迭代器、协程、上下文管理器等
-  - 比如：序列有 `__len__` 接口，类有 `__init__` 接口等
-
-- 特殊方法
-  - 名字前后各有两个下划线
-  - 用来提供基本的对象操作
-  - 特殊方法是用来给 Python 解析器调用的，而非用户调用的
-  - `len(collection)` 实际上是调用 `collection.__len__()`
-  - `obj[key]` 实际上是调用 `obj.__getitem__()`
-  - `for i in x` 实际上是调用 `x.__iter__()` 或 `x.__getitem__()`
-  - `value in collection` 实际上是调用 `collection.__contains__` 或者是顺序遍历
-
-- 特殊方法的使用场景
-  - 集合
-  - 属性访问
-  - 迭代
-  - 运算符重载
-  - 函数和方法调用
-  - 字符串表示和格式化
+- 控制流
+  - 迭代器、生成器和协程
+  - with、match 和 else 代码块
+  - 并发模型
+  - 并发执行器
   - 异步编程
-  - 对象创建和销毁
-  - 上下文管理
 
-- 特殊方法的四个常用场景
-  - 模仿数字类型（运算符重载）：`__abs__`, `__add__`, `__mul__`
-  - 字符串表示：`__repr__`, `__str__`
-  - 自定义类型的布尔值判断：`__bool__`, `__len__`
-  - Collection API: `__iter__`, `__len__`, `__contains__`
+- 元编程
+  - 动态属性
+  - 属性描述符
+  - 元编程
 
-  ![collection_types_uml](images/collection_types_uml.jpg)
-
-  ![special_method_names_operators_excluded](images/special_method_names_operators_excluded.jpg)
-
-  ![special_method_names_and_symbols_for_operators](images/special_method_names_and_symbols_for_operators.jpg)
+## Fluent Python 分析
 
   [1]: https://legacy.python.org/dev/peps/pep-0020/
   [2]: https://peps.python.org/pep-0008/
