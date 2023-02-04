@@ -70,7 +70,6 @@
 - 处理编码/解码错误
   - 字符串的 `encode` 方法提供参数 `errors`，可以指定如何处理 `UnicodeEncodeError`
   - 同理，二进制串的 `decode` 方法提供参数 `errors`，可以指定如何处理 `UnicodeDecodeError`
-  - 特别注意，cp1252, iso8859_1 和 koi8_r 等编码标准可以解码任意二进制串，直接忽略随机噪音，不会报错
 
   ```python
   city = '深圳'
@@ -79,6 +78,9 @@
   city.encode('cp437', errors='replace')
   city.encode('cp437', errors='xmlcharrefreplace')
   ```
+
+- 解码陷阱
+  - cp1252, iso8859_1 和 koi8_r 等编码标准可以解码任意二进制串，直接忽略随机噪音，不会报错
 
 - 处理文本文件
   - 最佳实践是：Unicode 三明治

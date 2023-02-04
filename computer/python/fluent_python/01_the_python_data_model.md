@@ -58,4 +58,32 @@
 Go 语言同样是面向接口编程模式，只是 Go 定义接口一般需要明确定义 `type interface xxx`，
 而 Python 似乎默认帮你定义了很多底层接口，你直接实现就可以用了。
 
+两个例子：
+
+```python
+class Foo:
+  def __getitem__(self, i):
+      return i ** 2
+
+foo = Foo()
+# 以下循环不会结束，这意味着我们构造了一个无穷数组
+for i in foo:
+    print(i)
+```
+
+```python
+class Bar:
+  def __init__(self):
+      self._len = 0
+
+  def __len__(self):
+      self._len += 1
+      return self._len
+
+bar = Bar()
+for i in range(10):
+    # 每次循环会导致len(bar)增加1. 这意味着我们伪造了一个长度不断增加的对象。
+    print(len(bar))
+```
+
   [1]: https://docs.python.org/3/reference/datamodel.html

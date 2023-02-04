@@ -50,6 +50,13 @@
 
 - 元组 vs 列表
 
+  ```python
+  bar = (1)
+  type(bar)  # int
+  cat = (1,)
+  type(cat)  # tuple
+  ```
+
 - 序列解包的应用场景
   - 同时赋值：`point = (3, 4); x, y = point`
   - 交换两个变量：`b, a = a, b`
