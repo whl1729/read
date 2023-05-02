@@ -66,3 +66,5 @@
 - Example 22-21 介绍了通过 `@property` 在不改变属性名字的情况下对属性增加校验的机制
 
 - Example 22-23 介绍了实体的属性会屏蔽类的属性，定义类的属性时要注意这一点。
+
+- "Flexible Object Creation with __new__" 一节提到 Python 的构造器其实是 `__new__`，而 `__init__` 只是初始化函数。
