@@ -308,7 +308,15 @@
 
 #### Q8.1: P255 "Defining Multiple Properties"一节的例子中，为什么修改year失败？
 
+#### Q8.2: class、constructor、prototype 三者的联系与区别是什么
+
+#### Q8.3: Object 与 Function 的联系与区别是什么
+
+#### Q8.4: 为什么 `Object instanceof Function` 和 `Function instanceof Object` 都返回 true
+
 ### Q9：这一章说得有道理吗？为什么？
+
+JavaScript 的原型链有点复杂，不好理解，我还没能理解。
 
 ### Q10：如何拓展这一章？
 
