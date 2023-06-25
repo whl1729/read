@@ -2,6 +2,7 @@
 
 ## B80 思维科学
 
+- [ ] How Not to Be Wrong: The Power of Mathematical Thinking
 - [ ] how to solve it（怎样解题）
 - [ ] 数学的发现
 - [ ] 数学与猜想
@@ -64,3 +65,13 @@
 - [ ] 一万小时天才理论
 - [ ] 少有人走的路：心智成熟的旅程
 - [ ] 异类：不一样的成功启示录
+
+## B85 创新
+
+- [ ] The Innovator’s Dilemma
+- [ ] The Myths of Innovation
+- [ ] Where Wizards Stay Up Late: The Origins of the Internet
+- [ ] Dealers of Lightning: Xerox PARC and the Dawn of the Computer Age
+- [ ] Hard Drive
+- [ ] Revolution in The Valley: The Insanely Great Story of How the Mac Was Made
+- [ ] 盛田昭夫：日本制造精神是这样创造的

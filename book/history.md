@@ -227,3 +227,15 @@
 ### 美国人传记
 
 - [ ] 绅士谋国：美国缔造者 （钱满素）
+
+### 计算机人物传记
+
+- [ ] Elon Musk
+- [ ] Steve Jobs
+- [ ] Alan Turing: The Enigma
+- [ ] A Mind at Play: How Claude Shannon Invented the Information Age
+- [ ] Models of My Life
+
+### 科学家传记
+
+- [ ] Leonardo da Vinci
