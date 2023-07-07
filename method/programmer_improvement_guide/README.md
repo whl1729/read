@@ -14,32 +14,32 @@
 
 - 开篇词
 - 入门篇
-  - 1 零基础启蒙
-  - 2 正式入门
+  - [1 零基础启蒙][1]
+  - [2 正式入门][2]
 - 修养篇
-  - 3 程序员修养
+  - [3 程序员修养][3]
 - 专业基础篇
-  - 4 编程语言
-  - 5 理论学科
-  - 6 系统知识
+  - [4 编程语言][4]
+  - [5 理论学科][5]
+  - [6 系统知识][6]
 - 软件设计篇
-  - 7 软件设计
+  - [7 软件设计][7]
 - 高手成长篇
-  - 8 Linux 系统、内存和网络（系统底层知识）
-  - 9 异步 I/O 模型和 Lock-Free 编程（系统底层知识）
-  - 10 Java 底层知识
-  - 11 数据库
-  - 12 分布式架构入门（分布式架构）
-  - 13 分布式架构经典图书和论文（分布式架构）
-  - 14 分布式架构工程设计（分布式架构）
-  - 15 微服务
-  - 16 容器化和自动化运维
-  - 17 机器学习和人工智能
-  - 18 前端基础和底层原理（前端方向）
-  - 19 前端性能优化和框架（前端方向）
-  - 20 UI/UX 设计（前端方向）
-  - 21 技术资源集散地
-  - 22 程序员练级攻略的正确打开方式
+  - [8 Linux 系统、内存和网络（系统底层知识）][8]
+  - [9 异步 I/O 模型和 Lock-Free 编程（系统底层知识）][9]
+  - [10 Java 底层知识][10]
+  - [11 数据库][11]
+  - [12 分布式架构入门（分布式架构）][12]
+  - [13 分布式架构经典图书和论文（分布式架构）][13]
+  - [14 分布式架构工程设计（分布式架构）][14]
+  - [15 微服务][15]
+  - [16 容器化和自动化运维][16]
+  - [17 机器学习和人工智能][17]
+  - [18 前端基础和底层原理（前端方向）][18]
+  - [19 前端性能优化和框架（前端方向）][19]
+  - [20 UI/UX 设计（前端方向）][20]
+  - [21 技术资源集散地][21]
+  - [22 程序员练级攻略的正确打开方式][22]
 
 ## Q4：作者想要解决什么问题？
 
@@ -219,45 +219,65 @@
 
 ### 一些值得我优先学习的资料
 
-- [How to read an academic article][r1]
-- [How to read and understand a scientific paper][r2]
-- [Should I Read Papers?][r3]
-- [The Refreshingly Rewarding Realm of Research Papers][r4]
-
-- [The Key To Accelerating Your Coding Skills][1]
-- [Two Minute Papers][2]
-- [慕课网在线课程：数据库设计的那些事][3]
-- [超完整的 Chrome 浏览器客户端调试大全][4]
-- [What are some of the most basic things every programmer should know?][5]
-- [Things Every Programmer Should Know][6]
-- [How To Ask Questions The Smart Way][7]
-- [X-Y Problem][8]
-  - 中文版：[X-Y 问题][9]
-- [FAQ for StackExchange Site][10]
-- [陈皓「极客时间」课程：《编程范式游记》][11]
-- [The Twelve-Factor App][12]
-- [The Twelve-Factor App（中文版）][13]
-- [Building Software Systems At Google and Lessons Learned][14]
+- [The Key To Accelerating Your Coding Skills][r1]
+- [Two Minute Papers][r2]
+- [慕课网在线课程：数据库设计的那些事][r3]
+- [超完整的 Chrome 浏览器客户端调试大全][r4]
+- [What are some of the most basic things every programmer should know?][r5]
+- [Things Every Programmer Should Know][r6]
+- [How To Ask Questions The Smart Way][r7]
+- [X-Y Problem][r8]
+  - 中文版：[X-Y 问题][r9]
+- [FAQ for StackExchange Site][r10]
+- [陈皓「极客时间」课程：《编程范式游记》][r11]
+- [The Twelve-Factor App][r12]
+- [The Twelve-Factor App（中文版）][r13]
+- [Building Software Systems At Google and Lessons Learned][r14]
   - 2010 年，斯坦福大学请杰夫·迪恩到大学里给他们讲了一节课，回顾了 Google 发展的历史。
+- [How to read an academic article][r15]
+- [How to read and understand a scientific paper][r16]
+- [Should I Read Papers?][r17]
+- [The Refreshingly Rewarding Realm of Research Papers][r18]
 
 ## Q18: 我如何应用这个教程的知识去解决问题？
 
-  [r1]: https://organizationsandmarkets.com/2010/08/31/how-to-read-an-academic-article/
-  [r2]: https://violentmetaphors.com/2013/08/25/how-to-read-and-understand-a-scientific-paper-2/
-  [r3]: http://michaelrbernste.in/2014/10/21/should-i-read-papers.html
-  [r4]: https://www.youtube.com/watch?v=8eRx5Wo3xYA
+  [r1]: http://blog.thefirehoseproject.com/posts/learn-to-code-and-be-self-reliant/
+  [r2]: https://www.youtube.com/user/keeroyz
+  [r3]: https://www.imooc.com/learn/117
+  [r4]: https://www.shouce.ren/api/view/a/12775
+  [r5]: https://www.quora.com/What-are-some-of-the-most-basic-things-every-programmer-should-know
+  [r6]: https://97-things-every-x-should-know.gitbooks.io/97-things-every-programmer-should-know/content/en/index.html
+  [r7]: http://www.catb.org/~esr/faqs/smart-questions.html
+  [r8]: https://xyproblem.info/
+  [r9]: https://coolshell.cn/articles/10804.html
+  [r10]: https://meta.stackexchange.com/questions/7931/faq-for-stack-exchange-sites
+  [r11]: https://time.geekbang.org/column/article/301
+  [r12]: https://12factor.net/
+  [r13]: https://12factor.net/zh_cn/
+  [r14]: https://www.youtube.com/watch?v=modXC5IWTJI
+  [r15]: https://organizationsandmarkets.com/2010/08/31/how-to-read-an-academic-article/
+  [r16]: https://violentmetaphors.com/2013/08/25/how-to-read-and-understand-a-scientific-paper-2/
+  [r17]: http://michaelrbernste.in/2014/10/21/should-i-read-papers.html
+  [r18]: https://www.youtube.com/watch?v=8eRx5Wo3xYA
 
-  [1]: http://blog.thefirehoseproject.com/posts/learn-to-code-and-be-self-reliant/
-  [2]: https://www.youtube.com/user/keeroyz
-  [3]: https://www.imooc.com/learn/117
-  [4]: https://www.shouce.ren/api/view/a/12775
-  [5]: https://www.quora.com/What-are-some-of-the-most-basic-things-every-programmer-should-know
-  [6]: https://97-things-every-x-should-know.gitbooks.io/97-things-every-programmer-should-know/content/en/index.html
-  [7]: http://www.catb.org/~esr/faqs/smart-questions.html
-  [8]: https://xyproblem.info/
-  [9]: https://coolshell.cn/articles/10804.html
-  [10]: https://meta.stackexchange.com/questions/7931/faq-for-stack-exchange-sites
-  [11]: https://time.geekbang.org/column/article/301
-  [12]: https://12factor.net/
-  [13]: https://12factor.net/zh_cn/
-  [14]: https://www.youtube.com/watch?v=modXC5IWTJI
+  [1]: ./01_get_started_for_zero-based.md
+  [2]: ./02_get_started_formally.md
+  [3]: ./03_programmer_culture.md
+  [4]: ./04_programming_language.md
+  [5]: ./05_subjects.md
+  [6]: ./06_system_knowledge.md
+  [7]: ./07_software_design.md
+  [8]: ./08_linux_memory_network.md
+  [9]: ./09_asynchronous_io_and_lock_free_programming.md
+  [10]: ./10_java.md
+  [11]: ./11_database.md
+  [12]: ./12_get_started_with_distributed_architecture.md
+  [13]: ./13_distributed_architecture_books_and_papers.md
+  [14]: ./14_distributed_architecture_design.md
+  [15]: ./15_microservices.md
+  [16]: ./16_container_and_ops_automation.md
+  [17]: ./17_machine_learning_and_ai.md
+  [18]: ./18_frontend_basic_and_principle.md
+  [19]: ./19_frontend_performance_improvement.md
+  [20]: ./20_ui_ux_design.md
+  [21]: ./21_tech_resource.md
