@@ -64,7 +64,7 @@
 
 ## 政治
 
-- [x] [精英的傲慢](politics/the_tyranny_of_merit.md)
+- [x] [精英的傲慢](politics/the_tyranny_of_merit)
 - [x] [新技术革命与国家治理现代化](politics/new_technology_revolution)
 - [ ] [公正：该如何做是好？](politics/justice)
 - [ ] [置身事内：中国政府与经济发展](politics/zhishengshinei)
@@ -77,3 +77,7 @@
 ## 管理学
 
 - [x] [技术团队管理者的第一堂管理课](management/tech_team_manager_lesson)
+
+## 爱情
+
+- [x] [如何避免孤独终老](./love/how_to_not_die_alone)
