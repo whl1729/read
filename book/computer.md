@@ -168,6 +168,7 @@
 
 ## TP311.4 编程方法
 
+- [ ] Designing Data-Intensive Applications
 - [ ] Design Patterns: Elements of Reusable Object-Oriented Software
 - [ ] The Elements of Programming (编程格调)
 - [ ] The Practices of Programming（程序设计实践）
