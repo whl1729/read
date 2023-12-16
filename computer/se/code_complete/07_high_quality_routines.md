@@ -2,9 +2,9 @@
 
 ## Chapter 7: High-Quality Routines
 
-### Q1：这一章的内容是什么？
+### Q1：这一章的内容是什么
 
-### Q2：这一章的大纲是什么？
+### Q2：这一章的大纲是什么
 
 - Valid Reasons to Create a Routine
 - Design at the Routine Level
@@ -14,9 +14,9 @@
 - Special Considerations in the Use of Functions
 - Macro Routines and Inline Routines
 
-### Q3：作者想要解决什么问题？
+### Q3：作者想要解决什么问题
 
-### Q4：这一章的关键词是什么？
+### Q4：这一章的关键词是什么
 
 - Cohesion
   - Sequential Cohesion
@@ -26,7 +26,7 @@
   - Logical Cohesion
   - Coincidental Cohesion
 
-### Q5：这一章的关键句是什么？
+### Q5：这一章的关键句是什么
 
 #### 7.1 Valid Reasons to Create a Routine
 
@@ -141,24 +141,24 @@
   - [ ] Does the routine avoid using input parameters as working variables?
   - [ ] If the routine is a function, does it return a valid value under all possible circumstances?
 
-### Q6：作者是怎么论述的？
+### Q6：作者是怎么论述的
 
-### Q7：作者解决了什么问题？
+### Q7：作者解决了什么问题
 
-### Q8：我有哪些疑问？
+### Q8：我有哪些疑问
 
 #### Q8.1 Why are sequential cohesion, communicational cohesion and temporal cohesion less than ideal
 
 #### Q8.2 Why are procedural cohesion, logical cohesion and coincidental cohesion unacceptable
 
-### Q9：这一章说得有道理吗？为什么？
+### Q9：这一章说得有道理吗？为什么
 
-### Q10：如何拓展这一章？
+### Q10：如何拓展这一章
 
-#### Q10.1：为什么是这样的？为什么发展成这样？为什么需要它？
+#### Q10.1：为什么是这样的？为什么发展成这样？为什么需要它
 
-#### Q10.2：有哪些相似的知识点？它们之间的联系是什么？
+#### Q10.2：有哪些相似的知识点？它们之间的联系是什么
 
-#### Q10.3：其他领域/学科有没有相关的知识点？日常生活中有没有类似的现象？
+#### Q10.3：其他领域/学科有没有相关的知识点？日常生活中有没有类似的现象
 
-### Q11：这一章和我有什么关系？
+### Q11：这一章和我有什么关系

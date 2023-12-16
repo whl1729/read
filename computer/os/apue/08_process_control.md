@@ -2,13 +2,13 @@
 
 ## Chapter 8: Process Control
 
-### Q1：这一章的内容属于哪一类别？
+### Q1：这一章的内容属于哪一类别
 
 计算机/操作系统。
 
-### Q2：这一章的内容是什么？
+### Q2：这一章的内容是什么
 
-### Q3：这一章的大纲是什么？
+### Q3：这一章的大纲是什么
 
 - Process Identifiers
 - `fork` Function
@@ -27,16 +27,16 @@
 - Process Scheduling
 - Process Times
 
-### Q4：作者想要解决什么问题？
+### Q4：作者想要解决什么问题
 
-### Q5：这一章的关键词是什么？
+### Q5：这一章的关键词是什么
 
 - Wall clock time (or Wall time): the actual time taken from the start of a computer program to the end.
   In other words, it is the difference between the time at which a task finishes and the time at which the task started.
 
 - CPU time: the time during which the processor is actively working on a certain task.
 
-### Q6：这一章的关键句是什么？
+### Q6：这一章的关键句是什么
 
 #### 8.2 Process Identifiers
 
@@ -816,28 +816,28 @@
   - All the `clock_t` values returned by this function are converted to seconds using the number of clock ticks per second—
     the `_SC_CLK_TCK` value returned by sysconf.
 
-### Q7：作者是怎么论述的？
+### Q7：作者是怎么论述的
 
-### Q8：作者解决了什么问题？
+### Q8：作者解决了什么问题
 
-### Q9：我有哪些疑问？
+### Q9：我有哪些疑问
 
-### Q10：这一章说得有道理吗？为什么？
+### Q10：这一章说得有道理吗？为什么
 
-### Q11: 这一章讨论的知识的本质是什么？
+### Q11: 这一章讨论的知识的本质是什么
 
-### Q12: 这一章讨论的知识的第一原则是什么？
+### Q12: 这一章讨论的知识的第一原则是什么
 
-### Q13：这一章讨论的知识的结构是怎样的？
+### Q13：这一章讨论的知识的结构是怎样的
 
-### Q14：这一章讨论的知识为什么是这样的？为什么发展成这样？为什么需要它？
+### Q14：这一章讨论的知识为什么是这样的？为什么发展成这样？为什么需要它
 
-### Q15：有哪些相似的知识？它们之间的联系是什么？
+### Q15：有哪些相似的知识？它们之间的联系是什么
 
-### Q16：其他领域/学科有没有相关的知识？日常生活中有没有类似的现象？
+### Q16：其他领域/学科有没有相关的知识？日常生活中有没有类似的现象
 
-### Q17: 这一章对我有哪些用处/帮助/启示？
+### Q17: 这一章对我有哪些用处/帮助/启示
 
-### Q18: 我如何应用这一章的知识去解决问题？
+### Q18: 我如何应用这一章的知识去解决问题
 
   [1]: https://stackoverflow.com/a/808995

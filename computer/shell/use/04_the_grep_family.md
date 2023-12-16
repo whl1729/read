@@ -2,11 +2,11 @@
 
 ## Chapter 4 The grep Family
 
-### Q1：这一章的内容是什么？
+### Q1：这一章的内容是什么
 
 介绍grep命令的基础知识，包括与正则表达式、选项的配合使用。
 
-### Q2：这一章的大纲是什么？
+### Q2：这一章的大纲是什么
 
 - The grep Command
   - The Meaning of grep
@@ -20,11 +20,11 @@
 - GNU grep
 - Recursive grep
 
-### Q3：作者想要解决什么问题？
+### Q3：作者想要解决什么问题
 
 让读者掌握grep的基础知识、用法、不同grep变体之间的区别。
 
-### Q4：这一章的关键词是什么？
+### Q4：这一章的关键词是什么
 
 - grep
 - egrep
@@ -33,7 +33,7 @@
 - GNU grep
 - metacharacters
 
-### Q5：这一章的关键句是什么？
+### Q5：这一章的关键句是什么
 
 #### 4.1.1 The Meaning of grep
 
@@ -132,20 +132,20 @@ In addition, GNU grep recognizes \b, \w, and \W, as well as a new class of POSIX
     provided that the metacharacters are preceded with a backslash.
   - The extended set of metacharacters have no special meaning to regular grep, unless they are backslashed.
 
-### Q6：作者是怎么论述的？
+### Q6：作者是怎么论述的
 
-### Q7：作者解决了什么问题？
+### Q7：作者解决了什么问题
 
-### Q8：我有哪些疑问？
+### Q8：我有哪些疑问
 
-### Q9：这一章说得有道理吗？为什么？
+### Q9：这一章说得有道理吗？为什么
 
-### Q10：如何拓展这一章？
+### Q10：如何拓展这一章
 
-#### Q10.1：为什么是这样的？为什么发展成这样？为什么需要它？
+#### Q10.1：为什么是这样的？为什么发展成这样？为什么需要它
 
-#### Q10.2：有哪些相似的知识点？它们之间的联系是什么？
+#### Q10.2：有哪些相似的知识点？它们之间的联系是什么
 
-#### Q10.3：其他领域/学科有没有相关的知识点？日常生活中有没有类似的现象？
+#### Q10.3：其他领域/学科有没有相关的知识点？日常生活中有没有类似的现象
 
-### Q11：这一章和我有什么关系？
+### Q11：这一章和我有什么关系

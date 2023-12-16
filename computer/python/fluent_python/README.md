@@ -116,12 +116,12 @@ PEP 8 大概有9节，前面几节讲的是代码布局（缩进、行长、空�
   This is because such statements will implicitly cancel any active exception that is propagating through the finally suite.
   （这里同样体现「Errors should never pass silently.」）
 
-## Fluent Python 想要解决什么问题？
+## Fluent Python 想要解决什么问题
 
 作者在前言中提到许多 Python 程序员的一个问题：不了解 Python 的很多语言特性。
 因此这本书的重点是介绍 Python 独有的或其他主流语言不具有的特性。
 
-## Fluent Python 的大纲是怎样的？
+## Fluent Python 的大纲是怎样的
 
 包括5个部分，分别是数据结构、函数、类/协议、控制流和元编程。
 

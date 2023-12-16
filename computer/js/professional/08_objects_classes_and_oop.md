@@ -2,9 +2,9 @@
 
 ## Chapter 8: Objects, Classes, and Object-Oriented Programming
 
-### Q1：这一章的内容是什么？
+### Q1：这一章的内容是什么
 
-### Q2：这一章的大纲是什么？
+### Q2：这一章的大纲是什么
 
 - Understanding Objects
   - Types of Properties
@@ -80,9 +80,9 @@
     - Inheriting from Built-in Types
     - Class Maxins
 
-### Q3：作者想要解决什么问题？
+### Q3：作者想要解决什么问题
 
-### Q4：这一章的关键词是什么？
+### Q4：这一章的关键词是什么
 
 - Prototype
 - Prototype Chaining
@@ -97,7 +97,7 @@
   - calls a function with a given this value and arguments provided individually.
   - allows for a function/method belonging to one object to be assigned and called for a different object.
 
-### Q5：这一章的关键句是什么？
+### Q5：这一章的关键句是什么
 
 - What is an object
   - An unordered collection of properties
@@ -300,13 +300,13 @@
 
 #### 8.4 Classes
 
-### Q6：作者是怎么论述的？
+### Q6：作者是怎么论述的
 
-### Q7：作者解决了什么问题？
+### Q7：作者解决了什么问题
 
-### Q8：我有哪些疑问？
+### Q8：我有哪些疑问
 
-#### Q8.1: P255 "Defining Multiple Properties"一节的例子中，为什么修改year失败？
+#### Q8.1: P255 "Defining Multiple Properties"一节的例子中，为什么修改year失败
 
 #### Q8.2: class、constructor、prototype 三者的联系与区别是什么
 
@@ -314,16 +314,16 @@
 
 #### Q8.4: 为什么 `Object instanceof Function` 和 `Function instanceof Object` 都返回 true
 
-### Q9：这一章说得有道理吗？为什么？
+### Q9：这一章说得有道理吗？为什么
 
 JavaScript 的原型链有点复杂，不好理解，我还没能理解。
 
-### Q10：如何拓展这一章？
+### Q10：如何拓展这一章
 
-#### Q10.1：为什么是这样的？为什么发展成这样？为什么需要它？
+#### Q10.1：为什么是这样的？为什么发展成这样？为什么需要它
 
-#### Q10.2：有哪些相似的知识点？它们之间的联系是什么？
+#### Q10.2：有哪些相似的知识点？它们之间的联系是什么
 
-#### Q10.3：其他领域/学科有没有相关的知识点？日常生活中有没有类似的现象？
+#### Q10.3：其他领域/学科有没有相关的知识点？日常生活中有没有类似的现象
 
-### Q11：这一章和我有什么关系？
+### Q11：这一章和我有什么关系

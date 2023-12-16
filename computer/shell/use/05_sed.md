@@ -2,11 +2,11 @@
 
 ## Chapter 5: sed, the Streamlined Editor
 
-### Q1：这一章的内容是什么？
+### Q1：这一章的内容是什么
 
 介绍sed工具的基础知识。
 
-### Q2：这一章的大纲是什么？
+### Q2：这一章的大纲是什么
 
 - What is sed
 - Versions of sed
@@ -18,13 +18,13 @@
 - Metacharacters
 - sed Scripting
 
-### Q3：作者想要解决什么问题？
+### Q3：作者想要解决什么问题
 
-### Q4：这一章的关键词是什么？
+### Q4：这一章的关键词是什么
 
 - streamlined editor
 
-### Q5：这一章的关键句是什么？
+### Q5：这一章的关键句是什么
 
 #### 5.1 What is sed
 
@@ -135,19 +135,19 @@
   - There cannot be any **trailing whitespace or text** at the end of the command.
   - If commands are not placed on a line by themselves, they must be terminated with a **semicolon**.
 
-### Q6：作者是怎么论述的？
+### Q6：作者是怎么论述的
 
-### Q7：作者解决了什么问题？
+### Q7：作者解决了什么问题
 
-### Q8：我有哪些疑问？
+### Q8：我有哪些疑问
 
-### Q9：这一章说得有道理吗？为什么？
+### Q9：这一章说得有道理吗？为什么
 
-### Q10：如何拓展这一章？
+### Q10：如何拓展这一章
 
-#### Q10.1：为什么是这样的？为什么发展成这样？为什么需要它？
+#### Q10.1：为什么是这样的？为什么发展成这样？为什么需要它
 
-#### Q10.2：有哪些相似的知识点？它们之间的联系是什么？
+#### Q10.2：有哪些相似的知识点？它们之间的联系是什么
 
 ##### [SED 简明教程][sed_tutorial]
 
@@ -176,6 +176,6 @@
 
   [sed_variable]: https://askubuntu.com/questions/76808/how-do-i-use-variables-in-a-sed-command
 
-#### Q10.3：其他领域/学科有没有相关的知识点？日常生活中有没有类似的现象？
+#### Q10.3：其他领域/学科有没有相关的知识点？日常生活中有没有类似的现象
 
-### Q11：这一章和我有什么关系？
+### Q11：这一章和我有什么关系

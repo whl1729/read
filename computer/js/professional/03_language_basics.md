@@ -2,9 +2,9 @@
 
 ## Chapter 3: Language Basics
 
-### Q1：这一章的内容是什么？
+### Q1：这一章的内容是什么
 
-### Q2：这一章的大纲是什么？
+### Q2：这一章的大纲是什么
 
 #### 一级大纲
 
@@ -64,14 +64,14 @@
   - The switch Statement
 - Functions
 
-### Q3：作者想要解决什么问题？
+### Q3：作者想要解决什么问题
 
 - Reviewing syntax
 - Working with data types
 - Working with flow-control statements
 - Understanding functions
 
-### Q4：这一章的关键词是什么？
+### Q4：这一章的关键词是什么
 
 - Strict Mode
 - Exponentiation Operators
@@ -83,7 +83,7 @@
 - Symbol.iterator
 - Symbol.asyncIterator
 
-### Q5：这一章的关键句是什么？
+### Q5：这一章的关键句是什么
 
 #### 3.1 Syntax
 
@@ -443,13 +443,13 @@
   - The switch statement works with all data types.
   - The case values need not be constants; they can be variables and even expressions.
 
-### Q6：作者是怎么论述的？
+### Q6：作者是怎么论述的
 
-### Q7：作者解决了什么问题？
+### Q7：作者解决了什么问题
 
-### Q8：我有哪些疑问？
+### Q8：我有哪些疑问
 
-#### Q8.1: 如何快速判断一个小数是否在IEEE 754标准下被精确表示？
+#### Q8.1: 如何快速判断一个小数是否在IEEE 754标准下被精确表示
 
 答：IEEE 754 能够表示的小数的通式为`sum(power(2, i))`，其中i为任意整数。
 假设最低的幂为k，那么这个小数乘以`|k|`后就变成整数了。 由此不难得到一个判断方法：
@@ -476,17 +476,17 @@ IEEE 754 标准规定: 只有大于等于`1.7976931348623158e+308` 的数才会�
 
 详见[为什么在js中Number.MAX_VALUE + 1不是Infinity？ - icymindx的回答 - 知乎][2]。
 
-### Q9：这一章说得有道理吗？为什么？
+### Q9：这一章说得有道理吗？为什么
 
-### Q10：如何拓展这一章？
+### Q10：如何拓展这一章
 
-#### Q10.1：为什么是这样的？为什么发展成这样？为什么需要它？
+#### Q10.1：为什么是这样的？为什么发展成这样？为什么需要它
 
-#### Q10.2：有哪些相似的知识点？它们之间的联系是什么？
+#### Q10.2：有哪些相似的知识点？它们之间的联系是什么
 
-#### Q10.3：其他领域/学科有没有相关的知识点？日常生活中有没有类似的现象？
+#### Q10.3：其他领域/学科有没有相关的知识点？日常生活中有没有类似的现象
 
-### Q11：这一章和我有什么关系？
+### Q11：这一章和我有什么关系
 
   [1]: https://en.wikipedia.org/wiki/Double-precision_floating-point_format
   [2]: https://www.zhihu.com/question/24423421/answer/140269663

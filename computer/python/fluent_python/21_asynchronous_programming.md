@@ -29,11 +29,11 @@
 
 ### 关于第21章我有哪些疑问
 
-#### Q1: Example 21-1 的处理流程是怎样的？
+#### Q1: Example 21-1 的处理流程是怎样的
 
 - 第8步创建了多个 coroutine 后，await 的操作会自动运行吗？还是要等到 asyncio.as_completed 时才会运行？
 
-#### Q1: Example 21-1 执行 await loop.getaddrinfo 后究竟会发生什么？
+#### Q1: Example 21-1 执行 await loop.getaddrinfo 后究竟会发生什么
 
 - 首先分析 getaddrinfo 的内部实现
   - getaddrinfo 需要进行网络 IO，比如请求 DNS 服务器。

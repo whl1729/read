@@ -2,11 +2,11 @@
 
 ## Chapter 3: Bad Smells in Code
 
-### Q1：这一章的内容属于哪一类别？
+### Q1：这一章的内容属于哪一类别
 
-### Q2：这一章的内容是什么？
+### Q2：这一章的内容是什么
 
-### Q3：这一章的大纲是什么？
+### Q3：这一章的大纲是什么
 
 - Mysterious Name （神秘命名）
 - Duplicated Code （重复代码）
@@ -33,9 +33,9 @@
 - Refused Bequest （被拒绝的遗赠）
 - Comments （注释）
 
-### Q4：作者想要解决什么问题？
+### Q4：作者想要解决什么问题
 
-### Q5：这一章的关键词是什么？
+### Q5：这一章的关键词是什么
 
 - Shotgun surgery
   - An antipattern in software development and occurs
@@ -47,7 +47,7 @@
     spends more time communicating with functions or data inside another module
     than it does within its own module.
 
-### Q6：这一章的关键句是什么？
+### Q6：这一章的关键句是什么
 
 #### Mysterious Name
 
@@ -342,34 +342,34 @@
   - A comment can also explain why you did something.
   - This kind of information helps future modifiers, especially forgetful ones.
 
-### Q7：作者是怎么论述的？
+### Q7：作者是怎么论述的
 
-### Q8：作者解决了什么问题？
+### Q8：作者解决了什么问题
 
-### Q9：我有哪些疑问？
+### Q9：我有哪些疑问
 
-#### Q9.1: 如何理解Combine Functions into Transform这个重构技巧？
+#### Q9.1: 如何理解Combine Functions into Transform这个重构技巧
 
-#### Q9.2: 如何理解Replace Superclass with Delegate 和 Replace Subclass with Delegate 这两个技巧？
+#### Q9.2: 如何理解Replace Superclass with Delegate 和 Replace Subclass with Delegate 这两个技巧
 
-#### Q9.3: 如何理解Alternative Classes with Different Interfaces这个技巧？
+#### Q9.3: 如何理解Alternative Classes with Different Interfaces这个技巧
 
-#### Q9.4: 在Refused Bequest中，作者为什么说不介意拒绝实现、但介意拒绝接口？
+#### Q9.4: 在Refused Bequest中，作者为什么说不介意拒绝实现、但介意拒绝接口
 
-### Q10：这一章说得有道理吗？为什么？
+### Q10：这一章说得有道理吗？为什么
 
-### Q11: 这一章讨论的知识的本质是什么？
+### Q11: 这一章讨论的知识的本质是什么
 
-### Q12: 这一章讨论的知识的第一原则是什么？
+### Q12: 这一章讨论的知识的第一原则是什么
 
-### Q13：这一章讨论的知识的结构是怎样的？
+### Q13：这一章讨论的知识的结构是怎样的
 
-### Q14：这一章讨论的知识为什么是这样的？为什么发展成这样？为什么需要它？
+### Q14：这一章讨论的知识为什么是这样的？为什么发展成这样？为什么需要它
 
-### Q15：有哪些相似的知识？它们之间的联系是什么？
+### Q15：有哪些相似的知识？它们之间的联系是什么
 
-### Q16：其他领域/学科有没有相关的知识？日常生活中有没有类似的现象？
+### Q16：其他领域/学科有没有相关的知识？日常生活中有没有类似的现象
 
-### Q17: 这一章对我有哪些用处/帮助/启示？
+### Q17: 这一章对我有哪些用处/帮助/启示
 
-### Q18: 我如何应用这一章的知识去解决问题？
+### Q18: 我如何应用这一章的知识去解决问题

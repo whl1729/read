@@ -2,7 +2,7 @@
 
 ## 3 Dictionaries and Sets
 
-### 这一章的大纲是什么？
+### 这一章的大纲是什么
 
 - 创建和处理 dict 和映射的语法，包括解包和模式匹配
 - 映射类型的常用方法
@@ -11,7 +11,7 @@
 - set 和 frozenset 类型
 - 哈希表对集合或字典的行为的影响
 
-### 目前为止我知道什么？
+### 目前为止我知道什么
 
 - 创建 dict: `people = {'name': 'guojing', 'age': 20}`
 - dict 的部分常用方法：`d[key]`, `d.get(key, def_val)`
@@ -19,7 +19,7 @@
 - dict 有这些变体：collections 库有 ChainMap、OrderedDict、UserDict、defaultdict 等变体，但不熟悉
 - 创建 set：`people = {'guojing', 'huangrong'}`
 
-### 目前为止我不知道什么？
+### 目前为止我不知道什么
 
 - dict 解包和模式匹配
 - dict 的其他常用方法
@@ -28,7 +28,7 @@
 - frozenset 的语法
 - 哈希表对集合或字典的行为的影响
 
-### 这一章的主要内容是什么？
+### 这一章的主要内容是什么
 
 - `__builtins__.__dict__` 存储了所有的内建类型、对象和函数。
 

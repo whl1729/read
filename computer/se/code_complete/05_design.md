@@ -2,9 +2,9 @@
 
 ## Chapter 5: Design in Construction
 
-### Q1：这一章的内容是什么？
+### Q1：这一章的内容是什么
 
-### Q2：这一章的大纲是什么？
+### Q2：这一章的大纲是什么
 
 - Design Challenges
 - Key Design Concepts
@@ -13,9 +13,9 @@
 - Comments on Popular Methodologies
 - Checklist: Design in Construction
 
-### Q3：作者想要解决什么问题？
+### Q3：作者想要解决什么问题
 
-### Q4：这一章的关键词是什么？
+### Q4：这一章的关键词是什么
 
 - Heuristics 启发式方法
 - Popular Methodologies
@@ -26,7 +26,7 @@
 - Experimental Prototyping
   - Writing the absolute minimum amount of throwaway code that’s needed to answer a specific design question.
 
-### Q5：这一章的关键句是什么？
+### Q5：这一章的关键句是什么
 
 #### 5.1 Design Challenges
 
@@ -402,11 +402,11 @@
   - IEEE Std 1016-1998, Recommended Practice for Software Design Descriptions
   - IEEE Std 1471-2000. Recommended Practice for Architectural Description of Software Intensive Systems
 
-### Q6：作者是怎么论述的？
+### Q6：作者是怎么论述的
 
-### Q7：作者解决了什么问题？
+### Q7：作者解决了什么问题
 
-### Q8：我有哪些疑问？
+### Q8：我有哪些疑问
 
 #### Q8.1: What are the design challenges
 
@@ -431,13 +431,13 @@
 
 根据我目前的理解，封装一般是面向对象中的概念，信息隐藏的适用范围更广泛。
 
-### Q9：这一章说得有道理吗？为什么？
+### Q9：这一章说得有道理吗？为什么
 
-### Q10：如何拓展这一章？
+### Q10：如何拓展这一章
 
-#### Q10.1：为什么是这样的？为什么发展成这样？为什么需要它？
+#### Q10.1：为什么是这样的？为什么发展成这样？为什么需要它
 
-#### Q10.2：有哪些相似的知识点？它们之间的联系是什么？
+#### Q10.2：有哪些相似的知识点？它们之间的联系是什么
 
 - 常见设计原则
   - 「左耳听风」提到的设计原则
@@ -446,6 +446,6 @@
   - 设计模式
   - 敏捷软件开发
 
-#### Q10.3：其他领域/学科有没有相关的知识点？日常生活中有没有类似的现象？
+#### Q10.3：其他领域/学科有没有相关的知识点？日常生活中有没有类似的现象
 
-### Q11：这一章和我有什么关系？
+### Q11：这一章和我有什么关系
