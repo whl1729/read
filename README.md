@@ -5,6 +5,8 @@
 ## 方法论
 
 - [x] [程序员练级攻略](method/programmer_improvement_guide)
+- [x] [把时间当做朋友](psychology/time_as_a_friend/README.md)
+- [x] [人人都能用英语](language/english/everyone_can_use_english/README.md)
 - [ ] 如何阅读一本书
 - [ ] Learn More, Study Less
 
