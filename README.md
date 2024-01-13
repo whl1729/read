@@ -10,6 +10,10 @@
 - [ ] 如何阅读一本书
 - [ ] Learn More, Study Less
 
+## 电子学
+
+- [x] [芯片战争](electronics/chip_war/README.md)
+
 ## 计算机
 
 ### database
