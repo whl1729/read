@@ -13,6 +13,7 @@
 ## 电子学
 
 - [x] [芯片战争](electronics/chip_war/README.md)
+- [x] [光刻巨人：ASML 崛起之路](electronics/asml_architects/README.md)
 
 ## 计算机
 
