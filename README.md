@@ -55,6 +55,10 @@
 
 - [ ] vim 实用技巧
 
+## 医学
+
+- [x] [薄世宁医学通识讲义](medicine/medicine_in_a_nutshell/README.md)
+
 ## 心理学
 
 - [x] [非暴力沟通](psychology/nonviolent_communication)
